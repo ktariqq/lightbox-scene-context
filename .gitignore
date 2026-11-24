@@ -1,0 +1,10 @@
+data/
+features/
+subset/
+uae*/
+tmp_zips/
+tmp_export/
+.venv/
+.venv-tfjs/
+__pycache__/
+*.pyc

@@ -1,0 +1,50 @@
+.stack-host{position:relative;perspective:1600px;perspective-origin:50% 30%;min-height:0;--film-o:.7}
+.stack-rot{position:absolute;inset:0;transform-style:preserve-3d}
+.beams{position:absolute;left:50%;top:50%;width:0;height:0;transform-style:preserve-3d;pointer-events:none}
+.bseg{position:absolute;left:0;top:0;transform-style:preserve-3d}
+.bp{position:absolute;left:0;top:0;transform-origin:50% 0}
+.bp:first-child{transform:rotateX(-90deg)}
+.bp:last-child{transform:rotateX(-90deg) rotateY(90deg)}
+
+.plate{position:absolute;left:50%;top:50%;width:calc(var(--P)*var(--r,.5));height:calc(var(--P)*var(--r,.5));transform-style:preserve-3d;cursor:grab;
+  --T:7px;
+  transform:translate3d(-50%,-50%,var(--z,0px)) translate3d(var(--ex,0px),var(--ey,0px),var(--ez,0px)) rotateZ(var(--er,0deg));
+  transition:width .8s var(--ease),height .8s var(--ease),transform .8s var(--ease),opacity .5s,filter .5s}
+.plate[data-view=center]{--dir:1}.plate[data-view=surround]{--dir:-1}.plate[data-view=global]{--dir:1}
+.plate:active{cursor:grabbing}
+.plate::before{content:"";position:absolute;inset:-6px;border:1px solid rgba(255,255,255,.55);transform:translateZ(-1px);
+  background:linear-gradient(135deg,rgba(255,255,255,.24),rgba(169,232,232,.08) 40%,rgba(102,51,153,.34))}
+.plate::after{content:"";position:absolute;inset:-16px;pointer-events:none;--c:rgba(205,182,234,.8);
+  background:linear-gradient(var(--c),var(--c)) 0 0/10px 1px no-repeat,linear-gradient(var(--c),var(--c)) 0 0/1px 10px no-repeat,
+  linear-gradient(var(--c),var(--c)) 100% 0/10px 1px no-repeat,linear-gradient(var(--c),var(--c)) 100% 0/1px 10px no-repeat,
+  linear-gradient(var(--c),var(--c)) 0 100%/10px 1px no-repeat,linear-gradient(var(--c),var(--c)) 0 100%/1px 10px no-repeat,
+  linear-gradient(var(--c),var(--c)) 100% 100%/10px 1px no-repeat,linear-gradient(var(--c),var(--c)) 100% 100%/1px 10px no-repeat}
+.face{position:absolute;inset:0;isolation:isolate;overflow:hidden;background:var(--deep);outline:1px solid rgba(255,255,255,.65);
+  box-shadow:0 0 calc(var(--gl,0)*34px) calc(var(--gl,0)*4px) rgba(242,193,78,calc(var(--gl,0)*.8));transition:filter .5s}
+.pic,.film{position:absolute;inset:0;width:100%;height:100%}
+.film{opacity:var(--film-o);pointer-events:none}
+.film[hidden]{display:none}
+.bloom .film{animation:bloom .9s var(--ease)}
+@keyframes bloom{from{opacity:0;filter:blur(10px) saturate(1.8)}to{opacity:var(--film-o);filter:none}}
+.glint{position:absolute;inset:0;pointer-events:none;opacity:.26;mix-blend-mode:soft-light;background-size:300% 100%;background-position:var(--gx,50%) 0;
+  background-image:linear-gradient(112deg,transparent 0 38%,rgba(255,255,255,.9) 47%,rgba(236,170,.7) 50%,transparent 60% 100%)}
+.plate.empty .face{background:repeating-linear-gradient(135deg,rgba(167,123,208,.28) 0 6px,rgba(26,16,37,.95) 6px 12px)}
+.plate.empty .pic{opacity:0}
+.plate.dark .face{filter:brightness(.12) saturate(.3)}
+.edge{position:absolute;background:linear-gradient(90deg,rgba(169,232,232,.75),rgba(167,123,208,.45))}
+.e-r{left:100%;top:0;width:var(--T);height:100%;transform-origin:0 50%;transform:rotateY(90deg)}
+.e-l{right:100%;top:0;width:var(--T);height:100%;transform-origin:100% 50%;transform:rotateY(-90deg)}
+.e-b{top:100%;left:0;height:var(--T);width:100%;transform-origin:50% 0;transform:rotateX(-90deg)}
+.e-t{bottom:100%;left:0;height:var(--T);width:100%;transform-origin:50% 100%;transform:rotateX(90deg)}
+.pj{position:absolute;width:2px;height:var(--ph,40px);transform-origin:0 0;transform:rotateX(-90deg);transition:opacity .4s;
+  background:repeating-linear-gradient(180deg,var(--aqua) 0 5px,transparent 5px 9px)}
+.pj-a{left:0;top:0}.pj-b{left:100%;top:0}.pj-c{left:0;top:100%}.pj-d{left:100%;top:100%}
+.stack-host[data-mode=input] .pj,.plate[data-view=global] .pj,.plate.ejected .pj{opacity:0}
+.plabel{position:absolute;left:0;top:calc(100% + 14px);white-space:nowrap;color:var(--frost)}
+.gtag{position:absolute;right:0;top:calc(100% + 14px);color:var(--sun);white-space:nowrap}
+.plate.ejected{--ex:calc(var(--P)*.85*var(--dir));--ey:calc(var(--P)*-.18);--ez:calc(var(--P)*.12);--er:calc(var(--dir)*12deg);opacity:.3;filter:saturate(.35)}
+.stack-host[data-focus] .plate:not(.is-focus):not(.ejected){opacity:.38}
+.plate:focus-visible{outline-offset:12px}
+.tilt-btn{position:absolute;left:8px;bottom:8px}
+@media (max-width:640px){.plabel,.gtag{font-size:.55rem}}
+@media (prefers-reduced-motion:reduce){.glint{background-position:60% 0}}

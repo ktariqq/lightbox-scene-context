@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position:absolute">
+  <symbol id="vine" viewBox="0 0 100 100"><g fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M8 92 C30 74 8 52 34 42 S38 16 72 8"/><path d="M30 58 q-14 -3 -16 -15 q13 0 16 15z"/><path d="M40 36 q12 -2 18 -12 q-13 -3 -18 12z"/><path d="M60 20 q9 3 14 12"/><path d="M20 78 q8 -2 10 -10"/></g></symbol>
+  <symbol id="flower" viewBox="0 0 100 100"><g fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round">
+    <g id="pt"><path d="M50 46 C38 34 44 16 50 12 C56 16 62 34 50 46z"/></g><use href="#pt" transform="rotate(72 50 46)"/><use href="#pt" transform="rotate(144 50 46)"/><use href="#pt" transform="rotate(216 50 46)"/><use href="#pt" transform="rotate(288 50 46)"/>
+    <path d="M50 52 C47 68 54 82 49 96"/><path d="M50 78 q-14 -2 -18 -12 q14 0 18 12z"/></g></symbol>
+  <symbol id="sparkle" viewBox="0 0 100 100"><path fill="currentColor" d="M50 2 C53 34 66 47 98 50 C66 53 53 66 50 98 C47 66 34 53 2 50 C34 47 47 34 50 2Z"/></symbol>
+  <symbol id="dew" viewBox="0 0 100 100"><g fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M50 8 C68 34 82 52 82 66 A32 32 0 0 1 18 66 C18 52 32 34 50 8Z"/><path d="M34 68 q2 12 14 16"/></g></symbol>
+  <symbol id="star" viewBox="0 0 100 100"><g fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M50 8 L60 38 L92 40 L66 58 L76 90 L50 70 L24 90 L34 58 L8 40 L40 38 Z"/></g></symbol>
+  <symbol id="squiggle" viewBox="0 0 100 100"><g fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round"><path d="M4 50 q10 -22 20 0 t20 0 t20 0 t20 0 t12 0"/></g></symbol>
+</svg>

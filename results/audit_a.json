@@ -1,0 +1,135 @@
+{
+ "rows": 8400,
+ "ok_rows": 8400,
+ "center_missing": 0,
+ "center_extra": 0,
+ "surround_missing": 0,
+ "surround_extra": 0,
+ "global_missing": 0,
+ "global_extra": 0,
+ "dup_md5_groups_across_splits": 18,
+ "dup_md5_repeated_rows": 28,
+ "class_counts": {
+  "Airport": {
+   "test": 100,
+   "train": 200,
+   "val": 50
+  },
+  "Beach": {
+   "test": 100,
+   "train": 200,
+   "val": 50
+  },
+  "Brownfield": {
+   "test": 100,
+   "train": 200,
+   "val": 50
+  },
+  "Chemical plant": {
+   "test": 100,
+   "train": 200,
+   "val": 50
+  },
+  "Construction": {
+   "test": 100,
+   "train": 200,
+   "val": 50
+  },
+  "Dry field": {
+   "test": 100,
+   "train": 200,
+   "val": 50
+  },
+  "Highway": {
+   "test": 100,
+   "train": 200,
+   "val": 50
+  },
+  "Hills": {
+   "test": 100,
+   "train": 200,
+   "val": 50
+  },
+  "Landfill": {
+   "test": 100,
+   "train": 200,
+   "val": 50
+  },
+  "Military training ground": {
+   "test": 100,
+   "train": 200,
+   "val": 50
+  },
+  "Mosque": {
+   "test": 100,
+   "train": 200,
+   "val": 50
+  },
+  "Mountain": {
+   "test": 100,
+   "train": 200,
+   "val": 50
+  },
+  "Petroleum well": {
+   "test": 100,
+   "train": 200,
+   "val": 50
+  },
+  "Port": {
+   "test": 100,
+   "train": 200,
+   "val": 50
+  },
+  "Quarry": {
+   "test": 100,
+   "train": 200,
+   "val": 50
+  },
+  "Resort": {
+   "test": 100,
+   "train": 200,
+   "val": 50
+  },
+  "Rock": {
+   "test": 100,
+   "train": 200,
+   "val": 50
+  },
+  "Roundabout": {
+   "test": 100,
+   "train": 200,
+   "val": 50
+  },
+  "Sand": {
+   "test": 100,
+   "train": 200,
+   "val": 50
+  },
+  "Scrub": {
+   "test": 100,
+   "train": 200,
+   "val": 50
+  },
+  "Solar power plant": {
+   "test": 100,
+   "train": 200,
+   "val": 50
+  },
+  "Substation": {
+   "test": 100,
+   "train": 200,
+   "val": 50
+  },
+  "Swimming pool": {
+   "test": 100,
+   "train": 200,
+   "val": 50
+  },
+  "Thermal power plant": {
+   "test": 100,
+   "train": 200,
+   "val": 50
+  }
+ },
+ "geographic_overlap": "NOT CHECKABLE: MEET has no coordinates or location metadata; near-duplicate scenes are screened by feature similarity (stage b)"
+}

@@ -1,0 +1,14 @@
+:root{
+  --void:#0A0614;--deep:#1A1025;--orbit:#32164F;--rebecca:#663399;--lilac:#A77BD0;--lilac-ink:#CDB6EA;
+  --gold:#C5A04D;--sun:#F2C14E;--frost:#F3EEFB;--ink:#2A1540;--aqua:#A9E8E8;--pink:#E8A7D1;
+  --f-display:"Unbounded","Arial Black",system-ui,sans-serif;
+  --f-body:"Bricolage Grotesque","Helvetica Neue",Arial,system-ui,sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --f-pix:"Silkscreen","JetBrains Mono",ui-monospace,monospace;
+  --t-pix:.66rem;--t-xs:.78rem;--t-sm:.9rem;--t-md:1.0625rem;--t-lg:1.3rem;
+  --t-xl:clamp(1.5rem,2.6vw,2.3rem);--t-2xl:clamp(2rem,4.2vw,4.2rem);--t-num:clamp(6rem,16vw,15rem);
+  --gap:clamp(12px,1.8vw,26px);--pad:clamp(16px,4vw,64px);--max:1400px;--dock:68px;
+  --ease:cubic-bezier(.2,.8,.2,1);
+  --foil:linear-gradient(115deg,#663399 0%,#A9E8E8 32%,#F2C14E 58%,#E8A7D1 82%,#663399 100%);
+  --glass:linear-gradient(180deg,rgba(255,255,255,.22),rgba(255,255,255,.04) 49%,rgba(10,6,20,.12) 51%,rgba(169,232,232,.10));
+}

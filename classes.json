@@ -1,0 +1,38 @@
+{
+ "classes": [
+  "Airport",
+  "Beach",
+  "Brownfield",
+  "Chemical plant",
+  "Construction",
+  "Dry field",
+  "Highway",
+  "Hills",
+  "Landfill",
+  "Military training ground",
+  "Mosque",
+  "Mountain",
+  "Petroleum well",
+  "Port",
+  "Quarry",
+  "Resort",
+  "Rock",
+  "Roundabout",
+  "Sand",
+  "Scrub",
+  "Solar power plant",
+  "Substation",
+  "Swimming pool",
+  "Thermal power plant"
+ ],
+ "arid": [
+    "Dry field",
+    "Hills",
+    "Mountain",
+    "Petroleum well",
+    "Quarry",
+    "Rock",
+    "Sand",
+    "Scrub"
+  ]
+}
