@@ -1,0 +1,199 @@
+ds,model,true,group,view,mean,std
+test,b4,Airport,other,center,0.77368736,0.006368012
+test,b4,Airport,other,global,0.75841475,0.011673504
+test,b4,Airport,other,surround,0.74456936,0.014025169
+test,b4,Beach,other,center,0.7765824,0.015547166
+test,b4,Beach,other,global,0.76599,0.014036958
+test,b4,Beach,other,surround,0.74915653,0.010378604
+test,b4,Brownfield,other,center,0.7792313,0.006901188
+test,b4,Brownfield,other,global,0.76782894,0.009924693
+test,b4,Brownfield,other,surround,0.7563607,0.005928129
+test,b4,Chemical plant,other,center,0.77820283,0.0026065563
+test,b4,Chemical plant,other,global,0.74399805,0.0022106352
+test,b4,Chemical plant,other,surround,0.74219507,0.009997539
+test,b4,Construction,other,center,0.7826021,0.0045028585
+test,b4,Construction,other,global,0.7551133,0.006229972
+test,b4,Construction,other,surround,0.75325674,0.009130008
+test,b4,Dry field,arid,center,0.77066016,0.0060918764
+test,b4,Dry field,arid,global,0.7575939,0.015438987
+test,b4,Dry field,arid,surround,0.74467975,0.012860417
+test,b4,Highway,other,center,0.7745921,0.006006576
+test,b4,Highway,other,global,0.7577211,0.008919885
+test,b4,Highway,other,surround,0.75312215,0.011194557
+test,b4,Hills,arid,center,0.77681226,0.011209372
+test,b4,Hills,arid,global,0.76820594,0.011945071
+test,b4,Hills,arid,surround,0.75269645,0.017337257
+test,b4,Landfill,other,center,0.7790459,0.009175819
+test,b4,Landfill,other,global,0.77279097,0.008092179
+test,b4,Landfill,other,surround,0.7605881,0.0032695818
+test,b4,Military training ground,other,center,0.7786204,0.0074751037
+test,b4,Military training ground,other,global,0.7648716,0.01892909
+test,b4,Military training ground,other,surround,0.75033695,0.015593347
+test,b4,Mosque,other,center,0.7752964,0.0104169175
+test,b4,Mosque,other,global,0.73942226,0.009226192
+test,b4,Mosque,other,surround,0.74115056,0.01868434
+test,b4,Mountain,arid,center,0.7713871,0.01152183
+test,b4,Mountain,arid,global,0.7646919,0.016470307
+test,b4,Mountain,arid,surround,0.7451585,0.020312442
+test,b4,Petroleum well,arid,center,0.78396076,0.005306321
+test,b4,Petroleum well,arid,global,0.7747957,0.009470305
+test,b4,Petroleum well,arid,surround,0.76284724,0.0124807805
+test,b4,Port,other,center,0.7838231,0.014119789
+test,b4,Port,other,global,0.75162596,0.010388775
+test,b4,Port,other,surround,0.7536195,0.016810205
+test,b4,Quarry,arid,center,0.780358,0.010393714
+test,b4,Quarry,arid,global,0.7695648,0.009382043
+test,b4,Quarry,arid,surround,0.7597429,0.009149953
+test,b4,Resort,other,center,0.78764933,0.0071617425
+test,b4,Resort,other,global,0.7521917,0.011380723
+test,b4,Resort,other,surround,0.7541094,0.017966922
+test,b4,Rock,arid,center,0.7655072,0.010847331
+test,b4,Rock,arid,global,0.7613265,0.018701404
+test,b4,Rock,arid,surround,0.7420601,0.008478987
+test,b4,Roundabout,other,center,0.7720218,0.013527419
+test,b4,Roundabout,other,global,0.74368453,0.014399192
+test,b4,Roundabout,other,surround,0.7470693,0.020883711
+test,b4,Sand,arid,center,0.7682888,0.0106401825
+test,b4,Sand,arid,global,0.76683503,0.01969235
+test,b4,Sand,arid,surround,0.74608827,0.01430244
+test,b4,Scrub,arid,center,0.7755761,0.01360023
+test,b4,Scrub,arid,global,0.76106924,0.028823929
+test,b4,Scrub,arid,surround,0.744524,0.01722505
+test,b4,Solar power plant,other,center,0.7705059,0.0082123
+test,b4,Solar power plant,other,global,0.7632702,0.01224153
+test,b4,Solar power plant,other,surround,0.746514,0.015141851
+test,b4,Substation,other,center,0.7818947,0.0017457006
+test,b4,Substation,other,global,0.764417,0.0047015836
+test,b4,Substation,other,surround,0.7570006,0.006965226
+test,b4,Swimming pool,other,center,0.77839476,0.0045101237
+test,b4,Swimming pool,other,global,0.7413344,0.01029923
+test,b4,Swimming pool,other,surround,0.74096584,0.021066535
+test,b4,Thermal power plant,other,center,0.7779643,0.007836753
+test,b4,Thermal power plant,other,global,0.747766,0.009707809
+test,b4,Thermal power plant,other,surround,0.7551444,0.008660512
+test,b4vd,Airport,other,center,0.8877309,0.015129657
+test,b4vd,Airport,other,global,0.867373,0.008359668
+test,b4vd,Airport,other,surround,0.8878537,0.021695508
+test,b4vd,Beach,other,center,0.87087125,0.0028083639
+test,b4vd,Beach,other,global,0.8830338,0.015532489
+test,b4vd,Beach,other,surround,0.88405067,0.024597095
+test,b4vd,Brownfield,other,center,0.88420945,0.015050169
+test,b4vd,Brownfield,other,global,0.8756089,0.009892587
+test,b4vd,Brownfield,other,surround,0.8915208,0.020495795
+test,b4vd,Chemical plant,other,center,0.8790603,0.017743457
+test,b4vd,Chemical plant,other,global,0.8495243,0.011083909
+test,b4vd,Chemical plant,other,surround,0.8784097,0.02461005
+test,b4vd,Construction,other,center,0.8854995,0.018764745
+test,b4vd,Construction,other,global,0.86061716,0.010502263
+test,b4vd,Construction,other,surround,0.8849597,0.026075771
+test,b4vd,Dry field,arid,center,0.8815875,0.011177952
+test,b4vd,Dry field,arid,global,0.87118465,0.012153152
+test,b4vd,Dry field,arid,surround,0.88542587,0.01941721
+test,b4vd,Highway,other,center,0.8858587,0.0106376605
+test,b4vd,Highway,other,global,0.85858464,0.007059465
+test,b4vd,Highway,other,surround,0.8910365,0.023210417
+test,b4vd,Hills,arid,center,0.87371033,0.010818454
+test,b4vd,Hills,arid,global,0.874677,0.016396664
+test,b4vd,Hills,arid,surround,0.87996656,0.021257183
+test,b4vd,Landfill,other,center,0.8824453,0.01356342
+test,b4vd,Landfill,other,global,0.8768316,0.01450727
+test,b4vd,Landfill,other,surround,0.8911292,0.021238217
+test,b4vd,Military training ground,other,center,0.87647897,0.016508197
+test,b4vd,Military training ground,other,global,0.88113385,0.012475428
+test,b4vd,Military training ground,other,surround,0.8897519,0.02098529
+test,b4vd,Mosque,other,center,0.8735588,0.024729554
+test,b4vd,Mosque,other,global,0.853199,0.009488981
+test,b4vd,Mosque,other,surround,0.8728927,0.022601472
+test,b4vd,Mountain,arid,center,0.8641901,0.010540086
+test,b4vd,Mountain,arid,global,0.87445015,0.020201994
+test,b4vd,Mountain,arid,surround,0.87389106,0.022865444
+test,b4vd,Petroleum well,arid,center,0.8797662,0.008119078
+test,b4vd,Petroleum well,arid,global,0.8853347,0.011298601
+test,b4vd,Petroleum well,arid,surround,0.8937902,0.02130048
+test,b4vd,Port,other,center,0.885911,0.0075088795
+test,b4vd,Port,other,global,0.86205727,0.011253768
+test,b4vd,Port,other,surround,0.8850654,0.018920094
+test,b4vd,Quarry,arid,center,0.88041514,0.01097175
+test,b4vd,Quarry,arid,global,0.875326,0.016417416
+test,b4vd,Quarry,arid,surround,0.88487893,0.022995956
+test,b4vd,Resort,other,center,0.882335,0.009312857
+test,b4vd,Resort,other,global,0.86663795,0.012228939
+test,b4vd,Resort,other,surround,0.8861456,0.020402396
+test,b4vd,Rock,arid,center,0.8666558,0.006429084
+test,b4vd,Rock,arid,global,0.8795428,0.020945026
+test,b4vd,Rock,arid,surround,0.87559456,0.01870985
+test,b4vd,Roundabout,other,center,0.88044804,0.016881295
+test,b4vd,Roundabout,other,global,0.850046,0.010117093
+test,b4vd,Roundabout,other,surround,0.8727879,0.02387686
+test,b4vd,Sand,arid,center,0.86331517,0.014854391
+test,b4vd,Sand,arid,global,0.8840162,0.022361202
+test,b4vd,Sand,arid,surround,0.876146,0.023647677
+test,b4vd,Scrub,arid,center,0.8708494,0.0143070845
+test,b4vd,Scrub,arid,global,0.87889165,0.015033041
+test,b4vd,Scrub,arid,surround,0.8793356,0.019478202
+test,b4vd,Solar power plant,other,center,0.8790555,0.013715913
+test,b4vd,Solar power plant,other,global,0.87839466,0.011993341
+test,b4vd,Solar power plant,other,surround,0.8859609,0.019909436
+test,b4vd,Substation,other,center,0.8860595,0.0136514
+test,b4vd,Substation,other,global,0.87379974,0.01140321
+test,b4vd,Substation,other,surround,0.89245147,0.02202776
+test,b4vd,Swimming pool,other,center,0.8768828,0.020554459
+test,b4vd,Swimming pool,other,global,0.8494676,0.013776971
+test,b4vd,Swimming pool,other,surround,0.8719986,0.0207387
+test,b4vd,Thermal power plant,other,center,0.8873195,0.013391312
+test,b4vd,Thermal power plant,other,global,0.856102,0.00889492
+test,b4vd,Thermal power plant,other,surround,0.8818032,0.021710964
+uae,b4,Airport,other,center,0.7835652,0.006417809
+uae,b4,Airport,other,global,0.76716024,0.013329401
+uae,b4,Airport,other,surround,0.75375086,0.009400827
+uae,b4,Beach,other,center,0.7890606,0.012551365
+uae,b4,Beach,other,global,0.7613104,0.013183777
+uae,b4,Beach,other,surround,0.7538621,0.012079308
+uae,b4,Brownfield,other,center,0.7893705,0.005691616
+uae,b4,Brownfield,other,global,0.76819706,0.014298359
+uae,b4,Brownfield,other,surround,0.7558215,0.01034557
+uae,b4,Landfill,other,center,0.785644,0.009096634
+uae,b4,Landfill,other,global,0.7684388,0.012969042
+uae,b4,Landfill,other,surround,0.7563155,0.009079942
+uae,b4,Mountain,arid,center,0.78356916,0.011063451
+uae,b4,Mountain,arid,global,0.76355904,0.020615611
+uae,b4,Mountain,arid,surround,0.75718707,0.015495058
+uae,b4,Quarry,arid,center,0.78888226,0.0070181494
+uae,b4,Quarry,arid,global,0.7723456,0.0141379
+uae,b4,Quarry,arid,surround,0.76106185,0.017145934
+uae,b4,Scrub,arid,center,0.7906168,0.0070593827
+uae,b4,Scrub,arid,global,0.77059585,0.014139321
+uae,b4,Scrub,arid,surround,0.76014996,0.010139227
+uae,b4,Solar power plant,other,center,0.7783947,0.00695914
+uae,b4,Solar power plant,other,global,0.7577007,0.013129465
+uae,b4,Solar power plant,other,surround,0.74486154,0.012201127
+uae,b4,Thermal power plant,other,center,0.787901,0.003671915
+uae,b4,Thermal power plant,other,global,0.759926,0.018761931
+uae,b4,Thermal power plant,other,surround,0.7501697,0.0144566605
+uae,b4vd,Airport,other,center,0.8752795,0.0111482665
+uae,b4vd,Airport,other,global,0.8881798,0.018139385
+uae,b4vd,Airport,other,surround,0.8932014,0.021499736
+uae,b4vd,Beach,other,center,0.87840027,0.008441533
+uae,b4vd,Beach,other,global,0.87567323,0.017248467
+uae,b4vd,Beach,other,surround,0.8910544,0.020489069
+uae,b4vd,Brownfield,other,center,0.8852727,0.016422782
+uae,b4vd,Brownfield,other,global,0.88049525,0.015072
+uae,b4vd,Brownfield,other,surround,0.89221454,0.017984958
+uae,b4vd,Landfill,other,center,0.878984,0.0126180025
+uae,b4vd,Landfill,other,global,0.8886426,0.019220615
+uae,b4vd,Landfill,other,surround,0.89262795,0.02276126
+uae,b4vd,Mountain,arid,center,0.8727825,0.010888532
+uae,b4vd,Mountain,arid,global,0.8850715,0.02056106
+uae,b4vd,Mountain,arid,surround,0.8893122,0.023894304
+uae,b4vd,Quarry,arid,center,0.8750908,0.011683593
+uae,b4vd,Quarry,arid,global,0.88638973,0.01848751
+uae,b4vd,Quarry,arid,surround,0.89530605,0.023624718
+uae,b4vd,Scrub,arid,center,0.88011235,0.014591534
+uae,b4vd,Scrub,arid,global,0.88880974,0.021528466
+uae,b4vd,Scrub,arid,surround,0.8944661,0.023112897
+uae,b4vd,Solar power plant,other,center,0.87801284,0.014601202
+uae,b4vd,Solar power plant,other,global,0.8777693,0.016548047
+uae,b4vd,Solar power plant,other,surround,0.8799193,0.021650977
+uae,b4vd,Thermal power plant,other,center,0.8847861,0.020732021
+uae,b4vd,Thermal power plant,other,global,0.8775582,0.015344308
+uae,b4vd,Thermal power plant,other,surround,0.88698715,0.016700864

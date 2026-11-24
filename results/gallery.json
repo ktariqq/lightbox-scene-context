@@ -1,0 +1,3247 @@
+{
+ "model": "b4vd",
+ "seed": 42,
+ "target": "predicted class logit",
+ "items": [
+  {
+   "filename": "Airport_928938.jpg",
+   "class": "Airport",
+   "pred": "Airport",
+   "kind": "correct",
+   "correct": true,
+   "confidence": 0.9978450536727905,
+   "gates": [
+    0.8857589364051819,
+    0.90325927734375,
+    0.878887951374054
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Airport/Airport_928938.jpg",
+     "cam": "results/gradcam/Airport/Airport_928938_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Airport/Airport_928938.jpg",
+     "cam": "results/gradcam/Airport/Airport_928938_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Airport/Airport_928938.jpg",
+     "cam": "results/gradcam/Airport/Airport_928938_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Airport_927213.jpg",
+   "class": "Airport",
+   "pred": "Airport",
+   "kind": "correct",
+   "correct": true,
+   "confidence": 0.9999828338623047,
+   "gates": [
+    0.8857694268226624,
+    0.9005060791969299,
+    0.8666999936103821
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Airport/Airport_927213.jpg",
+     "cam": "results/gradcam/Airport/Airport_927213_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Airport/Airport_927213.jpg",
+     "cam": "results/gradcam/Airport/Airport_927213_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Airport/Airport_927213.jpg",
+     "cam": "results/gradcam/Airport/Airport_927213_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Airport_929287.jpg",
+   "class": "Airport",
+   "pred": "Airport",
+   "kind": "correct",
+   "correct": true,
+   "confidence": 0.9995563626289368,
+   "gates": [
+    0.8904513120651245,
+    0.8880626559257507,
+    0.872519850730896
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Airport/Airport_929287.jpg",
+     "cam": "results/gradcam/Airport/Airport_929287_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Airport/Airport_929287.jpg",
+     "cam": "results/gradcam/Airport/Airport_929287_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Airport/Airport_929287.jpg",
+     "cam": "results/gradcam/Airport/Airport_929287_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Airport_929215.jpg",
+   "class": "Airport",
+   "pred": "Chemical plant",
+   "kind": "wrong",
+   "correct": false,
+   "confidence": 0.5368770360946655,
+   "gates": [
+    0.8810840845108032,
+    0.8992490172386169,
+    0.8573312759399414
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Airport/Airport_929215.jpg",
+     "cam": "results/gradcam/Airport/Airport_929215_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Airport/Airport_929215.jpg",
+     "cam": "results/gradcam/Airport/Airport_929215_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Airport/Airport_929215.jpg",
+     "cam": "results/gradcam/Airport/Airport_929215_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Airport_929159.jpg",
+   "class": "Airport",
+   "pred": "Thermal power plant",
+   "kind": "wrong",
+   "correct": false,
+   "confidence": 0.42886605858802795,
+   "gates": [
+    0.8703000545501709,
+    0.8767696022987366,
+    0.8624891042709351
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Airport/Airport_929159.jpg",
+     "cam": "results/gradcam/Airport/Airport_929159_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Airport/Airport_929159.jpg",
+     "cam": "results/gradcam/Airport/Airport_929159_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Airport/Airport_929159.jpg",
+     "cam": "results/gradcam/Airport/Airport_929159_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Beach_942834.jpg",
+   "class": "Beach",
+   "pred": "Beach",
+   "kind": "correct",
+   "correct": true,
+   "confidence": 0.9999918937683105,
+   "gates": [
+    0.8594495058059692,
+    0.897946298122406,
+    0.9007624983787537
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Beach/Beach_942834.jpg",
+     "cam": "results/gradcam/Beach/Beach_942834_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Beach/Beach_942834.jpg",
+     "cam": "results/gradcam/Beach/Beach_942834_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Beach/Beach_942834.jpg",
+     "cam": "results/gradcam/Beach/Beach_942834_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Beach_941496.jpg",
+   "class": "Beach",
+   "pred": "Beach",
+   "kind": "correct",
+   "correct": true,
+   "confidence": 0.9988059997558594,
+   "gates": [
+    0.8556199669837952,
+    0.9029895067214966,
+    0.9014496207237244
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Beach/Beach_941496.jpg",
+     "cam": "results/gradcam/Beach/Beach_941496_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Beach/Beach_941496.jpg",
+     "cam": "results/gradcam/Beach/Beach_941496_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Beach/Beach_941496.jpg",
+     "cam": "results/gradcam/Beach/Beach_941496_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Beach_941730.jpg",
+   "class": "Beach",
+   "pred": "Beach",
+   "kind": "correct",
+   "correct": true,
+   "confidence": 0.9990336894989014,
+   "gates": [
+    0.8735694289207458,
+    0.8886769413948059,
+    0.8928060531616211
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Beach/Beach_941730.jpg",
+     "cam": "results/gradcam/Beach/Beach_941730_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Beach/Beach_941730.jpg",
+     "cam": "results/gradcam/Beach/Beach_941730_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Beach/Beach_941730.jpg",
+     "cam": "results/gradcam/Beach/Beach_941730_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Beach_943271.jpg",
+   "class": "Beach",
+   "pred": "Sand",
+   "kind": "wrong",
+   "correct": false,
+   "confidence": 0.9387995600700378,
+   "gates": [
+    0.8638184070587158,
+    0.8768485188484192,
+    0.9083821177482605
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Beach/Beach_943271.jpg",
+     "cam": "results/gradcam/Beach/Beach_943271_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Beach/Beach_943271.jpg",
+     "cam": "results/gradcam/Beach/Beach_943271_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Beach/Beach_943271.jpg",
+     "cam": "results/gradcam/Beach/Beach_943271_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Beach_943608.jpg",
+   "class": "Beach",
+   "pred": "Landfill",
+   "kind": "wrong",
+   "correct": false,
+   "confidence": 0.3980028033256531,
+   "gates": [
+    0.8948076367378235,
+    0.9062381982803345,
+    0.9007731676101685
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Beach/Beach_943608.jpg",
+     "cam": "results/gradcam/Beach/Beach_943608_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Beach/Beach_943608.jpg",
+     "cam": "results/gradcam/Beach/Beach_943608_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Beach/Beach_943608.jpg",
+     "cam": "results/gradcam/Beach/Beach_943608_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Brownfield_973181.jpg",
+   "class": "Brownfield",
+   "pred": "Brownfield",
+   "kind": "correct",
+   "correct": true,
+   "confidence": 0.9813507795333862,
+   "gates": [
+    0.8863944411277771,
+    0.893011748790741,
+    0.8749334812164307
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Brownfield/Brownfield_973181.jpg",
+     "cam": "results/gradcam/Brownfield/Brownfield_973181_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Brownfield/Brownfield_973181.jpg",
+     "cam": "results/gradcam/Brownfield/Brownfield_973181_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Brownfield/Brownfield_973181.jpg",
+     "cam": "results/gradcam/Brownfield/Brownfield_973181_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Brownfield_973394.jpg",
+   "class": "Brownfield",
+   "pred": "Brownfield",
+   "kind": "correct",
+   "correct": true,
+   "confidence": 0.8316478133201599,
+   "gates": [
+    0.8784320950508118,
+    0.8938947916030884,
+    0.867363452911377
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Brownfield/Brownfield_973394.jpg",
+     "cam": "results/gradcam/Brownfield/Brownfield_973394_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Brownfield/Brownfield_973394.jpg",
+     "cam": "results/gradcam/Brownfield/Brownfield_973394_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Brownfield/Brownfield_973394.jpg",
+     "cam": "results/gradcam/Brownfield/Brownfield_973394_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Brownfield_972660.jpg",
+   "class": "Brownfield",
+   "pred": "Brownfield",
+   "kind": "correct",
+   "correct": true,
+   "confidence": 0.9132827520370483,
+   "gates": [
+    0.8978359699249268,
+    0.901328980922699,
+    0.9012112617492676
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Brownfield/Brownfield_972660.jpg",
+     "cam": "results/gradcam/Brownfield/Brownfield_972660_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Brownfield/Brownfield_972660.jpg",
+     "cam": "results/gradcam/Brownfield/Brownfield_972660_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Brownfield/Brownfield_972660.jpg",
+     "cam": "results/gradcam/Brownfield/Brownfield_972660_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Brownfield_972791.jpg",
+   "class": "Brownfield",
+   "pred": "Landfill",
+   "kind": "wrong",
+   "correct": false,
+   "confidence": 0.7496052980422974,
+   "gates": [
+    0.8863036036491394,
+    0.9056445360183716,
+    0.9037182927131653
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Brownfield/Brownfield_972791.jpg",
+     "cam": "results/gradcam/Brownfield/Brownfield_972791_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Brownfield/Brownfield_972791.jpg",
+     "cam": "results/gradcam/Brownfield/Brownfield_972791_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Brownfield/Brownfield_972791.jpg",
+     "cam": "results/gradcam/Brownfield/Brownfield_972791_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Brownfield_973029.jpg",
+   "class": "Brownfield",
+   "pred": "Landfill",
+   "kind": "wrong",
+   "correct": false,
+   "confidence": 0.8491169214248657,
+   "gates": [
+    0.8823457360267639,
+    0.8955269455909729,
+    0.8968537449836731
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Brownfield/Brownfield_973029.jpg",
+     "cam": "results/gradcam/Brownfield/Brownfield_973029_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Brownfield/Brownfield_973029.jpg",
+     "cam": "results/gradcam/Brownfield/Brownfield_973029_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Brownfield/Brownfield_973029.jpg",
+     "cam": "results/gradcam/Brownfield/Brownfield_973029_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Chemical_plant_964981.jpg",
+   "class": "Chemical plant",
+   "pred": "Chemical plant",
+   "kind": "correct",
+   "correct": true,
+   "confidence": 0.9822900891304016,
+   "gates": [
+    0.8738734126091003,
+    0.909319281578064,
+    0.8651769757270813
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Chemical_plant/Chemical_plant_964981.jpg",
+     "cam": "results/gradcam/Chemical_plant/Chemical_plant_964981_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Chemical_plant/Chemical_plant_964981.jpg",
+     "cam": "results/gradcam/Chemical_plant/Chemical_plant_964981_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Chemical_plant/Chemical_plant_964981.jpg",
+     "cam": "results/gradcam/Chemical_plant/Chemical_plant_964981_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Chemical_plant_964650.jpg",
+   "class": "Chemical plant",
+   "pred": "Chemical plant",
+   "kind": "correct",
+   "correct": true,
+   "confidence": 0.9131143689155579,
+   "gates": [
+    0.8659135699272156,
+    0.8810790777206421,
+    0.8380701541900635
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Chemical_plant/Chemical_plant_964650.jpg",
+     "cam": "results/gradcam/Chemical_plant/Chemical_plant_964650_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Chemical_plant/Chemical_plant_964650.jpg",
+     "cam": "results/gradcam/Chemical_plant/Chemical_plant_964650_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Chemical_plant/Chemical_plant_964650.jpg",
+     "cam": "results/gradcam/Chemical_plant/Chemical_plant_964650_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Chemical_plant_964795.jpg",
+   "class": "Chemical plant",
+   "pred": "Chemical plant",
+   "kind": "correct",
+   "correct": true,
+   "confidence": 0.9416908025741577,
+   "gates": [
+    0.8601245880126953,
+    0.8983936905860901,
+    0.8576323390007019
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Chemical_plant/Chemical_plant_964795.jpg",
+     "cam": "results/gradcam/Chemical_plant/Chemical_plant_964795_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Chemical_plant/Chemical_plant_964795.jpg",
+     "cam": "results/gradcam/Chemical_plant/Chemical_plant_964795_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Chemical_plant/Chemical_plant_964795.jpg",
+     "cam": "results/gradcam/Chemical_plant/Chemical_plant_964795_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Chemical_plant_964384.jpg",
+   "class": "Chemical plant",
+   "pred": "Resort",
+   "kind": "wrong",
+   "correct": false,
+   "confidence": 0.5679976344108582,
+   "gates": [
+    0.8732213973999023,
+    0.8879954814910889,
+    0.8650875687599182
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Chemical_plant/Chemical_plant_964384.jpg",
+     "cam": "results/gradcam/Chemical_plant/Chemical_plant_964384_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Chemical_plant/Chemical_plant_964384.jpg",
+     "cam": "results/gradcam/Chemical_plant/Chemical_plant_964384_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Chemical_plant/Chemical_plant_964384.jpg",
+     "cam": "results/gradcam/Chemical_plant/Chemical_plant_964384_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Chemical_plant_964440.jpg",
+   "class": "Chemical plant",
+   "pred": "Thermal power plant",
+   "kind": "wrong",
+   "correct": false,
+   "confidence": 0.41547128558158875,
+   "gates": [
+    0.8667852282524109,
+    0.8872205018997192,
+    0.8509613871574402
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Chemical_plant/Chemical_plant_964440.jpg",
+     "cam": "results/gradcam/Chemical_plant/Chemical_plant_964440_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Chemical_plant/Chemical_plant_964440.jpg",
+     "cam": "results/gradcam/Chemical_plant/Chemical_plant_964440_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Chemical_plant/Chemical_plant_964440.jpg",
+     "cam": "results/gradcam/Chemical_plant/Chemical_plant_964440_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Construction_953641.jpg",
+   "class": "Construction",
+   "pred": "Construction",
+   "kind": "correct",
+   "correct": true,
+   "confidence": 0.9885255694389343,
+   "gates": [
+    0.8743155002593994,
+    0.9015643000602722,
+    0.8703671097755432
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Construction/Construction_953641.jpg",
+     "cam": "results/gradcam/Construction/Construction_953641_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Construction/Construction_953641.jpg",
+     "cam": "results/gradcam/Construction/Construction_953641_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Construction/Construction_953641.jpg",
+     "cam": "results/gradcam/Construction/Construction_953641_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Construction_953774.jpg",
+   "class": "Construction",
+   "pred": "Construction",
+   "kind": "correct",
+   "correct": true,
+   "confidence": 0.5158993601799011,
+   "gates": [
+    0.8792185187339783,
+    0.9059723019599915,
+    0.8583059310913086
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Construction/Construction_953774.jpg",
+     "cam": "results/gradcam/Construction/Construction_953774_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Construction/Construction_953774.jpg",
+     "cam": "results/gradcam/Construction/Construction_953774_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Construction/Construction_953774.jpg",
+     "cam": "results/gradcam/Construction/Construction_953774_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Construction_954210.jpg",
+   "class": "Construction",
+   "pred": "Construction",
+   "kind": "correct",
+   "correct": true,
+   "confidence": 0.9468738436698914,
+   "gates": [
+    0.8712681531906128,
+    0.8913024663925171,
+    0.8513302803039551
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Construction/Construction_954210.jpg",
+     "cam": "results/gradcam/Construction/Construction_954210_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Construction/Construction_954210.jpg",
+     "cam": "results/gradcam/Construction/Construction_954210_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Construction/Construction_954210.jpg",
+     "cam": "results/gradcam/Construction/Construction_954210_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Construction_954814.jpg",
+   "class": "Construction",
+   "pred": "Landfill",
+   "kind": "wrong",
+   "correct": false,
+   "confidence": 0.612494945526123,
+   "gates": [
+    0.8732516169548035,
+    0.8958423733711243,
+    0.8739933371543884
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Construction/Construction_954814.jpg",
+     "cam": "results/gradcam/Construction/Construction_954814_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Construction/Construction_954814.jpg",
+     "cam": "results/gradcam/Construction/Construction_954814_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Construction/Construction_954814.jpg",
+     "cam": "results/gradcam/Construction/Construction_954814_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Construction_954633.jpg",
+   "class": "Construction",
+   "pred": "Port",
+   "kind": "wrong",
+   "correct": false,
+   "confidence": 0.49995046854019165,
+   "gates": [
+    0.8839382529258728,
+    0.8772602677345276,
+    0.8614436984062195
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Construction/Construction_954633.jpg",
+     "cam": "results/gradcam/Construction/Construction_954633_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Construction/Construction_954633.jpg",
+     "cam": "results/gradcam/Construction/Construction_954633_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Construction/Construction_954633.jpg",
+     "cam": "results/gradcam/Construction/Construction_954633_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Dry_field_433066.jpg",
+   "class": "Dry field",
+   "pred": "Dry field",
+   "kind": "correct",
+   "correct": true,
+   "confidence": 0.998996913433075,
+   "gates": [
+    0.8872213363647461,
+    0.8884828090667725,
+    0.8936501741409302
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Dry_field/Dry_field_433066.jpg",
+     "cam": "results/gradcam/Dry_field/Dry_field_433066_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Dry_field/Dry_field_433066.jpg",
+     "cam": "results/gradcam/Dry_field/Dry_field_433066_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Dry_field/Dry_field_433066.jpg",
+     "cam": "results/gradcam/Dry_field/Dry_field_433066_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Dry_field_481488.jpg",
+   "class": "Dry field",
+   "pred": "Dry field",
+   "kind": "correct",
+   "correct": true,
+   "confidence": 0.998353123664856,
+   "gates": [
+    0.8707420229911804,
+    0.8792853951454163,
+    0.8839230537414551
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Dry_field/Dry_field_481488.jpg",
+     "cam": "results/gradcam/Dry_field/Dry_field_481488_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Dry_field/Dry_field_481488.jpg",
+     "cam": "results/gradcam/Dry_field/Dry_field_481488_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Dry_field/Dry_field_481488.jpg",
+     "cam": "results/gradcam/Dry_field/Dry_field_481488_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Dry_field_501145.jpg",
+   "class": "Dry field",
+   "pred": "Dry field",
+   "kind": "correct",
+   "correct": true,
+   "confidence": 0.9854745864868164,
+   "gates": [
+    0.8641577959060669,
+    0.907017171382904,
+    0.897965669631958
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Dry_field/Dry_field_501145.jpg",
+     "cam": "results/gradcam/Dry_field/Dry_field_501145_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Dry_field/Dry_field_501145.jpg",
+     "cam": "results/gradcam/Dry_field/Dry_field_501145_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Dry_field/Dry_field_501145.jpg",
+     "cam": "results/gradcam/Dry_field/Dry_field_501145_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Dry_field_520368.jpg",
+   "class": "Dry field",
+   "pred": "Brownfield",
+   "kind": "wrong",
+   "correct": false,
+   "confidence": 0.5465707182884216,
+   "gates": [
+    0.8747976422309875,
+    0.8923640251159668,
+    0.8894079923629761
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Dry_field/Dry_field_520368.jpg",
+     "cam": "results/gradcam/Dry_field/Dry_field_520368_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Dry_field/Dry_field_520368.jpg",
+     "cam": "results/gradcam/Dry_field/Dry_field_520368_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Dry_field/Dry_field_520368.jpg",
+     "cam": "results/gradcam/Dry_field/Dry_field_520368_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Dry_field_412109.jpg",
+   "class": "Dry field",
+   "pred": "Highway",
+   "kind": "wrong",
+   "correct": false,
+   "confidence": 0.4967167377471924,
+   "gates": [
+    0.8775150179862976,
+    0.8818722367286682,
+    0.8628625869750977
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Dry_field/Dry_field_412109.jpg",
+     "cam": "results/gradcam/Dry_field/Dry_field_412109_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Dry_field/Dry_field_412109.jpg",
+     "cam": "results/gradcam/Dry_field/Dry_field_412109_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Dry_field/Dry_field_412109.jpg",
+     "cam": "results/gradcam/Dry_field/Dry_field_412109_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Highway_892582.jpg",
+   "class": "Highway",
+   "pred": "Highway",
+   "kind": "correct",
+   "correct": true,
+   "confidence": 0.9680391550064087,
+   "gates": [
+    0.8732576370239258,
+    0.8870148658752441,
+    0.8522436022758484
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Highway/Highway_892582.jpg",
+     "cam": "results/gradcam/Highway/Highway_892582_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Highway/Highway_892582.jpg",
+     "cam": "results/gradcam/Highway/Highway_892582_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Highway/Highway_892582.jpg",
+     "cam": "results/gradcam/Highway/Highway_892582_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Highway_893325.jpg",
+   "class": "Highway",
+   "pred": "Highway",
+   "kind": "correct",
+   "correct": true,
+   "confidence": 0.9520142674446106,
+   "gates": [
+    0.8794329762458801,
+    0.8979578018188477,
+    0.8590343594551086
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Highway/Highway_893325.jpg",
+     "cam": "results/gradcam/Highway/Highway_893325_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Highway/Highway_893325.jpg",
+     "cam": "results/gradcam/Highway/Highway_893325_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Highway/Highway_893325.jpg",
+     "cam": "results/gradcam/Highway/Highway_893325_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Highway_893020.jpg",
+   "class": "Highway",
+   "pred": "Highway",
+   "kind": "correct",
+   "correct": true,
+   "confidence": 0.8796738982200623,
+   "gates": [
+    0.8757959604263306,
+    0.9043706059455872,
+    0.8793031573295593
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Highway/Highway_893020.jpg",
+     "cam": "results/gradcam/Highway/Highway_893020_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Highway/Highway_893020.jpg",
+     "cam": "results/gradcam/Highway/Highway_893020_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Highway/Highway_893020.jpg",
+     "cam": "results/gradcam/Highway/Highway_893020_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Highway_891216.jpg",
+   "class": "Highway",
+   "pred": "Construction",
+   "kind": "wrong",
+   "correct": false,
+   "confidence": 0.9714643359184265,
+   "gates": [
+    0.8673746585845947,
+    0.8863048553466797,
+    0.8390094041824341
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Highway/Highway_891216.jpg",
+     "cam": "results/gradcam/Highway/Highway_891216_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Highway/Highway_891216.jpg",
+     "cam": "results/gradcam/Highway/Highway_891216_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Highway/Highway_891216.jpg",
+     "cam": "results/gradcam/Highway/Highway_891216_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Highway_891131.jpg",
+   "class": "Highway",
+   "pred": "Port",
+   "kind": "wrong",
+   "correct": false,
+   "confidence": 0.7735007405281067,
+   "gates": [
+    0.8831926584243774,
+    0.8896978497505188,
+    0.8432469367980957
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Highway/Highway_891131.jpg",
+     "cam": "results/gradcam/Highway/Highway_891131_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Highway/Highway_891131.jpg",
+     "cam": "results/gradcam/Highway/Highway_891131_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Highway/Highway_891131.jpg",
+     "cam": "results/gradcam/Highway/Highway_891131_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Hills_951855.jpg",
+   "class": "Hills",
+   "pred": "Hills",
+   "kind": "correct",
+   "correct": true,
+   "confidence": 0.7295213341712952,
+   "gates": [
+    0.8862931728363037,
+    0.8818732500076294,
+    0.8856595158576965
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Hills/Hills_951855.jpg",
+     "cam": "results/gradcam/Hills/Hills_951855_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Hills/Hills_951855.jpg",
+     "cam": "results/gradcam/Hills/Hills_951855_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Hills/Hills_951855.jpg",
+     "cam": "results/gradcam/Hills/Hills_951855_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Hills_952718.jpg",
+   "class": "Hills",
+   "pred": "Hills",
+   "kind": "correct",
+   "correct": true,
+   "confidence": 0.8576610088348389,
+   "gates": [
+    0.85091632604599,
+    0.8827207684516907,
+    0.900250256061554
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Hills/Hills_952718.jpg",
+     "cam": "results/gradcam/Hills/Hills_952718_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Hills/Hills_952718.jpg",
+     "cam": "results/gradcam/Hills/Hills_952718_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Hills/Hills_952718.jpg",
+     "cam": "results/gradcam/Hills/Hills_952718_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Hills_951998.jpg",
+   "class": "Hills",
+   "pred": "Hills",
+   "kind": "correct",
+   "correct": true,
+   "confidence": 0.7057294845581055,
+   "gates": [
+    0.892779529094696,
+    0.8775281310081482,
+    0.883984386920929
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Hills/Hills_951998.jpg",
+     "cam": "results/gradcam/Hills/Hills_951998_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Hills/Hills_951998.jpg",
+     "cam": "results/gradcam/Hills/Hills_951998_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Hills/Hills_951998.jpg",
+     "cam": "results/gradcam/Hills/Hills_951998_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Hills_952749.jpg",
+   "class": "Hills",
+   "pred": "Mountain",
+   "kind": "wrong",
+   "correct": false,
+   "confidence": 0.5787379741668701,
+   "gates": [
+    0.8719356060028076,
+    0.8586269021034241,
+    0.8935856819152832
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Hills/Hills_952749.jpg",
+     "cam": "results/gradcam/Hills/Hills_952749_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Hills/Hills_952749.jpg",
+     "cam": "results/gradcam/Hills/Hills_952749_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Hills/Hills_952749.jpg",
+     "cam": "results/gradcam/Hills/Hills_952749_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Hills_953131.jpg",
+   "class": "Hills",
+   "pred": "Quarry",
+   "kind": "wrong",
+   "correct": false,
+   "confidence": 0.6484719514846802,
+   "gates": [
+    0.8790639638900757,
+    0.8945894241333008,
+    0.8979440927505493
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Hills/Hills_953131.jpg",
+     "cam": "results/gradcam/Hills/Hills_953131_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Hills/Hills_953131.jpg",
+     "cam": "results/gradcam/Hills/Hills_953131_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Hills/Hills_953131.jpg",
+     "cam": "results/gradcam/Hills/Hills_953131_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Landfill_963414.jpg",
+   "class": "Landfill",
+   "pred": "Landfill",
+   "kind": "correct",
+   "correct": true,
+   "confidence": 0.6024351716041565,
+   "gates": [
+    0.8799251317977905,
+    0.9053114056587219,
+    0.8940380215644836
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Landfill/Landfill_963414.jpg",
+     "cam": "results/gradcam/Landfill/Landfill_963414_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Landfill/Landfill_963414.jpg",
+     "cam": "results/gradcam/Landfill/Landfill_963414_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Landfill/Landfill_963414.jpg",
+     "cam": "results/gradcam/Landfill/Landfill_963414_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Landfill_963935.jpg",
+   "class": "Landfill",
+   "pred": "Landfill",
+   "kind": "correct",
+   "correct": true,
+   "confidence": 0.99544358253479,
+   "gates": [
+    0.8858548998832703,
+    0.8930068612098694,
+    0.8775174617767334
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Landfill/Landfill_963935.jpg",
+     "cam": "results/gradcam/Landfill/Landfill_963935_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Landfill/Landfill_963935.jpg",
+     "cam": "results/gradcam/Landfill/Landfill_963935_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Landfill/Landfill_963935.jpg",
+     "cam": "results/gradcam/Landfill/Landfill_963935_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Landfill_963312.jpg",
+   "class": "Landfill",
+   "pred": "Landfill",
+   "kind": "correct",
+   "correct": true,
+   "confidence": 0.9898966550827026,
+   "gates": [
+    0.8889950513839722,
+    0.8887113332748413,
+    0.8889134526252747
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Landfill/Landfill_963312.jpg",
+     "cam": "results/gradcam/Landfill/Landfill_963312_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Landfill/Landfill_963312.jpg",
+     "cam": "results/gradcam/Landfill/Landfill_963312_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Landfill/Landfill_963312.jpg",
+     "cam": "results/gradcam/Landfill/Landfill_963312_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Landfill_962913.jpg",
+   "class": "Landfill",
+   "pred": "Highway",
+   "kind": "wrong",
+   "correct": false,
+   "confidence": 0.34683722257614136,
+   "gates": [
+    0.8884631991386414,
+    0.9086316227912903,
+    0.890469491481781
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Landfill/Landfill_962913.jpg",
+     "cam": "results/gradcam/Landfill/Landfill_962913_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Landfill/Landfill_962913.jpg",
+     "cam": "results/gradcam/Landfill/Landfill_962913_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Landfill/Landfill_962913.jpg",
+     "cam": "results/gradcam/Landfill/Landfill_962913_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Landfill_963571.jpg",
+   "class": "Landfill",
+   "pred": "Brownfield",
+   "kind": "wrong",
+   "correct": false,
+   "confidence": 0.8910983204841614,
+   "gates": [
+    0.8748816847801208,
+    0.9035731554031372,
+    0.889399528503418
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Landfill/Landfill_963571.jpg",
+     "cam": "results/gradcam/Landfill/Landfill_963571_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Landfill/Landfill_963571.jpg",
+     "cam": "results/gradcam/Landfill/Landfill_963571_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Landfill/Landfill_963571.jpg",
+     "cam": "results/gradcam/Landfill/Landfill_963571_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Military_training_ground_944418.jpg",
+   "class": "Military training ground",
+   "pred": "Military training ground",
+   "kind": "correct",
+   "correct": true,
+   "confidence": 0.9504168033599854,
+   "gates": [
+    0.8903403282165527,
+    0.9084848165512085,
+    0.9006415605545044
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Military_training_ground/Military_training_ground_944418.jpg",
+     "cam": "results/gradcam/Military_training_ground/Military_training_ground_944418_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Military_training_ground/Military_training_ground_944418.jpg",
+     "cam": "results/gradcam/Military_training_ground/Military_training_ground_944418_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Military_training_ground/Military_training_ground_944418.jpg",
+     "cam": "results/gradcam/Military_training_ground/Military_training_ground_944418_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Military_training_ground_943958.jpg",
+   "class": "Military training ground",
+   "pred": "Military training ground",
+   "kind": "correct",
+   "correct": true,
+   "confidence": 0.9992669224739075,
+   "gates": [
+    0.8857262134552002,
+    0.9180184006690979,
+    0.8865677714347839
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Military_training_ground/Military_training_ground_943958.jpg",
+     "cam": "results/gradcam/Military_training_ground/Military_training_ground_943958_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Military_training_ground/Military_training_ground_943958.jpg",
+     "cam": "results/gradcam/Military_training_ground/Military_training_ground_943958_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Military_training_ground/Military_training_ground_943958.jpg",
+     "cam": "results/gradcam/Military_training_ground/Military_training_ground_943958_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Military_training_ground_943832.jpg",
+   "class": "Military training ground",
+   "pred": "Military training ground",
+   "kind": "correct",
+   "correct": true,
+   "confidence": 0.9947117567062378,
+   "gates": [
+    0.8951470255851746,
+    0.8966367244720459,
+    0.8848261833190918
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Military_training_ground/Military_training_ground_943832.jpg",
+     "cam": "results/gradcam/Military_training_ground/Military_training_ground_943832_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Military_training_ground/Military_training_ground_943832.jpg",
+     "cam": "results/gradcam/Military_training_ground/Military_training_ground_943832_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Military_training_ground/Military_training_ground_943832.jpg",
+     "cam": "results/gradcam/Military_training_ground/Military_training_ground_943832_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Military_training_ground_944585.jpg",
+   "class": "Military training ground",
+   "pred": "Rock",
+   "kind": "wrong",
+   "correct": false,
+   "confidence": 0.3030603528022766,
+   "gates": [
+    0.8809895515441895,
+    0.886888861656189,
+    0.892650842666626
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Military_training_ground/Military_training_ground_944585.jpg",
+     "cam": "results/gradcam/Military_training_ground/Military_training_ground_944585_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Military_training_ground/Military_training_ground_944585.jpg",
+     "cam": "results/gradcam/Military_training_ground/Military_training_ground_944585_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Military_training_ground/Military_training_ground_944585.jpg",
+     "cam": "results/gradcam/Military_training_ground/Military_training_ground_944585_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Military_training_ground_944279.jpg",
+   "class": "Military training ground",
+   "pred": "Rock",
+   "kind": "wrong",
+   "correct": false,
+   "confidence": 0.9658570885658264,
+   "gates": [
+    0.8738864660263062,
+    0.872613251209259,
+    0.898266077041626
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Military_training_ground/Military_training_ground_944279.jpg",
+     "cam": "results/gradcam/Military_training_ground/Military_training_ground_944279_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Military_training_ground/Military_training_ground_944279.jpg",
+     "cam": "results/gradcam/Military_training_ground/Military_training_ground_944279_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Military_training_ground/Military_training_ground_944279.jpg",
+     "cam": "results/gradcam/Military_training_ground/Military_training_ground_944279_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Mosque_1030949.jpg",
+   "class": "Mosque",
+   "pred": "Mosque",
+   "kind": "correct",
+   "correct": true,
+   "confidence": 0.998717188835144,
+   "gates": [
+    0.8549883961677551,
+    0.8814242482185364,
+    0.8320266008377075
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Mosque/Mosque_1030949.jpg",
+     "cam": "results/gradcam/Mosque/Mosque_1030949_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Mosque/Mosque_1030949.jpg",
+     "cam": "results/gradcam/Mosque/Mosque_1030949_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Mosque/Mosque_1030949.jpg",
+     "cam": "results/gradcam/Mosque/Mosque_1030949_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Mosque_1031448.jpg",
+   "class": "Mosque",
+   "pred": "Mosque",
+   "kind": "correct",
+   "correct": true,
+   "confidence": 0.9975979924201965,
+   "gates": [
+    0.8457147479057312,
+    0.8828539252281189,
+    0.8528314232826233
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Mosque/Mosque_1031448.jpg",
+     "cam": "results/gradcam/Mosque/Mosque_1031448_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Mosque/Mosque_1031448.jpg",
+     "cam": "results/gradcam/Mosque/Mosque_1031448_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Mosque/Mosque_1031448.jpg",
+     "cam": "results/gradcam/Mosque/Mosque_1031448_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Mosque_1031113.jpg",
+   "class": "Mosque",
+   "pred": "Mosque",
+   "kind": "correct",
+   "correct": true,
+   "confidence": 0.9311979413032532,
+   "gates": [
+    0.8726879358291626,
+    0.8947845697402954,
+    0.8620120882987976
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Mosque/Mosque_1031113.jpg",
+     "cam": "results/gradcam/Mosque/Mosque_1031113_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Mosque/Mosque_1031113.jpg",
+     "cam": "results/gradcam/Mosque/Mosque_1031113_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Mosque/Mosque_1031113.jpg",
+     "cam": "results/gradcam/Mosque/Mosque_1031113_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Mosque_1031035.jpg",
+   "class": "Mosque",
+   "pred": "Roundabout",
+   "kind": "wrong",
+   "correct": false,
+   "confidence": 0.49487540125846863,
+   "gates": [
+    0.8652793765068054,
+    0.881620466709137,
+    0.8675698041915894
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Mosque/Mosque_1031035.jpg",
+     "cam": "results/gradcam/Mosque/Mosque_1031035_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Mosque/Mosque_1031035.jpg",
+     "cam": "results/gradcam/Mosque/Mosque_1031035_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Mosque/Mosque_1031035.jpg",
+     "cam": "results/gradcam/Mosque/Mosque_1031035_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Mosque_1030836.jpg",
+   "class": "Mosque",
+   "pred": "Swimming pool",
+   "kind": "wrong",
+   "correct": false,
+   "confidence": 0.6438637375831604,
+   "gates": [
+    0.8634809255599976,
+    0.8779972791671753,
+    0.8912357687950134
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Mosque/Mosque_1030836.jpg",
+     "cam": "results/gradcam/Mosque/Mosque_1030836_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Mosque/Mosque_1030836.jpg",
+     "cam": "results/gradcam/Mosque/Mosque_1030836_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Mosque/Mosque_1030836.jpg",
+     "cam": "results/gradcam/Mosque/Mosque_1030836_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Mountain_940024.jpg",
+   "class": "Mountain",
+   "pred": "Mountain",
+   "kind": "correct",
+   "correct": true,
+   "confidence": 0.9982078075408936,
+   "gates": [
+    0.8490506410598755,
+    0.8574960231781006,
+    0.8995744585990906
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Mountain/Mountain_940024.jpg",
+     "cam": "results/gradcam/Mountain/Mountain_940024_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Mountain/Mountain_940024.jpg",
+     "cam": "results/gradcam/Mountain/Mountain_940024_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Mountain/Mountain_940024.jpg",
+     "cam": "results/gradcam/Mountain/Mountain_940024_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Mountain_941059.jpg",
+   "class": "Mountain",
+   "pred": "Mountain",
+   "kind": "correct",
+   "correct": true,
+   "confidence": 0.9810411334037781,
+   "gates": [
+    0.8468658328056335,
+    0.8821839094161987,
+    0.9043123126029968
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Mountain/Mountain_941059.jpg",
+     "cam": "results/gradcam/Mountain/Mountain_941059_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Mountain/Mountain_941059.jpg",
+     "cam": "results/gradcam/Mountain/Mountain_941059_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Mountain/Mountain_941059.jpg",
+     "cam": "results/gradcam/Mountain/Mountain_941059_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Mountain_940922.jpg",
+   "class": "Mountain",
+   "pred": "Mountain",
+   "kind": "correct",
+   "correct": true,
+   "confidence": 0.9917395114898682,
+   "gates": [
+    0.8526153564453125,
+    0.8559852838516235,
+    0.9020963311195374
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Mountain/Mountain_940922.jpg",
+     "cam": "results/gradcam/Mountain/Mountain_940922_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Mountain/Mountain_940922.jpg",
+     "cam": "results/gradcam/Mountain/Mountain_940922_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Mountain/Mountain_940922.jpg",
+     "cam": "results/gradcam/Mountain/Mountain_940922_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Mountain_940548.jpg",
+   "class": "Mountain",
+   "pred": "Hills",
+   "kind": "wrong",
+   "correct": false,
+   "confidence": 0.9133143424987793,
+   "gates": [
+    0.8750037550926208,
+    0.8858747482299805,
+    0.898811936378479
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Mountain/Mountain_940548.jpg",
+     "cam": "results/gradcam/Mountain/Mountain_940548_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Mountain/Mountain_940548.jpg",
+     "cam": "results/gradcam/Mountain/Mountain_940548_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Mountain/Mountain_940548.jpg",
+     "cam": "results/gradcam/Mountain/Mountain_940548_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Mountain_940076.jpg",
+   "class": "Mountain",
+   "pred": "Hills",
+   "kind": "wrong",
+   "correct": false,
+   "confidence": 0.6183099150657654,
+   "gates": [
+    0.8610500693321228,
+    0.8872659206390381,
+    0.8935908079147339
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Mountain/Mountain_940076.jpg",
+     "cam": "results/gradcam/Mountain/Mountain_940076_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Mountain/Mountain_940076.jpg",
+     "cam": "results/gradcam/Mountain/Mountain_940076_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Mountain/Mountain_940076.jpg",
+     "cam": "results/gradcam/Mountain/Mountain_940076_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Petroleum_well_994470.jpg",
+   "class": "Petroleum well",
+   "pred": "Petroleum well",
+   "kind": "correct",
+   "correct": true,
+   "confidence": 0.9909855127334595,
+   "gates": [
+    0.8758974671363831,
+    0.8850244879722595,
+    0.8718149065971375
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Petroleum_well/Petroleum_well_994470.jpg",
+     "cam": "results/gradcam/Petroleum_well/Petroleum_well_994470_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Petroleum_well/Petroleum_well_994470.jpg",
+     "cam": "results/gradcam/Petroleum_well/Petroleum_well_994470_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Petroleum_well/Petroleum_well_994470.jpg",
+     "cam": "results/gradcam/Petroleum_well/Petroleum_well_994470_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Petroleum_well_994027.jpg",
+   "class": "Petroleum well",
+   "pred": "Petroleum well",
+   "kind": "correct",
+   "correct": true,
+   "confidence": 0.9999616146087646,
+   "gates": [
+    0.8663520812988281,
+    0.8978208303451538,
+    0.8809260129928589
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Petroleum_well/Petroleum_well_994027.jpg",
+     "cam": "results/gradcam/Petroleum_well/Petroleum_well_994027_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Petroleum_well/Petroleum_well_994027.jpg",
+     "cam": "results/gradcam/Petroleum_well/Petroleum_well_994027_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Petroleum_well/Petroleum_well_994027.jpg",
+     "cam": "results/gradcam/Petroleum_well/Petroleum_well_994027_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Petroleum_well_993984.jpg",
+   "class": "Petroleum well",
+   "pred": "Petroleum well",
+   "kind": "correct",
+   "correct": true,
+   "confidence": 0.9437255859375,
+   "gates": [
+    0.8650327324867249,
+    0.8980322480201721,
+    0.9007166028022766
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Petroleum_well/Petroleum_well_993984.jpg",
+     "cam": "results/gradcam/Petroleum_well/Petroleum_well_993984_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Petroleum_well/Petroleum_well_993984.jpg",
+     "cam": "results/gradcam/Petroleum_well/Petroleum_well_993984_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Petroleum_well/Petroleum_well_993984.jpg",
+     "cam": "results/gradcam/Petroleum_well/Petroleum_well_993984_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Petroleum_well_994603.jpg",
+   "class": "Petroleum well",
+   "pred": "Scrub",
+   "kind": "wrong",
+   "correct": false,
+   "confidence": 0.5032349228858948,
+   "gates": [
+    0.8715490698814392,
+    0.9057310819625854,
+    0.8913630247116089
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Petroleum_well/Petroleum_well_994603.jpg",
+     "cam": "results/gradcam/Petroleum_well/Petroleum_well_994603_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Petroleum_well/Petroleum_well_994603.jpg",
+     "cam": "results/gradcam/Petroleum_well/Petroleum_well_994603_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Petroleum_well/Petroleum_well_994603.jpg",
+     "cam": "results/gradcam/Petroleum_well/Petroleum_well_994603_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Petroleum_well_994297.jpg",
+   "class": "Petroleum well",
+   "pred": "Brownfield",
+   "kind": "wrong",
+   "correct": false,
+   "confidence": 0.4772603213787079,
+   "gates": [
+    0.8753138780593872,
+    0.8964576125144958,
+    0.9049032330513
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Petroleum_well/Petroleum_well_994297.jpg",
+     "cam": "results/gradcam/Petroleum_well/Petroleum_well_994297_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Petroleum_well/Petroleum_well_994297.jpg",
+     "cam": "results/gradcam/Petroleum_well/Petroleum_well_994297_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Petroleum_well/Petroleum_well_994297.jpg",
+     "cam": "results/gradcam/Petroleum_well/Petroleum_well_994297_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Port_984839.jpg",
+   "class": "Port",
+   "pred": "Port",
+   "kind": "correct",
+   "correct": true,
+   "confidence": 0.9978803396224976,
+   "gates": [
+    0.8842608332633972,
+    0.8898018002510071,
+    0.8628795742988586
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Port/Port_984839.jpg",
+     "cam": "results/gradcam/Port/Port_984839_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Port/Port_984839.jpg",
+     "cam": "results/gradcam/Port/Port_984839_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Port/Port_984839.jpg",
+     "cam": "results/gradcam/Port/Port_984839_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Port_985888.jpg",
+   "class": "Port",
+   "pred": "Port",
+   "kind": "correct",
+   "correct": true,
+   "confidence": 0.9997637867927551,
+   "gates": [
+    0.880131185054779,
+    0.8946651816368103,
+    0.866950511932373
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Port/Port_985888.jpg",
+     "cam": "results/gradcam/Port/Port_985888_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Port/Port_985888.jpg",
+     "cam": "results/gradcam/Port/Port_985888_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Port/Port_985888.jpg",
+     "cam": "results/gradcam/Port/Port_985888_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Port_986105.jpg",
+   "class": "Port",
+   "pred": "Port",
+   "kind": "correct",
+   "correct": true,
+   "confidence": 0.22771838307380676,
+   "gates": [
+    0.8771672248840332,
+    0.9011707305908203,
+    0.8743206858634949
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Port/Port_986105.jpg",
+     "cam": "results/gradcam/Port/Port_986105_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Port/Port_986105.jpg",
+     "cam": "results/gradcam/Port/Port_986105_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Port/Port_986105.jpg",
+     "cam": "results/gradcam/Port/Port_986105_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Port_985839.jpg",
+   "class": "Port",
+   "pred": "Chemical plant",
+   "kind": "wrong",
+   "correct": false,
+   "confidence": 0.8269815444946289,
+   "gates": [
+    0.8727720379829407,
+    0.8730360269546509,
+    0.8431210517883301
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Port/Port_985839.jpg",
+     "cam": "results/gradcam/Port/Port_985839_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Port/Port_985839.jpg",
+     "cam": "results/gradcam/Port/Port_985839_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Port/Port_985839.jpg",
+     "cam": "results/gradcam/Port/Port_985839_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Port_985329.jpg",
+   "class": "Port",
+   "pred": "Resort",
+   "kind": "wrong",
+   "correct": false,
+   "confidence": 0.5472185611724854,
+   "gates": [
+    0.8804318308830261,
+    0.8915433883666992,
+    0.870947539806366
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Port/Port_985329.jpg",
+     "cam": "results/gradcam/Port/Port_985329_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Port/Port_985329.jpg",
+     "cam": "results/gradcam/Port/Port_985329_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Port/Port_985329.jpg",
+     "cam": "results/gradcam/Port/Port_985329_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Quarry_904726.jpg",
+   "class": "Quarry",
+   "pred": "Quarry",
+   "kind": "correct",
+   "correct": true,
+   "confidence": 0.6036182045936584,
+   "gates": [
+    0.8832964897155762,
+    0.9018059372901917,
+    0.9067485928535461
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Quarry/Quarry_904726.jpg",
+     "cam": "results/gradcam/Quarry/Quarry_904726_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Quarry/Quarry_904726.jpg",
+     "cam": "results/gradcam/Quarry/Quarry_904726_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Quarry/Quarry_904726.jpg",
+     "cam": "results/gradcam/Quarry/Quarry_904726_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Quarry_902734.jpg",
+   "class": "Quarry",
+   "pred": "Quarry",
+   "kind": "correct",
+   "correct": true,
+   "confidence": 0.9500009417533875,
+   "gates": [
+    0.8869264125823975,
+    0.8981371521949768,
+    0.8898471593856812
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Quarry/Quarry_902734.jpg",
+     "cam": "results/gradcam/Quarry/Quarry_902734_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Quarry/Quarry_902734.jpg",
+     "cam": "results/gradcam/Quarry/Quarry_902734_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Quarry/Quarry_902734.jpg",
+     "cam": "results/gradcam/Quarry/Quarry_902734_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Quarry_903226.jpg",
+   "class": "Quarry",
+   "pred": "Quarry",
+   "kind": "correct",
+   "correct": true,
+   "confidence": 0.9630368947982788,
+   "gates": [
+    0.8709808588027954,
+    0.8872089385986328,
+    0.8782166838645935
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Quarry/Quarry_903226.jpg",
+     "cam": "results/gradcam/Quarry/Quarry_903226_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Quarry/Quarry_903226.jpg",
+     "cam": "results/gradcam/Quarry/Quarry_903226_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Quarry/Quarry_903226.jpg",
+     "cam": "results/gradcam/Quarry/Quarry_903226_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Quarry_901521.jpg",
+   "class": "Quarry",
+   "pred": "Hills",
+   "kind": "wrong",
+   "correct": false,
+   "confidence": 0.6113951802253723,
+   "gates": [
+    0.8719744682312012,
+    0.8999209403991699,
+    0.903588056564331
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Quarry/Quarry_901521.jpg",
+     "cam": "results/gradcam/Quarry/Quarry_901521_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Quarry/Quarry_901521.jpg",
+     "cam": "results/gradcam/Quarry/Quarry_901521_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Quarry/Quarry_901521.jpg",
+     "cam": "results/gradcam/Quarry/Quarry_901521_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Quarry_901119.jpg",
+   "class": "Quarry",
+   "pred": "Mountain",
+   "kind": "wrong",
+   "correct": false,
+   "confidence": 0.6415170431137085,
+   "gates": [
+    0.8624921441078186,
+    0.8645544052124023,
+    0.8879925012588501
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Quarry/Quarry_901119.jpg",
+     "cam": "results/gradcam/Quarry/Quarry_901119_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Quarry/Quarry_901119.jpg",
+     "cam": "results/gradcam/Quarry/Quarry_901119_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Quarry/Quarry_901119.jpg",
+     "cam": "results/gradcam/Quarry/Quarry_901119_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Resort_972010.jpg",
+   "class": "Resort",
+   "pred": "Resort",
+   "kind": "correct",
+   "correct": true,
+   "confidence": 0.9844420552253723,
+   "gates": [
+    0.8760243058204651,
+    0.88835209608078,
+    0.8784151673316956
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Resort/Resort_972010.jpg",
+     "cam": "results/gradcam/Resort/Resort_972010_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Resort/Resort_972010.jpg",
+     "cam": "results/gradcam/Resort/Resort_972010_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Resort/Resort_972010.jpg",
+     "cam": "results/gradcam/Resort/Resort_972010_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Resort_971501.jpg",
+   "class": "Resort",
+   "pred": "Resort",
+   "kind": "correct",
+   "correct": true,
+   "confidence": 0.9876933693885803,
+   "gates": [
+    0.885529637336731,
+    0.8931576013565063,
+    0.8735955357551575
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Resort/Resort_971501.jpg",
+     "cam": "results/gradcam/Resort/Resort_971501_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Resort/Resort_971501.jpg",
+     "cam": "results/gradcam/Resort/Resort_971501_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Resort/Resort_971501.jpg",
+     "cam": "results/gradcam/Resort/Resort_971501_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Resort_971841.jpg",
+   "class": "Resort",
+   "pred": "Resort",
+   "kind": "correct",
+   "correct": true,
+   "confidence": 0.9917365908622742,
+   "gates": [
+    0.8675565123558044,
+    0.8939850330352783,
+    0.8611284494400024
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Resort/Resort_971841.jpg",
+     "cam": "results/gradcam/Resort/Resort_971841_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Resort/Resort_971841.jpg",
+     "cam": "results/gradcam/Resort/Resort_971841_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Resort/Resort_971841.jpg",
+     "cam": "results/gradcam/Resort/Resort_971841_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Resort_972072.jpg",
+   "class": "Resort",
+   "pred": "Petroleum well",
+   "kind": "wrong",
+   "correct": false,
+   "confidence": 0.5155673623085022,
+   "gates": [
+    0.8711163997650146,
+    0.9003497362136841,
+    0.8740180730819702
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Resort/Resort_972072.jpg",
+     "cam": "results/gradcam/Resort/Resort_972072_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Resort/Resort_972072.jpg",
+     "cam": "results/gradcam/Resort/Resort_972072_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Resort/Resort_972072.jpg",
+     "cam": "results/gradcam/Resort/Resort_972072_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Resort_972289.jpg",
+   "class": "Resort",
+   "pred": "Mosque",
+   "kind": "wrong",
+   "correct": false,
+   "confidence": 0.6367345452308655,
+   "gates": [
+    0.871029794216156,
+    0.8937814235687256,
+    0.8822068572044373
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Resort/Resort_972289.jpg",
+     "cam": "results/gradcam/Resort/Resort_972289_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Resort/Resort_972289.jpg",
+     "cam": "results/gradcam/Resort/Resort_972289_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Resort/Resort_972289.jpg",
+     "cam": "results/gradcam/Resort/Resort_972289_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Rock_995621.jpg",
+   "class": "Rock",
+   "pred": "Rock",
+   "kind": "correct",
+   "correct": true,
+   "confidence": 0.9990785121917725,
+   "gates": [
+    0.8952769041061401,
+    0.8902685642242432,
+    0.9032973051071167
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Rock/Rock_995621.jpg",
+     "cam": "results/gradcam/Rock/Rock_995621_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Rock/Rock_995621.jpg",
+     "cam": "results/gradcam/Rock/Rock_995621_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Rock/Rock_995621.jpg",
+     "cam": "results/gradcam/Rock/Rock_995621_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Rock_995530.jpg",
+   "class": "Rock",
+   "pred": "Rock",
+   "kind": "correct",
+   "correct": true,
+   "confidence": 0.9999219179153442,
+   "gates": [
+    0.854783296585083,
+    0.8663997650146484,
+    0.909217119216919
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Rock/Rock_995530.jpg",
+     "cam": "results/gradcam/Rock/Rock_995530_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Rock/Rock_995530.jpg",
+     "cam": "results/gradcam/Rock/Rock_995530_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Rock/Rock_995530.jpg",
+     "cam": "results/gradcam/Rock/Rock_995530_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Rock_995484.jpg",
+   "class": "Rock",
+   "pred": "Rock",
+   "kind": "correct",
+   "correct": true,
+   "confidence": 0.7342135906219482,
+   "gates": [
+    0.8581526279449463,
+    0.8618426322937012,
+    0.9086363911628723
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Rock/Rock_995484.jpg",
+     "cam": "results/gradcam/Rock/Rock_995484_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Rock/Rock_995484.jpg",
+     "cam": "results/gradcam/Rock/Rock_995484_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Rock/Rock_995484.jpg",
+     "cam": "results/gradcam/Rock/Rock_995484_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Rock_995008.jpg",
+   "class": "Rock",
+   "pred": "Sand",
+   "kind": "wrong",
+   "correct": false,
+   "confidence": 0.964889645576477,
+   "gates": [
+    0.8463123440742493,
+    0.8668598532676697,
+    0.9112192392349243
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Rock/Rock_995008.jpg",
+     "cam": "results/gradcam/Rock/Rock_995008_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Rock/Rock_995008.jpg",
+     "cam": "results/gradcam/Rock/Rock_995008_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Rock/Rock_995008.jpg",
+     "cam": "results/gradcam/Rock/Rock_995008_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Rock_995848.jpg",
+   "class": "Rock",
+   "pred": "Brownfield",
+   "kind": "wrong",
+   "correct": false,
+   "confidence": 0.517938494682312,
+   "gates": [
+    0.8869591355323792,
+    0.9013959765434265,
+    0.8970544934272766
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Rock/Rock_995848.jpg",
+     "cam": "results/gradcam/Rock/Rock_995848_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Rock/Rock_995848.jpg",
+     "cam": "results/gradcam/Rock/Rock_995848_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Rock/Rock_995848.jpg",
+     "cam": "results/gradcam/Rock/Rock_995848_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Roundabout_1032682.jpg",
+   "class": "Roundabout",
+   "pred": "Roundabout",
+   "kind": "correct",
+   "correct": true,
+   "confidence": 0.9878800511360168,
+   "gates": [
+    0.8690021634101868,
+    0.8872239589691162,
+    0.8638363480567932
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Roundabout/Roundabout_1032682.jpg",
+     "cam": "results/gradcam/Roundabout/Roundabout_1032682_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Roundabout/Roundabout_1032682.jpg",
+     "cam": "results/gradcam/Roundabout/Roundabout_1032682_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Roundabout/Roundabout_1032682.jpg",
+     "cam": "results/gradcam/Roundabout/Roundabout_1032682_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Roundabout_1033010.jpg",
+   "class": "Roundabout",
+   "pred": "Roundabout",
+   "kind": "correct",
+   "correct": true,
+   "confidence": 0.9971127510070801,
+   "gates": [
+    0.8583376407623291,
+    0.8774826526641846,
+    0.8630907535552979
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Roundabout/Roundabout_1033010.jpg",
+     "cam": "results/gradcam/Roundabout/Roundabout_1033010_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Roundabout/Roundabout_1033010.jpg",
+     "cam": "results/gradcam/Roundabout/Roundabout_1033010_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Roundabout/Roundabout_1033010.jpg",
+     "cam": "results/gradcam/Roundabout/Roundabout_1033010_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Roundabout_1033286.jpg",
+   "class": "Roundabout",
+   "pred": "Roundabout",
+   "kind": "correct",
+   "correct": true,
+   "confidence": 0.9989525079727173,
+   "gates": [
+    0.8669619560241699,
+    0.8797270059585571,
+    0.859994113445282
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Roundabout/Roundabout_1033286.jpg",
+     "cam": "results/gradcam/Roundabout/Roundabout_1033286_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Roundabout/Roundabout_1033286.jpg",
+     "cam": "results/gradcam/Roundabout/Roundabout_1033286_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Roundabout/Roundabout_1033286.jpg",
+     "cam": "results/gradcam/Roundabout/Roundabout_1033286_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Roundabout_1032781.jpg",
+   "class": "Roundabout",
+   "pred": "Construction",
+   "kind": "wrong",
+   "correct": false,
+   "confidence": 0.7120250463485718,
+   "gates": [
+    0.8813585042953491,
+    0.9008382558822632,
+    0.8810865879058838
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Roundabout/Roundabout_1032781.jpg",
+     "cam": "results/gradcam/Roundabout/Roundabout_1032781_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Roundabout/Roundabout_1032781.jpg",
+     "cam": "results/gradcam/Roundabout/Roundabout_1032781_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Roundabout/Roundabout_1032781.jpg",
+     "cam": "results/gradcam/Roundabout/Roundabout_1032781_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Roundabout_1033462.jpg",
+   "class": "Roundabout",
+   "pred": "Mosque",
+   "kind": "wrong",
+   "correct": false,
+   "confidence": 0.4933663308620453,
+   "gates": [
+    0.8557736873626709,
+    0.8657932877540588,
+    0.8297216296195984
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Roundabout/Roundabout_1033462.jpg",
+     "cam": "results/gradcam/Roundabout/Roundabout_1033462_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Roundabout/Roundabout_1033462.jpg",
+     "cam": "results/gradcam/Roundabout/Roundabout_1033462_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Roundabout/Roundabout_1033462.jpg",
+     "cam": "results/gradcam/Roundabout/Roundabout_1033462_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Sand_957941.jpg",
+   "class": "Sand",
+   "pred": "Sand",
+   "kind": "correct",
+   "correct": true,
+   "confidence": 0.999403715133667,
+   "gates": [
+    0.8466864824295044,
+    0.8819511532783508,
+    0.9105714559555054
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Sand/Sand_957941.jpg",
+     "cam": "results/gradcam/Sand/Sand_957941_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Sand/Sand_957941.jpg",
+     "cam": "results/gradcam/Sand/Sand_957941_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Sand/Sand_957941.jpg",
+     "cam": "results/gradcam/Sand/Sand_957941_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Sand_957684.jpg",
+   "class": "Sand",
+   "pred": "Sand",
+   "kind": "correct",
+   "correct": true,
+   "confidence": 0.9998160004615784,
+   "gates": [
+    0.8545107841491699,
+    0.8791311979293823,
+    0.914663553237915
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Sand/Sand_957684.jpg",
+     "cam": "results/gradcam/Sand/Sand_957684_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Sand/Sand_957684.jpg",
+     "cam": "results/gradcam/Sand/Sand_957684_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Sand/Sand_957684.jpg",
+     "cam": "results/gradcam/Sand/Sand_957684_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Sand_957101.jpg",
+   "class": "Sand",
+   "pred": "Sand",
+   "kind": "correct",
+   "correct": true,
+   "confidence": 0.9950215816497803,
+   "gates": [
+    0.862991452217102,
+    0.9021201729774475,
+    0.9088823199272156
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Sand/Sand_957101.jpg",
+     "cam": "results/gradcam/Sand/Sand_957101_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Sand/Sand_957101.jpg",
+     "cam": "results/gradcam/Sand/Sand_957101_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Sand/Sand_957101.jpg",
+     "cam": "results/gradcam/Sand/Sand_957101_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Sand_956812.jpg",
+   "class": "Sand",
+   "pred": "Scrub",
+   "kind": "wrong",
+   "correct": false,
+   "confidence": 0.5234541296958923,
+   "gates": [
+    0.8698517084121704,
+    0.8901718854904175,
+    0.9074306488037109
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Sand/Sand_956812.jpg",
+     "cam": "results/gradcam/Sand/Sand_956812_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Sand/Sand_956812.jpg",
+     "cam": "results/gradcam/Sand/Sand_956812_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Sand/Sand_956812.jpg",
+     "cam": "results/gradcam/Sand/Sand_956812_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Sand_956764.jpg",
+   "class": "Sand",
+   "pred": "Solar power plant",
+   "kind": "wrong",
+   "correct": false,
+   "confidence": 0.9796299934387207,
+   "gates": [
+    0.8654923439025879,
+    0.8866205215454102,
+    0.9158346652984619
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Sand/Sand_956764.jpg",
+     "cam": "results/gradcam/Sand/Sand_956764_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Sand/Sand_956764.jpg",
+     "cam": "results/gradcam/Sand/Sand_956764_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Sand/Sand_956764.jpg",
+     "cam": "results/gradcam/Sand/Sand_956764_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Scrub_860005.jpg",
+   "class": "Scrub",
+   "pred": "Scrub",
+   "kind": "correct",
+   "correct": true,
+   "confidence": 0.9989058971405029,
+   "gates": [
+    0.8803443312644958,
+    0.8902844786643982,
+    0.88575279712677
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Scrub/Scrub_860005.jpg",
+     "cam": "results/gradcam/Scrub/Scrub_860005_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Scrub/Scrub_860005.jpg",
+     "cam": "results/gradcam/Scrub/Scrub_860005_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Scrub/Scrub_860005.jpg",
+     "cam": "results/gradcam/Scrub/Scrub_860005_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Scrub_860076.jpg",
+   "class": "Scrub",
+   "pred": "Scrub",
+   "kind": "correct",
+   "correct": true,
+   "confidence": 0.9965079426765442,
+   "gates": [
+    0.8466112017631531,
+    0.8754051923751831,
+    0.8946712613105774
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Scrub/Scrub_860076.jpg",
+     "cam": "results/gradcam/Scrub/Scrub_860076_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Scrub/Scrub_860076.jpg",
+     "cam": "results/gradcam/Scrub/Scrub_860076_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Scrub/Scrub_860076.jpg",
+     "cam": "results/gradcam/Scrub/Scrub_860076_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Scrub_866927.jpg",
+   "class": "Scrub",
+   "pred": "Scrub",
+   "kind": "correct",
+   "correct": true,
+   "confidence": 0.9456713795661926,
+   "gates": [
+    0.8742276430130005,
+    0.891111433506012,
+    0.911387026309967
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Scrub/Scrub_866927.jpg",
+     "cam": "results/gradcam/Scrub/Scrub_866927_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Scrub/Scrub_866927.jpg",
+     "cam": "results/gradcam/Scrub/Scrub_866927_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Scrub/Scrub_866927.jpg",
+     "cam": "results/gradcam/Scrub/Scrub_866927_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Scrub_857580.jpg",
+   "class": "Scrub",
+   "pred": "Military training ground",
+   "kind": "wrong",
+   "correct": false,
+   "confidence": 0.37133315205574036,
+   "gates": [
+    0.8931941986083984,
+    0.8998803496360779,
+    0.8906183838844299
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Scrub/Scrub_857580.jpg",
+     "cam": "results/gradcam/Scrub/Scrub_857580_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Scrub/Scrub_857580.jpg",
+     "cam": "results/gradcam/Scrub/Scrub_857580_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Scrub/Scrub_857580.jpg",
+     "cam": "results/gradcam/Scrub/Scrub_857580_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Scrub_863522.jpg",
+   "class": "Scrub",
+   "pred": "Military training ground",
+   "kind": "wrong",
+   "correct": false,
+   "confidence": 0.5718374848365784,
+   "gates": [
+    0.8789986371994019,
+    0.8787855505943298,
+    0.89089435338974
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Scrub/Scrub_863522.jpg",
+     "cam": "results/gradcam/Scrub/Scrub_863522_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Scrub/Scrub_863522.jpg",
+     "cam": "results/gradcam/Scrub/Scrub_863522_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Scrub/Scrub_863522.jpg",
+     "cam": "results/gradcam/Scrub/Scrub_863522_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Solar_power_plant_816356.jpg",
+   "class": "Solar power plant",
+   "pred": "Solar power plant",
+   "kind": "correct",
+   "correct": true,
+   "confidence": 0.9353383183479309,
+   "gates": [
+    0.8855417966842651,
+    0.9005529284477234,
+    0.878563642501831
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Solar_power_plant/Solar_power_plant_816356.jpg",
+     "cam": "results/gradcam/Solar_power_plant/Solar_power_plant_816356_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Solar_power_plant/Solar_power_plant_816356.jpg",
+     "cam": "results/gradcam/Solar_power_plant/Solar_power_plant_816356_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Solar_power_plant/Solar_power_plant_816356.jpg",
+     "cam": "results/gradcam/Solar_power_plant/Solar_power_plant_816356_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Solar_power_plant_819719.jpg",
+   "class": "Solar power plant",
+   "pred": "Solar power plant",
+   "kind": "correct",
+   "correct": true,
+   "confidence": 0.9992955923080444,
+   "gates": [
+    0.8883191347122192,
+    0.9130157232284546,
+    0.8963136672973633
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Solar_power_plant/Solar_power_plant_819719.jpg",
+     "cam": "results/gradcam/Solar_power_plant/Solar_power_plant_819719_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Solar_power_plant/Solar_power_plant_819719.jpg",
+     "cam": "results/gradcam/Solar_power_plant/Solar_power_plant_819719_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Solar_power_plant/Solar_power_plant_819719.jpg",
+     "cam": "results/gradcam/Solar_power_plant/Solar_power_plant_819719_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Solar_power_plant_826772.jpg",
+   "class": "Solar power plant",
+   "pred": "Solar power plant",
+   "kind": "correct",
+   "correct": true,
+   "confidence": 0.9989709854125977,
+   "gates": [
+    0.890353798866272,
+    0.9118337631225586,
+    0.8928492069244385
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Solar_power_plant/Solar_power_plant_826772.jpg",
+     "cam": "results/gradcam/Solar_power_plant/Solar_power_plant_826772_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Solar_power_plant/Solar_power_plant_826772.jpg",
+     "cam": "results/gradcam/Solar_power_plant/Solar_power_plant_826772_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Solar_power_plant/Solar_power_plant_826772.jpg",
+     "cam": "results/gradcam/Solar_power_plant/Solar_power_plant_826772_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Solar_power_plant_818931.jpg",
+   "class": "Solar power plant",
+   "pred": "Scrub",
+   "kind": "wrong",
+   "correct": false,
+   "confidence": 0.7498411536216736,
+   "gates": [
+    0.8620678186416626,
+    0.9043834805488586,
+    0.9054568409919739
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Solar_power_plant/Solar_power_plant_818931.jpg",
+     "cam": "results/gradcam/Solar_power_plant/Solar_power_plant_818931_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Solar_power_plant/Solar_power_plant_818931.jpg",
+     "cam": "results/gradcam/Solar_power_plant/Solar_power_plant_818931_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Solar_power_plant/Solar_power_plant_818931.jpg",
+     "cam": "results/gradcam/Solar_power_plant/Solar_power_plant_818931_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Solar_power_plant_804727.jpg",
+   "class": "Solar power plant",
+   "pred": "Dry field",
+   "kind": "wrong",
+   "correct": false,
+   "confidence": 0.8971655368804932,
+   "gates": [
+    0.8871203064918518,
+    0.883618950843811,
+    0.8802551031112671
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Solar_power_plant/Solar_power_plant_804727.jpg",
+     "cam": "results/gradcam/Solar_power_plant/Solar_power_plant_804727_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Solar_power_plant/Solar_power_plant_804727.jpg",
+     "cam": "results/gradcam/Solar_power_plant/Solar_power_plant_804727_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Solar_power_plant/Solar_power_plant_804727.jpg",
+     "cam": "results/gradcam/Solar_power_plant/Solar_power_plant_804727_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Substation_986508.jpg",
+   "class": "Substation",
+   "pred": "Substation",
+   "kind": "correct",
+   "correct": true,
+   "confidence": 0.9997656941413879,
+   "gates": [
+    0.8758866190910339,
+    0.8883400559425354,
+    0.8815466165542603
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Substation/Substation_986508.jpg",
+     "cam": "results/gradcam/Substation/Substation_986508_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Substation/Substation_986508.jpg",
+     "cam": "results/gradcam/Substation/Substation_986508_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Substation/Substation_986508.jpg",
+     "cam": "results/gradcam/Substation/Substation_986508_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Substation_986199.jpg",
+   "class": "Substation",
+   "pred": "Substation",
+   "kind": "correct",
+   "correct": true,
+   "confidence": 0.9319292306900024,
+   "gates": [
+    0.8774621486663818,
+    0.8964805006980896,
+    0.8659232258796692
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Substation/Substation_986199.jpg",
+     "cam": "results/gradcam/Substation/Substation_986199_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Substation/Substation_986199.jpg",
+     "cam": "results/gradcam/Substation/Substation_986199_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Substation/Substation_986199.jpg",
+     "cam": "results/gradcam/Substation/Substation_986199_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Substation_986339.jpg",
+   "class": "Substation",
+   "pred": "Substation",
+   "kind": "correct",
+   "correct": true,
+   "confidence": 0.9890763759613037,
+   "gates": [
+    0.8914426565170288,
+    0.9006127119064331,
+    0.8848056793212891
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Substation/Substation_986339.jpg",
+     "cam": "results/gradcam/Substation/Substation_986339_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Substation/Substation_986339.jpg",
+     "cam": "results/gradcam/Substation/Substation_986339_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Substation/Substation_986339.jpg",
+     "cam": "results/gradcam/Substation/Substation_986339_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Substation_986985.jpg",
+   "class": "Substation",
+   "pred": "Construction",
+   "kind": "wrong",
+   "correct": false,
+   "confidence": 0.677050769329071,
+   "gates": [
+    0.8843255043029785,
+    0.8801280856132507,
+    0.8538996577262878
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Substation/Substation_986985.jpg",
+     "cam": "results/gradcam/Substation/Substation_986985_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Substation/Substation_986985.jpg",
+     "cam": "results/gradcam/Substation/Substation_986985_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Substation/Substation_986985.jpg",
+     "cam": "results/gradcam/Substation/Substation_986985_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Substation_987189.jpg",
+   "class": "Substation",
+   "pred": "Chemical plant",
+   "kind": "wrong",
+   "correct": false,
+   "confidence": 0.6236724257469177,
+   "gates": [
+    0.8794977068901062,
+    0.8796355724334717,
+    0.8560259938240051
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Substation/Substation_987189.jpg",
+     "cam": "results/gradcam/Substation/Substation_987189_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Substation/Substation_987189.jpg",
+     "cam": "results/gradcam/Substation/Substation_987189_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Substation/Substation_987189.jpg",
+     "cam": "results/gradcam/Substation/Substation_987189_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Swimming_pool_955563.jpg",
+   "class": "Swimming pool",
+   "pred": "Swimming pool",
+   "kind": "correct",
+   "correct": true,
+   "confidence": 0.9469335675239563,
+   "gates": [
+    0.880446195602417,
+    0.880890965461731,
+    0.8536904454231262
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Swimming_pool/Swimming_pool_955563.jpg",
+     "cam": "results/gradcam/Swimming_pool/Swimming_pool_955563_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Swimming_pool/Swimming_pool_955563.jpg",
+     "cam": "results/gradcam/Swimming_pool/Swimming_pool_955563_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Swimming_pool/Swimming_pool_955563.jpg",
+     "cam": "results/gradcam/Swimming_pool/Swimming_pool_955563_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Swimming_pool_956137.jpg",
+   "class": "Swimming pool",
+   "pred": "Swimming pool",
+   "kind": "correct",
+   "correct": true,
+   "confidence": 0.9621405601501465,
+   "gates": [
+    0.8689221143722534,
+    0.8744072914123535,
+    0.8443452715873718
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Swimming_pool/Swimming_pool_956137.jpg",
+     "cam": "results/gradcam/Swimming_pool/Swimming_pool_956137_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Swimming_pool/Swimming_pool_956137.jpg",
+     "cam": "results/gradcam/Swimming_pool/Swimming_pool_956137_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Swimming_pool/Swimming_pool_956137.jpg",
+     "cam": "results/gradcam/Swimming_pool/Swimming_pool_956137_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Swimming_pool_955184.jpg",
+   "class": "Swimming pool",
+   "pred": "Swimming pool",
+   "kind": "correct",
+   "correct": true,
+   "confidence": 0.418576180934906,
+   "gates": [
+    0.8583554029464722,
+    0.8872703313827515,
+    0.8603624105453491
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Swimming_pool/Swimming_pool_955184.jpg",
+     "cam": "results/gradcam/Swimming_pool/Swimming_pool_955184_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Swimming_pool/Swimming_pool_955184.jpg",
+     "cam": "results/gradcam/Swimming_pool/Swimming_pool_955184_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Swimming_pool/Swimming_pool_955184.jpg",
+     "cam": "results/gradcam/Swimming_pool/Swimming_pool_955184_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Swimming_pool_955392.jpg",
+   "class": "Swimming pool",
+   "pred": "Resort",
+   "kind": "wrong",
+   "correct": false,
+   "confidence": 0.48133453726768494,
+   "gates": [
+    0.8618800640106201,
+    0.8854130506515503,
+    0.8557865619659424
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Swimming_pool/Swimming_pool_955392.jpg",
+     "cam": "results/gradcam/Swimming_pool/Swimming_pool_955392_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Swimming_pool/Swimming_pool_955392.jpg",
+     "cam": "results/gradcam/Swimming_pool/Swimming_pool_955392_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Swimming_pool/Swimming_pool_955392.jpg",
+     "cam": "results/gradcam/Swimming_pool/Swimming_pool_955392_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Swimming_pool_956397.jpg",
+   "class": "Swimming pool",
+   "pred": "Resort",
+   "kind": "wrong",
+   "correct": false,
+   "confidence": 0.9940546154975891,
+   "gates": [
+    0.8701696395874023,
+    0.887137770652771,
+    0.8680369257926941
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Swimming_pool/Swimming_pool_956397.jpg",
+     "cam": "results/gradcam/Swimming_pool/Swimming_pool_956397_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Swimming_pool/Swimming_pool_956397.jpg",
+     "cam": "results/gradcam/Swimming_pool/Swimming_pool_956397_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Swimming_pool/Swimming_pool_956397.jpg",
+     "cam": "results/gradcam/Swimming_pool/Swimming_pool_956397_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Thermal_power_plant_1014796.jpg",
+   "class": "Thermal power plant",
+   "pred": "Thermal power plant",
+   "kind": "correct",
+   "correct": true,
+   "confidence": 0.9999022483825684,
+   "gates": [
+    0.8906999230384827,
+    0.8793458342552185,
+    0.8672991394996643
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Thermal_power_plant/Thermal_power_plant_1014796.jpg",
+     "cam": "results/gradcam/Thermal_power_plant/Thermal_power_plant_1014796_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Thermal_power_plant/Thermal_power_plant_1014796.jpg",
+     "cam": "results/gradcam/Thermal_power_plant/Thermal_power_plant_1014796_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Thermal_power_plant/Thermal_power_plant_1014796.jpg",
+     "cam": "results/gradcam/Thermal_power_plant/Thermal_power_plant_1014796_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Thermal_power_plant_1014739.jpg",
+   "class": "Thermal power plant",
+   "pred": "Thermal power plant",
+   "kind": "correct",
+   "correct": true,
+   "confidence": 0.9999516010284424,
+   "gates": [
+    0.8719754219055176,
+    0.8773008584976196,
+    0.856116533279419
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Thermal_power_plant/Thermal_power_plant_1014739.jpg",
+     "cam": "results/gradcam/Thermal_power_plant/Thermal_power_plant_1014739_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Thermal_power_plant/Thermal_power_plant_1014739.jpg",
+     "cam": "results/gradcam/Thermal_power_plant/Thermal_power_plant_1014739_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Thermal_power_plant/Thermal_power_plant_1014739.jpg",
+     "cam": "results/gradcam/Thermal_power_plant/Thermal_power_plant_1014739_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Thermal_power_plant_1014985.jpg",
+   "class": "Thermal power plant",
+   "pred": "Thermal power plant",
+   "kind": "correct",
+   "correct": true,
+   "confidence": 0.9807790517807007,
+   "gates": [
+    0.8916274309158325,
+    0.8931793570518494,
+    0.8961995840072632
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Thermal_power_plant/Thermal_power_plant_1014985.jpg",
+     "cam": "results/gradcam/Thermal_power_plant/Thermal_power_plant_1014985_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Thermal_power_plant/Thermal_power_plant_1014985.jpg",
+     "cam": "results/gradcam/Thermal_power_plant/Thermal_power_plant_1014985_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Thermal_power_plant/Thermal_power_plant_1014985.jpg",
+     "cam": "results/gradcam/Thermal_power_plant/Thermal_power_plant_1014985_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Thermal_power_plant_1014445.jpg",
+   "class": "Thermal power plant",
+   "pred": "Quarry",
+   "kind": "wrong",
+   "correct": false,
+   "confidence": 0.6955174803733826,
+   "gates": [
+    0.8771726489067078,
+    0.8973802328109741,
+    0.8950921297073364
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Thermal_power_plant/Thermal_power_plant_1014445.jpg",
+     "cam": "results/gradcam/Thermal_power_plant/Thermal_power_plant_1014445_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Thermal_power_plant/Thermal_power_plant_1014445.jpg",
+     "cam": "results/gradcam/Thermal_power_plant/Thermal_power_plant_1014445_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Thermal_power_plant/Thermal_power_plant_1014445.jpg",
+     "cam": "results/gradcam/Thermal_power_plant/Thermal_power_plant_1014445_global.png"
+    }
+   }
+  },
+  {
+   "filename": "Thermal_power_plant_1014635.jpg",
+   "class": "Thermal power plant",
+   "pred": "Port",
+   "kind": "wrong",
+   "correct": false,
+   "confidence": 0.583209753036499,
+   "gates": [
+    0.8714460730552673,
+    0.8978605270385742,
+    0.877457320690155
+   ],
+   "views": {
+    "center": {
+     "image": "subset/center/test/Thermal_power_plant/Thermal_power_plant_1014635.jpg",
+     "cam": "results/gradcam/Thermal_power_plant/Thermal_power_plant_1014635_center.png"
+    },
+    "surround": {
+     "image": "subset/surround/test/Thermal_power_plant/Thermal_power_plant_1014635.jpg",
+     "cam": "results/gradcam/Thermal_power_plant/Thermal_power_plant_1014635_surround.png"
+    },
+    "global": {
+     "image": "subset/global/test/Thermal_power_plant/Thermal_power_plant_1014635.jpg",
+     "cam": "results/gradcam/Thermal_power_plant/Thermal_power_plant_1014635_global.png"
+    }
+   }
+  }
+ ]
+}
