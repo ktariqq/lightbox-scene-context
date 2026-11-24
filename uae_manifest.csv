@@ -1,0 +1,94 @@
+id,class,lat,lon,acq_date,src_res,blur_flag,res_flag
+Airport_node7968830838,Airport,24.2703622,55.6091877,2025-11-08,10.0,False,True
+Airport_relation8329652,Airport,25.1103186,56.3290926,2025-11-08,10.0,False,True
+Airport_way1047613743,Airport,24.9308566,52.8549014,2025-11-13,10.0,False,True
+Airport_way1047826952,Airport,24.5905008,51.726471,2026-02-22,10.0,False,True
+Airport_way1049328011,Airport,24.1014641,55.6099405,2025-11-08,10.0,False,True
+Airport_way200338235,Airport,24.0667339,52.4651485,2026-01-20,10.0,False,True
+Airport_way200493228,Airport,24.1825564,53.867488,2026-02-14,10.0,False,True
+Airport_way200674020,Airport,24.5128575,52.3345243,2025-11-13,10.0,False,True
+Airport_way200678906,Airport,24.2217887,52.0071488,2026-02-22,10.0,False,True
+Airport_way221565305,Airport,25.1547699,55.5355725,2025-12-03,10.0,False,True
+Airport_way626238342,Airport,25.3304308,55.5163597,2025-11-23,10.0,False,True
+Airport_way954310361,Airport,24.8618993,53.0778654,2026-03-16,10.0,False,True
+Beach_relation11130622,Beach,25.1007437,55.1411684,2025-12-03,10.0,False,True
+Beach_way145186794,Beach,25.7732874,55.9222902,2025-11-23,10.0,False,True
+Beach_way1488516616,Beach,25.2422038,54.2347757,2025-11-01,10.0,False,True
+Beach_way169357643,Beach,25.1156111,55.1124717,2025-12-03,10.0,False,True
+Beach_way195987356,Beach,25.3976736,55.4228836,2025-11-23,10.0,False,True
+Beach_way302209849,Beach,25.5496359,55.5701794,2025-11-23,10.0,False,True
+Beach_way312059800,Beach,24.4396456,54.5725965,2025-11-01,10.0,False,True
+Beach_way336038611,Beach,25.6639887,55.7500762,2025-11-23,10.0,False,True
+Beach_way557664756,Beach,25.0856839,56.3598405,2025-11-08,10.0,False,True
+Beach_way613142270,Beach,25.3323845,55.3572245,2025-11-23,10.0,False,True
+Beach_way660898590,Beach,25.2456289,55.2539425,2025-11-23,10.0,False,True
+Beach_way87183867,Beach,25.126033,55.1387377,2025-12-03,10.0,False,True
+Brownfield_way1059298937,Brownfield,24.5072207,54.4101292,2025-11-01,10.0,False,True
+Brownfield_way1089933630,Brownfield,24.183838,55.6579816,2025-11-08,10.0,False,True
+Brownfield_way1433996553,Brownfield,25.1232177,55.2403402,2025-12-03,10.0,False,True
+Brownfield_way286603377,Brownfield,24.2826981,54.4718531,2025-12-03,10.0,False,True
+Brownfield_way451867456,Brownfield,24.102673,52.7525,2026-01-20,10.0,False,True
+Brownfield_way453376334,Brownfield,24.06077,52.7552738,2026-01-20,10.0,False,True
+Brownfield_way856515473,Brownfield,24.5227369,54.3637071,2025-11-01,10.0,False,True
+Landfill_way1071843890,Landfill,25.2669991,55.9791198,2025-11-23,10.0,False,True
+Landfill_way1075260417,Landfill,24.5786107,53.3056131,2026-03-16,10.0,False,True
+Landfill_way1075869004,Landfill,24.1092433,52.7260668,2026-01-20,10.0,False,True
+Landfill_way1085596436,Landfill,25.4903555,55.70822,2025-11-23,10.0,False,True
+Landfill_way388752704,Landfill,25.4276039,55.5503193,2025-11-23,10.0,False,True
+Landfill_way590267201,Landfill,23.0212485,54.0154512,2025-11-13,10.0,False,True
+Landfill_way686478320,Landfill,24.6889227,55.5903182,2025-12-03,10.0,False,True
+Landfill_way747385001,Mountain,25.0143452,55.9828278,2025-12-03,10.0,False,True
+Landfill_way839835803,Mountain,24.9611182,56.1398179,2025-11-08,10.0,False,True
+Mountain_node10753800507,Mountain,25.2882901,56.1873044,2025-11-08,10.0,False,True
+Mountain_node10754682482,Mountain,25.1259195,56.1707963,2025-11-08,10.0,False,True
+Mountain_node10845848756,Mountain,25.2007769,56.3389449,2025-11-08,10.0,False,True
+Mountain_node10899273813,Mountain,25.015239,55.7937058,2025-12-03,10.0,False,True
+Mountain_node10899819068,Mountain,25.8550768,56.0454001,2025-11-23,10.0,False,True
+Mountain_node11661416585,Mountain,25.8560422,56.0874932,2025-11-23,10.0,False,True
+Mountain_node11692371917,Mountain,25.5930194,56.3276251,2025-11-23,10.0,False,True
+Mountain_node11693015156,Mountain,25.606811,56.0984479,2025-11-23,10.0,False,True
+Mountain_node11788495736,Mountain,25.6438127,56.0726791,2025-11-23,10.0,False,True
+Mountain_node11793686448,Mountain,25.4380367,56.3230724,2025-11-23,10.0,False,True
+Mountain_node11801223118,Mountain,25.4593047,56.3422349,2025-11-23,10.0,False,True
+Mountain_node11895271628,Mountain,25.570004,56.1607742,2025-11-23,10.0,False,True
+Mountain_node12122333272,Mountain,25.3852462,56.337228,2025-11-23,10.0,False,True
+Mountain_node12161595295,Mountain,25.3303053,56.2577969,2025-11-23,10.0,False,True
+Mountain_node12269803459,Mountain,24.8009149,56.1459476,2025-11-08,10.0,False,True
+Quarry_way1315147584,Quarry,25.3469107,56.3364095,2025-11-23,10.0,False,True
+Quarry_way360442863,Quarry,24.8590047,56.0184713,2025-11-08,10.0,False,True
+Quarry_way360442880,Quarry,24.8612331,56.0545287,2025-11-08,10.0,False,True
+Quarry_way360465344,Quarry,24.8222025,56.1668806,2025-11-08,10.0,False,True
+Quarry_way360475931,Quarry,24.8103664,56.0741541,2025-11-08,10.0,False,True
+Quarry_way739732124,Quarry,25.0730319,56.075061,2025-11-08,10.0,False,True
+Scrub_way1286756097,Scrub,24.8119993,55.6623434,2025-12-03,10.0,False,True
+Scrub_way1543212144,Scrub,24.7391882,55.3220972,2025-12-03,10.0,False,True
+Scrub_way360415705,Scrub,24.8098579,55.2088557,2025-12-03,10.0,False,True
+Scrub_way360804644,Scrub,24.5229379,55.4849186,2025-12-03,10.0,False,True
+Scrub_way701149945,Scrub,24.8464258,55.3664555,2025-12-03,10.0,False,True
+Scrub_way702650979,Scrub,24.8565988,55.4001911,2025-12-03,10.0,False,True
+Scrub_way895833986,Scrub,24.9515517,55.2559444,2025-12-03,10.0,False,True
+Scrub_way914337368,Scrub,24.7175566,55.2830295,2025-12-03,10.0,False,True
+Solar_power_plant_way1029323306,Solar power plant,24.7592461,55.4622758,2025-12-03,10.0,False,True
+Solar_power_plant_way1057118544,Solar power plant,25.033103,55.418823,2025-12-03,10.0,False,True
+Solar_power_plant_way1087124530,Solar power plant,24.1408738,54.5169312,2025-12-03,10.0,False,True
+Solar_power_plant_way1214512948,Solar power plant,24.3367841,52.5621512,2025-11-13,10.0,False,True
+Solar_power_plant_way1255406045,Solar power plant,24.7568574,55.5190528,2025-12-03,10.0,False,True
+Solar_power_plant_way1255406046,Solar power plant,24.7633608,55.487425,2025-12-03,10.0,False,True
+Solar_power_plant_way1452773904,Solar power plant,24.8782091,55.1268041,2025-12-03,10.0,False,True
+Solar_power_plant_way525717212,Solar power plant,24.7470158,55.383138,2025-12-03,10.0,False,True
+Solar_power_plant_way614475328,Solar power plant,24.5448458,55.4445769,2025-12-03,10.0,False,True
+Solar_power_plant_way679697939,Solar power plant,24.7373668,55.4212871,2025-12-03,10.0,False,True
+Solar_power_plant_way893914510,Solar power plant,24.708493,55.4238488,2025-12-03,10.0,False,True
+Thermal_power_plant_way1188978622,Thermal power plant,23.9093059,53.7057811,2026-02-14,10.0,False,True
+Thermal_power_plant_way1264647394,Thermal power plant,24.7683559,54.6878784,2025-11-01,10.0,False,True
+Thermal_power_plant_way1429720312,Thermal power plant,24.9124271,54.9165515,2026-02-21,10.0,False,True
+Thermal_power_plant_way155312475,Thermal power plant,25.1494725,55.425967,2025-12-03,10.0,False,True
+Thermal_power_plant_way226668892,Thermal power plant,24.2358671,55.7465792,2025-11-08,10.0,False,True
+Thermal_power_plant_way301647036,Thermal power plant,24.1601283,52.568568,2026-01-20,10.0,False,True
+Thermal_power_plant_way332856582,Thermal power plant,24.7989559,54.7104562,2025-11-01,10.0,False,True
+Thermal_power_plant_way360052309,Thermal power plant,25.0464106,55.1063445,2025-12-03,10.0,False,True
+Thermal_power_plant_way385704363,Thermal power plant,25.2132848,55.2844427,2025-12-03,10.0,False,True
+Thermal_power_plant_way441112677,Thermal power plant,25.3013077,56.3714639,2025-11-08,10.0,False,True
+Thermal_power_plant_way689277122,Thermal power plant,24.1188523,53.4443615,2026-02-14,10.0,False,True
+Thermal_power_plant_way895288008,Thermal power plant,25.0251475,55.0877501,2025-12-03,10.0,False,True
+Thermal_power_plant_way965704056,Thermal power plant,23.3138829,54.1742711,2025-11-13,10.0,False,True

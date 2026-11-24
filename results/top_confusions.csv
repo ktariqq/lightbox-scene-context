@@ -1,0 +1,181 @@
+ds,model,true,pred,count,rate_of_true_class
+test,customcnn,Mosque,Swimming pool,44,0.44
+test,customcnn,Hills,Mountain,41,0.41
+test,customcnn,Roundabout,Thermal power plant,33,0.33
+test,customcnn,Mosque,Port,28,0.28
+test,customcnn,Chemical plant,Airport,27,0.27
+test,customcnn,Chemical plant,Thermal power plant,27,0.27
+test,customcnn,Brownfield,Landfill,27,0.27
+test,customcnn,Resort,Swimming pool,26,0.26
+test,customcnn,Construction,Thermal power plant,26,0.26
+test,customcnn,Highway,Thermal power plant,23,0.23
+test,b2,Mountain,Hills,29,0.29
+test,b2,Hills,Mountain,24,0.24
+test,b2,Quarry,Landfill,18,0.18
+test,b2,Brownfield,Landfill,16,0.16
+test,b2,Landfill,Brownfield,16,0.16
+test,b2,Swimming pool,Resort,12,0.12
+test,b2,Petroleum well,Brownfield,12,0.12
+test,b2,Landfill,Quarry,12,0.12
+test,b2,Quarry,Hills,10,0.1
+test,b2,Military training ground,Brownfield,10,0.1
+test,b3,Mountain,Hills,15,0.15
+test,b3,Quarry,Landfill,14,0.14
+test,b3,Brownfield,Landfill,11,0.11
+test,b3,Hills,Quarry,10,0.1
+test,b3,Hills,Mountain,9,0.09
+test,b3,Quarry,Hills,8,0.08
+test,b3,Landfill,Quarry,6,0.06
+test,b3,Swimming pool,Mosque,6,0.06
+test,b3,Swimming pool,Chemical plant,5,0.05
+test,b3,Brownfield,Substation,5,0.05
+test,b3vd,Brownfield,Landfill,15,0.15
+test,b3vd,Quarry,Landfill,15,0.15
+test,b3vd,Hills,Mountain,13,0.13
+test,b3vd,Hills,Quarry,11,0.11
+test,b3vd,Mountain,Hills,10,0.1
+test,b3vd,Swimming pool,Resort,10,0.1
+test,b3vd,Swimming pool,Chemical plant,9,0.09
+test,b3vd,Port,Resort,8,0.08
+test,b3vd,Quarry,Hills,8,0.08
+test,b3vd,Mosque,Resort,7,0.07
+test,b4,Mountain,Hills,16,0.16
+test,b4,Hills,Mountain,11,0.11
+test,b4,Swimming pool,Mosque,11,0.11
+test,b4,Hills,Quarry,10,0.1
+test,b4,Landfill,Brownfield,9,0.09
+test,b4,Quarry,Brownfield,8,0.08
+test,b4,Landfill,Quarry,7,0.07
+test,b4,Quarry,Hills,7,0.07
+test,b4,Resort,Mosque,6,0.06
+test,b4,Roundabout,Mosque,6,0.06
+test,b4vd,Hills,Mountain,13,0.13
+test,b4vd,Mountain,Hills,13,0.13
+test,b4vd,Quarry,Hills,10,0.1
+test,b4vd,Quarry,Landfill,9,0.09
+test,b4vd,Hills,Quarry,8,0.08
+test,b4vd,Swimming pool,Mosque,8,0.08
+test,b4vd,Swimming pool,Resort,7,0.07
+test,b4vd,Landfill,Quarry,6,0.06
+test,b4vd,Brownfield,Landfill,6,0.06
+test,b4vd,Scrub,Military training ground,6,0.06
+uae,customcnn,Airport,Petroleum well,10,0.8333333333333334
+uae,customcnn,Thermal power plant,Petroleum well,10,0.7692307692307693
+uae,customcnn,Beach,Petroleum well,8,0.6666666666666666
+uae,customcnn,Mountain,Landfill,7,0.4117647058823529
+uae,customcnn,Solar power plant,Petroleum well,7,0.6363636363636364
+uae,customcnn,Mountain,Petroleum well,5,0.29411764705882354
+uae,customcnn,Mountain,Beach,5,0.29411764705882354
+uae,customcnn,Scrub,Landfill,4,0.5
+uae,customcnn,Quarry,Petroleum well,4,0.6666666666666666
+uae,customcnn,Scrub,Petroleum well,4,0.5
+uae,b2,Mountain,Scrub,9,0.5294117647058824
+uae,b2,Airport,Beach,8,0.6666666666666666
+uae,b2,Beach,Port,5,0.4166666666666667
+uae,b2,Mountain,Sand,5,0.29411764705882354
+uae,b2,Solar power plant,Beach,5,0.45454545454545453
+uae,b2,Thermal power plant,Dry field,3,0.23076923076923078
+uae,b2,Quarry,Scrub,3,0.5
+uae,b2,Thermal power plant,Resort,3,0.23076923076923078
+uae,b2,Scrub,Resort,2,0.25
+uae,b2,Scrub,Sand,2,0.25
+uae,b3,Mountain,Sand,7,0.4117647058823529
+uae,b3,Thermal power plant,Chemical plant,7,0.5384615384615384
+uae,b3,Solar power plant,Dry field,6,0.5454545454545454
+uae,b3,Airport,Petroleum well,5,0.4166666666666667
+uae,b3,Beach,Port,5,0.4166666666666667
+uae,b3,Landfill,Beach,5,0.7142857142857143
+uae,b3,Airport,Beach,4,0.3333333333333333
+uae,b3,Thermal power plant,Brownfield,3,0.23076923076923078
+uae,b3,Scrub,Dry field,2,0.25
+uae,b3,Solar power plant,Sand,2,0.18181818181818182
+uae,b3vd,Airport,Beach,10,0.8333333333333334
+uae,b3vd,Thermal power plant,Chemical plant,8,0.6153846153846154
+uae,b3vd,Mountain,Sand,7,0.4117647058823529
+uae,b3vd,Solar power plant,Dry field,5,0.45454545454545453
+uae,b3vd,Mountain,Rock,4,0.23529411764705882
+uae,b3vd,Landfill,Beach,4,0.5714285714285714
+uae,b3vd,Scrub,Sand,3,0.375
+uae,b3vd,Scrub,Beach,3,0.375
+uae,b3vd,Beach,Port,3,0.25
+uae,b3vd,Thermal power plant,Substation,2,0.15384615384615385
+uae,b4,Mountain,Sand,9,0.5294117647058824
+uae,b4,Airport,Dry field,6,0.5
+uae,b4,Airport,Beach,5,0.4166666666666667
+uae,b4,Thermal power plant,Chemical plant,5,0.38461538461538464
+uae,b4,Solar power plant,Dry field,5,0.45454545454545453
+uae,b4,Beach,Port,4,0.3333333333333333
+uae,b4,Mountain,Hills,4,0.23529411764705882
+uae,b4,Landfill,Sand,3,0.42857142857142855
+uae,b4,Brownfield,Chemical plant,3,0.42857142857142855
+uae,b4,Solar power plant,Sand,3,0.2727272727272727
+uae,b4vd,Solar power plant,Dry field,7,0.6363636363636364
+uae,b4vd,Mountain,Sand,7,0.4117647058823529
+uae,b4vd,Beach,Port,6,0.5
+uae,b4vd,Airport,Beach,5,0.4166666666666667
+uae,b4vd,Thermal power plant,Substation,4,0.3076923076923077
+uae,b4vd,Quarry,Dry field,4,0.6666666666666666
+uae,b4vd,Airport,Dry field,4,0.3333333333333333
+uae,b4vd,Mountain,Hills,4,0.23529411764705882
+uae,b4vd,Mountain,Dry field,3,0.17647058823529413
+uae,b4vd,Scrub,Dry field,3,0.375
+meet10,customcnn,Mosque,Airport,84,0.84
+meet10,customcnn,Construction,Airport,78,0.78
+meet10,customcnn,Chemical plant,Airport,75,0.75
+meet10,customcnn,Highway,Port,69,0.69
+meet10,customcnn,Scrub,Port,67,0.67
+meet10,customcnn,Rock,Beach,63,0.63
+meet10,customcnn,Swimming pool,Airport,60,0.6
+meet10,customcnn,Roundabout,Airport,59,0.59
+meet10,customcnn,Mountain,Port,58,0.58
+meet10,customcnn,Military training ground,Port,58,0.58
+meet10,b2,Rock,Beach,52,0.52
+meet10,b2,Mosque,Scrub,48,0.48
+meet10,b2,Military training ground,Scrub,42,0.42
+meet10,b2,Mountain,Hills,42,0.42
+meet10,b2,Airport,Beach,40,0.4
+meet10,b2,Swimming pool,Resort,35,0.35
+meet10,b2,Resort,Scrub,34,0.34
+meet10,b2,Solar power plant,Dry field,31,0.31
+meet10,b2,Sand,Beach,28,0.28
+meet10,b2,Rock,Sand,27,0.27
+meet10,b3,Hills,Mountain,41,0.41
+meet10,b3,Mosque,Scrub,27,0.27
+meet10,b3,Rock,Sand,23,0.23
+meet10,b3,Substation,Petroleum well,23,0.23
+meet10,b3,Port,Resort,21,0.21
+meet10,b3,Solar power plant,Dry field,19,0.19
+meet10,b3,Highway,Dry field,17,0.17
+meet10,b3,Roundabout,Brownfield,16,0.16
+meet10,b3,Brownfield,Petroleum well,14,0.14
+meet10,b3,Construction,Chemical plant,14,0.14
+meet10,b3vd,Hills,Mountain,49,0.49
+meet10,b3vd,Port,Resort,48,0.48
+meet10,b3vd,Rock,Sand,26,0.26
+meet10,b3vd,Mosque,Scrub,23,0.23
+meet10,b3vd,Construction,Chemical plant,20,0.2
+meet10,b3vd,Roundabout,Chemical plant,19,0.19
+meet10,b3vd,Mosque,Swimming pool,19,0.19
+meet10,b3vd,Thermal power plant,Chemical plant,18,0.18
+meet10,b3vd,Swimming pool,Resort,18,0.18
+meet10,b3vd,Substation,Petroleum well,18,0.18
+meet10,b4,Solar power plant,Dry field,35,0.35
+meet10,b4,Rock,Sand,30,0.3
+meet10,b4,Mountain,Hills,26,0.26
+meet10,b4,Roundabout,Mosque,25,0.25
+meet10,b4,Quarry,Sand,25,0.25
+meet10,b4,Hills,Mountain,25,0.25
+meet10,b4,Quarry,Hills,22,0.22
+meet10,b4,Port,Resort,21,0.21
+meet10,b4,Roundabout,Dry field,20,0.2
+meet10,b4,Substation,Petroleum well,20,0.2
+meet10,b4vd,Hills,Mountain,33,0.33
+meet10,b4vd,Solar power plant,Dry field,30,0.3
+meet10,b4vd,Rock,Sand,25,0.25
+meet10,b4vd,Quarry,Hills,24,0.24
+meet10,b4vd,Mountain,Hills,20,0.2
+meet10,b4vd,Roundabout,Mosque,20,0.2
+meet10,b4vd,Highway,Dry field,19,0.19
+meet10,b4vd,Rock,Dry field,17,0.17
+meet10,b4vd,Military training ground,Dry field,17,0.17
+meet10,b4vd,Substation,Petroleum well,17,0.17

@@ -1,0 +1,42 @@
+{
+ "train": {
+  "tf": "2.21.0",
+  "device": "gpu",
+  "platform": "kaggle",
+  "seconds": 19.0,
+  "n": 4800,
+  "ms_per_image_per_view": 1.319
+ },
+ "val": {
+  "tf": "2.21.0",
+  "device": "gpu",
+  "platform": "kaggle",
+  "seconds": 7.7,
+  "n": 1200,
+  "ms_per_image_per_view": 2.139
+ },
+ "test": {
+  "tf": "2.21.0",
+  "device": "gpu",
+  "platform": "kaggle",
+  "seconds": 9.0,
+  "n": 2400,
+  "ms_per_image_per_view": 1.25
+ },
+ "uae": {
+  "tf": "2.16.2",
+  "device": "cpu",
+  "platform": "local",
+  "seconds": 7.3,
+  "n": 93,
+  "ms_per_image_per_view": 26.165
+ },
+ "meet10": {
+  "tf": "2.16.2",
+  "device": "cpu",
+  "platform": "local",
+  "seconds": 131.9,
+  "n": 2400,
+  "ms_per_image_per_view": 18.319
+ }
+}
