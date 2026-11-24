@@ -48,3 +48,5 @@
 .tilt-btn{position:absolute;left:8px;bottom:8px}
 @media (max-width:640px){.plabel,.gtag{font-size:.55rem}}
 @media (prefers-reduced-motion:reduce){.glint{background-position:60% 0}}
+.bseg{transition:transform .8s var(--ease)}
+.bp{transition:width .8s var(--ease),height .8s var(--ease),margin-left .8s var(--ease),clip-path .8s var(--ease)}

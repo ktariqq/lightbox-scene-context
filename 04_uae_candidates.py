@@ -2,6 +2,7 @@ import json, time, requests, numpy as np, pandas as pd
 from config import *
 from common import cdir
 F={"Mosque":'nwr["building"="mosque"]',"Swimming pool":'nwr["leisure"="swimming_pool"]',"Roundabout":'nwr["junction"="roundabout"]',"Airport":'nwr["aeroway"="aerodrome"]',"Port":'nwr["landuse"="port"]',"Resort":'nwr["tourism"="resort"]',"Beach":'nwr["natural"="beach"]',"Sand":'nwr["natural"="sand"]',"Rock":'nwr["natural"="bare_rock"]',"Scrub":'nwr["natural"="scrub"]',"Brownfield":'nwr["landuse"="brownfield"]',"Construction":'nwr["landuse"="construction"]',"Quarry":'nwr["landuse"="quarry"]',"Landfill":'nwr["landuse"="landfill"]',"Petroleum well":'nwr["man_made"="petroleum_well"]',"Solar power plant":'nwr["power"="plant"]["plant:source"="solar"]',"Thermal power plant":'nwr["power"="plant"]["plant:source"~"gas|coal|oil"]',"Chemical plant":'nwr["man_made"="works"]["product"~"chemical|petrochemical|fertili"]',"Substation":'nwr["power"="substation"]',"Highway":'way["highway"="motorway"]',"Mountain":'node["natural"="peak"]'}
+F={k:v for k,v in F.items() if k in UAE_CLASSES}  # only classes resolvable at 10 m
 URLS=["https://overpass-api.de/api/interpreter","https://overpass.kumi.systems/api/interpreter"]; UAE.mkdir(exist_ok=True)
 def op(c):
     f=UAE/f"op_{cdir(c)}.json"
@@ -26,7 +27,7 @@ for c in sorted(pool,key=lambda c:len(pool[c])):  # rare classes pick first; glo
         r=pool[c][i]
         if LA and hav(r[2],r[3],np.array(LA),np.array(LO)).min()<2.5: continue
         LA.append(r[2]); LO.append(r[3]); rows.append(r); n+=1
-        if n==25: break
+        if n==N_UAE: break
     print(f"{c}: pool {len(pool[c])}, kept {n}")
-print("no candidates:",[c for c in F if c not in pool],"| skipped by design: Dry field, Hills, Military training ground")
+print("no candidates:",[c for c in F if c not in pool],"| not sampled:",[c for c in CLASSES if c not in F])
 pd.DataFrame(rows,columns=["id","class","lat","lon","tags"]).sort_values(["class","id"]).to_csv(UAE/"candidates.csv",index=False)

@@ -87,4 +87,40 @@
 .kv dt{font-weight:700}.kv dd{margin:0;overflow-wrap:anywhere}
 .cm{width:100%;min-width:680px;height:auto}
 .cm .cell{transition:opacity .15s}.cm.iso .cell.dim{opacity:.1}
-.cm .lab{font:10px var(--f-mono);fill:var(--frost);cursor:pointer}.cm .lab.arid{fill:var(
+.cm .lab{font:10px var(--f-mono);fill:var(--frost);cursor:pointer}
+.cm .lab.arid{fill:var(--sun);font-weight:700}
+.cm .lab:hover,.cm .lab:focus{text-decoration:underline;outline:none}
+.cm .conn{fill:none;stroke:var(--pink);stroke-width:1}
+.cm .box{fill:none;stroke:var(--pink);stroke-width:1.5}
+.cm .conn.dim,.cm .box.dim{opacity:.08}
+.cm .gold{fill:var(--sun)}
+.cm .sep{stroke:var(--sun);stroke-width:1.5}
+.cm .diag{fill:none;stroke:var(--lilac);stroke-width:1;opacity:.8}
+.cm-legend{display:flex;gap:10px;align-items:center;flex-wrap:wrap;font:var(--t-xs) var(--f-mono);margin:6px 0}
+.cm-legend i{display:block;width:160px;height:10px;border:1px solid var(--lilac);background:linear-gradient(90deg,#1A1025,#32164F 25%,#663399 50%,#F2C14E 75%,#fff)}
+.sb .bar{display:block}
+.chart-wrap{min-width:0}
+.fig-ctl{display:flex;gap:6px;margin:4px 0 8px}
+.fig-ctl .cap[aria-pressed=true]{background:var(--sun);color:var(--ink)}
+.kpi{display:grid;gap:4px;margin:8px 0}
+.kpi b{font:900 clamp(2.6rem,6vw,5rem)/.9 var(--f-display);letter-spacing:-.03em}
+.paper .kpi b{color:var(--rebecca);text-shadow:3px 3px 0 var(--sun)}
+.plum .kpi b{color:var(--sun)}
+.kpi span{font:var(--t-xs)/1.4 var(--f-mono)}
+.verdict{display:inline-block;padding:1px 7px;border:1px solid currentColor;font:600 var(--t-xs) var(--f-mono)}
+.pair{margin:14px 0}
+.pair h4{margin:0 0 2px}
+.shot{aspect-ratio:4/3;background:#fff;border:1px solid var(--ink);display:grid;place-items:center;overflow:hidden}
+.shot img{width:100%;height:100%;object-fit:contain}
+.shot .empty{margin:0;width:100%}
+.pc-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:var(--gap);align-items:start}
+@media (max-width:900px){.pc-grid{grid-template-columns:1fr}}
+.pcl{list-style:none;margin:0;padding:0;display:grid;gap:3px}
+.pcl button{display:grid;grid-template-columns:minmax(100px,170px) 1fr 52px;gap:8px;align-items:center;width:100%;cursor:pointer;padding:3px 5px;border:1px solid transparent;background:none;color:inherit;text-align:left;font:var(--t-xs) var(--f-mono)}
+.pcl button[aria-current=true]{border-color:var(--ink);background:rgba(242,193,78,.28)}
+.pcb{height:10px;background:rgba(42,21,64,.16)}
+.pcb i{display:block;height:100%;background:var(--rebecca)}
+.pcl .arid .pcb i{background:var(--sun);outline:1px solid var(--ink)}
+.datafiles{margin-top:16px;display:grid;gap:6px}
+.datafiles details{border:1px solid var(--lilac);padding:6px 10px;background:rgba(26,16,37,.6)}
+.datafiles summary{cursor:pointer}

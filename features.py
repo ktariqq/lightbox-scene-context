@@ -12,6 +12,9 @@ for sp in sps:
     if sp=="uae":
         u=pd.read_csv(UMAN); idx=pd.DataFrame({"filename":u["id"],"label":[CLASSES.index(c) for c in u["class"]]})
         P={v:[str(UAE_SUBSET/v/cdir(c)/f"{i}.jpg") for i,c in zip(u["id"],u["class"])] for v in VIEWS}
+    elif sp=="meet10":  # same samples and order as the test split, degraded views
+        d=pd.read_csv(MAN); d=d[d["split"]=="test"]; idx=pd.DataFrame({"filename":d["filename"].values,"label":[CLASSES.index(c) for c in d["class"]]})
+        P={v:[str(MEET10/v/cdir(c)/(Path(f).stem+".jpg")) for f,c in zip(d["filename"],d["class"])] for v in VIEWS}
     else:
         d=pd.read_csv(MAN); d=d[d["split"]==sp]; assert d["ok"].all(),f"{sp}: samples not extracted"  # never silently drop samples
         idx=pd.DataFrame({"filename":d["filename"].values,"label":[CLASSES.index(c) for c in d["class"]]}); P={v:[str(vpath(v,sp,c,f)) for f,c in zip(d["filename"],d["class"])] for v in VIEWS}

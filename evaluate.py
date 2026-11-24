@@ -12,6 +12,7 @@ def ld(sp): ix=pd.read_csv(FEAT/f"{sp}_index.csv"); return {v:np.load(FEAT/f"{v}
 DS={"test":ld("test")}
 if (FEAT/"uae_index.csv").exists(): DS["uae"]=ld("uae")
 else: print("WARNING: no UAE features, UAE skipped")
+if (FEAT/"meet10_index.csv").exists(): DS["meet10"]=ld("meet10")  # MEET test degraded to 10 m (resolution control)
 ytr=pd.read_csv(FEAT/"train_index.csv")["label"].values; MC={}
 def MODEL(n,s):
     if (n,s) not in MC: MC[n,s]=keras.models.load_model(MODELS/("customcnn.keras" if n=="customcnn" else f"{n}_s{s}.keras"),compile=False)
@@ -19,6 +20,7 @@ def MODEL(n,s):
 def sm(z): e=np.exp(z-z.max(1,keepdims=True)); return e/e.sum(1,keepdims=True)
 def pth(ds):
     if ds=="test": d=pd.read_csv(MAN); d=d[d["split"]=="test"]; return [str(vpath("center","test",c,f)) for f,c in zip(d["filename"],d["class"])]
+    if ds=="meet10": d=pd.read_csv(MAN); d=d[d["split"]=="test"]; return [str(MEET10/"center"/cdir(c)/(Path(f).stem+".jpg")) for f,c in zip(d["filename"],d["class"])]
     u=pd.read_csv(UMAN); return [str(UAE_SUBSET/"center"/cdir(c)/f"{i}.jpg") for i,c in zip(u["id"],u["class"])]
 def lb1(ds): return MODEL("customcnn",42).predict(tf.data.Dataset.from_tensor_slices(pth(ds)).map(lambda p:tf.ensure_shape(tf.cast(tf.io.decode_jpeg(tf.io.read_file(p),channels=3),tf.float32),[224,224,3])).batch(64),verbose=0)
 def lg(n,s,ds,sub):

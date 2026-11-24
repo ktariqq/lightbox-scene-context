@@ -8,3 +8,6 @@ tmp_export/
 .venv-tfjs/
 __pycache__/
 *.pyc
+uae/
+uae_subset/
+meet10/

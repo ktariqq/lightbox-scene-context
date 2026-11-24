@@ -31,7 +31,7 @@ export const CONFIG = {
     { label: 'UAE second-annotator agreement', text: '[EDIT: report kappa and n, or state not done]' },
     { label: 'UAE acquisition and coverage', text: '[EDIT: acquisition dates min-max, source resolution min/median/max, flagged counts, final class coverage from results/uae_coverage.json]' },
     { label: 'Extraction platform', text: '[EDIT: Kaggle or Colab, GPU type]' },
-    { label: 'Esri service copyright text', text: '[EDIT: paste copyrightText]' },
+    { label: 'Copernicus attribution', text: '[EDIT: paste copyrightText from uae/service_info.json]' },
   ],
 };
 export const FOOTPRINT = v => (v.box[2] - v.box[0]) * CONFIG.GSD;

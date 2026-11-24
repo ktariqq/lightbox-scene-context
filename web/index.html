@@ -71,7 +71,7 @@
       <div class="copy">
         <p class="pix">Research question 3</p>
         <h2 id="h-q3" class="h2">Does it hold on a small <span class="cut cut-c">UAE</span> external set?</h2>
-        <p>Imagery at 1.0 m/pixel, labels checked by eye, no retraining or tuning on UAE. Classes with fewer than 5 accepted samples are not evaluated. Read it as a sanity check, not a verdict.</p>
+        <p>Sentinel-2 imagery at 10 m/pixel, so this is a cross-resolution test. Labels checked by eye, no retraining or tuning on UAE. A MEET test set degraded to 10 m separates resolution from regional shift. Classes with fewer than 5 accepted samples are not evaluated. Read it as a sanity check, not a verdict.</p>
         <span class="sticker">External test</span>
       </div>
     </section>
@@ -140,7 +140,7 @@
       <ul class="lim">
         <li><b>No coordinates in MEET.</b> Geographic overlap between train, validation and test cannot be checked. Near-duplicates are screened only by exact MD5 and by feature cosine similarity to the nearest train sample.</li>
         <li><b>UAE n is small.</b> Up to 25 candidates per class, only classes with at least 5 accepted samples are evaluated, and some classes are not sampled at all (Dry field, Hills, Military training ground).</li>
-        <li><b>Sensor and date differences.</b> UAE imagery is current Esri World Imagery, requested at 1.0 m/pixel. Its source resolution can differ from the nominal 1.0 m, and acquisition years differ from MEET. There is no retraining or tuning on UAE.</li>
+        <li><b>Sensor and date differences.</b> UAE imagery is Copernicus Sentinel-2 at 10 m (winter 2025-26), ten times coarser than MEET, and five small-object classes cannot be sampled. There is no retraining or tuning on UAE.</li>
         <li><b>B1 vs B2 is not a context comparison.</b> The custom CNN is trained end to end on the center view and has a different architecture from the frozen-MobileNetV2 head.</li>
         <li><b>Gates are weights, not explanations.</b> A larger gate means the head leaned on that view's features, not that the view is causally important.</li>
         <li><b>Grad-CAM is a visual aid.</b> It shows where a class logit is sensitive, not a proof of what the model "understands".</li>
@@ -232,7 +232,7 @@
       <ul class="lim">
         <li><b>MEET</b>, Hugging Face dataset repo <code>zinStar/MEET</code>. Only the exported gallery subset is shown here. Do not redistribute <code>subset/</code> unless the licence permits.</li>
         <li><b>ImageNet-pretrained MobileNetV2</b> weights from <code>keras.applications</code>. ImageNet terms apply.</li>
-        <li><b>Esri World Imagery</b>, subject to Esri terms of use. UAE imagery is private and is never shown, bundled or linked here. Only aggregate metrics appear.</li>
+        <li><b>Copernicus Sentinel-2</b>, free, full and open. Contains modified Copernicus Sentinel data [years]. Only aggregate UAE metrics are shown here.</li>
         <li>UAE candidate generation: © OpenStreetMap contributors, ODbL.</li>
         <li>TensorFlow.js 4.22.0 (Apache 2.0). Fonts: Unbounded, Bricolage Grotesque, JetBrains Mono, Silkscreen (SIL OFL).</li>
       </ul>

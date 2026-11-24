@@ -1,6 +1,6 @@
 # AIRE410: Context-aware fine-grained scene classification (MEET subset, 24 classes)
 
-Research questions: (1) does multi-scale context help versus center-only, (2) is the gain larger for arid/bare classes, (3) does it hold on a small UAE external set. Proposed method: gated multi-scale fusion head trained with view dropout (B4-VD).
+Research questions: (1) does multi-scale context help versus center-only, (2) is the gain larger for arid/bare classes, (3) does it hold on a small UAE external set at 10 m, and how much of any change is explained by resolution (MEET-10m control). Proposed method: gated multi-scale fusion head trained with view dropout (B4-VD).
 
 Placeholders written as `[EDIT: ...]` must be filled before submission.
 
@@ -19,14 +19,13 @@ Placeholders written as `[EDIT: ...]` must be filled before submission.
 - Views are nested crops resized to 224x224 (bicubic): center box (512,512,768,768), surround (256,256,1024,1024), global = full image.
 - Arid vs other grouping: `classes.json["arid"]`, fixed before results were seen.
 
-## UAE external set
-- Candidates: OpenStreetMap via Overpass (candidate generation only, tags in `uae/candidates.csv`). Military elements dropped, centers at least 2.5 km apart, up to 25 per class. Dry field, Hills, and Military training ground are not sampled.
-- Imagery: Esri World Imagery (current release), `World_Imagery/MapServer/export`, requested at exactly 1.0 m/pixel (1280 m footprint in EPSG:3857 using 640/cos(lat) half-width) to match MEET.
-- Ground truth is manual visual review (`06_uae_review.py`); OSM labels are not trusted. Optional second-annotator agreement: `06b_uae_kappa.py` [EDIT: report kappa and n, or state not done].
-- Acquisition date range, source resolution, and flags: see `uae_manifest.csv`, `uae/meta.csv`, and the summary printed by `export.py` [EDIT: acquisition dates min-max, source resolution min/median/max, flagged counts, final class coverage from `results/uae_coverage.json`].
-- Differences from MEET: different sensors and acquisition years, source resolution can differ from the nominal 1.0 m, no model retraining or tuning on UAE, small n per class, only classes with at least 5 accepted samples are evaluated.
-- Attribution: Esri service copyright text saved in `uae/service_info.json` [EDIT: paste copyrightText]. Candidate tags: (c) OpenStreetMap contributors, ODbL.
-- UAE imagery is private and never committed (`.gitignore`).
+## UAE external set (Sentinel-2, 10 m)
+- Imagery: Copernicus Sentinel-2 L2A true-colour (TCI), 10 m/pixel, from Element84 Earth Search (AWS Open Data), collection sentinel-2-c1-l2a. For each point, the least-cloudy scene (cloud cover below 5%) between 2025-11-01 and 2026-03-31. A 128 x 128 px window (1280 m) is centered on the point, bicubic-resized to 1280 x 1280, then cut into the same three views as MEET. Scene ids and acquisition dates: `uae/meta.csv`.
+- Licence: Copernicus Sentinel data are free, full and open (EU Regulation 1159/2013). Notice: [EDIT: paste copyrightText from uae/service_info.json]. Images were cropped and resampled, so they count as modified.
+- Candidates: OpenStreetMap via Overpass, candidate generation only (c) OpenStreetMap contributors, ODbL. Military elements dropped, centers at least 2.5 km apart, up to 15 per class. 16 classes are sampled. Swimming pool, Mosque, Petroleum well, Substation and Roundabout are not resolvable at 10 m. Dry field, Hills and Military training ground are not sampled.
+- Ground truth: manual visual review (`06_uae_review.py`). OSM labels are not trusted. Second-annotator agreement: not done.
+- Resolution caveat: Sentinel-2 is 10x coarser than MEET, so the 256 m center view covers about 26 native pixels. The UAE result is a cross-resolution, cross-sensor, cross-region test. To separate resolution from the rest, `08_meet10.py` degrades the MEET test views to 10 m (box downsample, bicubic upsample), and `09_s2_summary.py` compares test, meet10 and uae on the same classes.
+- No retraining or tuning on UAE; only classes with at least 5 accepted samples are evaluated.
 
 ## Experiments
 B1 custom CNN (center, end-to-end; architecture differs from B2, so B1 vs B2 is NOT a context comparison). B2 frozen MobileNetV2 + head (center). B3 concat fusion, B3-VD with view dropout. B4 gated fusion, B4-VD with view dropout (proposed). Heads use cached frozen MobileNetV2 (ImageNet) features. Comparisons: B2 vs B3, B3 vs B4, B3-VD vs B4-VD, B3 vs B3-VD, B4 vs B4-VD. All fusion variants are evaluated on all 7 non-empty view subsets, on MEET test and UAE.
@@ -40,7 +39,7 @@ B1 custom CNN (center, end-to-end; architecture differs from B2, so B1 vs B2 is 
 
 ## License caveats
 - ImageNet-pretrained MobileNetV2 weights come from `keras.applications`; ImageNet terms apply.
-- Esri imagery is subject to Esri terms of use; do not redistribute images.
+- Copernicus Sentinel data: free, full and open; keep the notice.
 - MEET terms apply to the subset; do not redistribute `subset/` unless the license permits.
 
 ## Results schema (`results/`)
