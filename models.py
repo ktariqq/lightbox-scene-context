@@ -1,17 +1,17 @@
-
 import numpy as np
 import keras
 from keras import layers
+
 from config import *
 
 NC = len(CLASSES)
 
-
+# Small end-to-end CNN baseline (B1).
 def customcnn():
     i = x = keras.Input((224, 224, 3), name="image")
     x = layers.RandomFlip("horizontal_and_vertical")(x)
     x = layers.RandomRotation(0.1)(x)
-    x = layers.Rescaling(1/255)(x)
+    x = layers.Rescaling(1 / 255)(x)
 
     for f in (32, 64, 128, 256):
         x = layers.Conv2D(f, 3, padding="same")(x)
@@ -24,7 +24,7 @@ def customcnn():
 
     return keras.Model(i, out, name="customcnn")
 
-
+# Frozen-feature MLP baseline (B2).
 def transfercnn(proj=256, hid=128):
     i = keras.Input((1280,), name="center")
     x = layers.Dense(proj, activation="relu")(i)
@@ -33,14 +33,14 @@ def transfercnn(proj=256, hid=128):
 
     return keras.Model(i, out, name="transfercnn")
 
-
+# Dense layer with fixed weights, used inside the gated head.
 def fdense(x, w, b=None, act=None):
     d = layers.Dense(np.shape(w)[1], activation=act, use_bias=b is not None, trainable=False)
     y = d(x)
     d.set_weights([np.float32(w)] + ([np.float32(b)] if b is not None else []))
     return y
 
-
+# Fusion head: concat or gated multi-view fusion.
 def fusionhead(kind, proj=256, hid=128):
     ins = [keras.Input((1280,), name=v) for v in VIEWS]
     mk = keras.Input((3,), name="mask")
@@ -62,7 +62,6 @@ def fusionhead(kind, proj=256, hid=128):
         fused = layers.Multiply()([gm, pm])
         z = layers.GlobalAveragePooling1D()(fused)
         z = layers.Multiply()([z, s])
-
     else:
         z = flat
 
@@ -74,6 +73,7 @@ def fusionhead(kind, proj=256, hid=128):
     if kind == "concat":
         return tm, tm
 
+    # Gated model also exposes gates for analysis.
     gate_mean = layers.GlobalAveragePooling1D()(layers.Permute((2, 1))(gm))
     full = keras.Model(ins + [mk], [out, gm, gate_mean], name="gated_full")
 

@@ -15,11 +15,11 @@ from config import *
 from common import seed_all, cdir
 from models import customcnn, transfercnn, fusionhead, NC
 
-
-# Training configuration
+# Training configuration.
 EP_H, PAT_H = 30, 5
 SEEDS = (42, 7, 123)
 
+# Architecture choice by model name.
 ARCH = {
     "b3": "concat",
     "b3vd": "concat",
@@ -29,6 +29,7 @@ ARCH = {
 
 KEYS = VIEWS + ["mask"]
 
+# Default hyperparameters.
 DEF = {
     "lr": 1e-3,
     "proj": 256,
@@ -44,16 +45,13 @@ seed_all()
 MODELS.mkdir(exist_ok=True)
 RES.mkdir(exist_ok=True)
 
-
-# Result file handling
+# Result file helpers.
 def rj(n):
     p = RES / n
     return json.load(open(p)) if p.exists() else {}
 
-
 def wj(n, o):
     json.dump(o, open(RES / n, "w"), indent=1)
-
 
 TIMES = rj("train_times.json")
 HIST = rj("history.json")
@@ -61,8 +59,7 @@ HIST = rj("history.json")
 mm = pd.read_csv(MAN)
 ymn = mm[mm["split"] == "train"]["class"].map(CLASSES.index).values
 
-
-# Class weighting
+# Class weighting for imbalanced splits.
 def cw(y):
     c = np.bincount(y, minlength=NC)
 
@@ -74,12 +71,10 @@ def cw(y):
         for i in range(NC)
     }
 
-
 CW = cw(ymn)
 print("class weights:", CW or "none (even counts)")
 
-
-# Feature loading
+# Load cached features for one split.
 def load(sp):
     ix = pd.read_csv(FEAT / f"{sp}_index.csv")
 
@@ -92,7 +87,6 @@ def load(sp):
 
     return X, y
 
-
 if st != "b1":
     Xtr, ytr = load("train")
     Xva, yva = load("val")
@@ -102,8 +96,7 @@ if st != "b1":
         "mask": np.ones((len(yva), 3), "float32")
     }
 
-
-# Variable-view masking
+# Variable-view masking for view dropout.
 def rmask(x, y, p):
     k = tf.random.uniform([], 0, 6, tf.int32) + 1
     c = tf.where(tf.random.uniform([]) < p, 7, k)
@@ -118,8 +111,7 @@ def rmask(x, y, p):
 
     return x, y
 
-
-# Dataset preparation
+# Build a tf.data dataset from cached features.
 def mkds(X, y, bs, keys, train=False, pf=1.0, seed=SEED):
     ds = tf.data.Dataset.from_tensor_slices((
         {
@@ -141,8 +133,7 @@ def mkds(X, y, bs, keys, train=False, pf=1.0, seed=SEED):
 
     return ds.batch(bs).prefetch(1)
 
-
-# Model training
+# Train one model and return history plus elapsed time.
 def train(tm, c, seed, keys, pf):
     spe = math.ceil(len(ytr) / c["bs"])
 
@@ -179,8 +170,7 @@ def train(tm, c, seed, keys, pf):
 
     return history, time.time() - t
 
-
-# Hyperparameter search space
+# Hyperparameter search space.
 def space(hp):
     return {
         "lr": hp.Choice("lr", [3e-4, 1e-3, 3e-3]),
@@ -190,7 +180,6 @@ def space(hp):
         "bs": hp.Choice("bs", [32, 64, 128])
     }
 
-
 def hm(arch):
     def build(hp):
         c = space(hp)
@@ -198,10 +187,8 @@ def hm(arch):
 
     return build
 
-
-# Macro-F1 tuning objective
+# Tuner objective: macro-F1 on validation.
 class f1tuner(kt.RandomSearch):
-
     def run_trial(self, trial):
         hp = trial.hyperparameters
         c = space(hp)
@@ -225,8 +212,7 @@ class f1tuner(kt.RandomSearch):
 
         return f
 
-
-# Hyperparameter tuning
+# Tune B3-VD and B4-VD.
 def tune():
     T = {}
 
@@ -257,8 +243,7 @@ def tune():
 
     wj("tuning.json", T)
 
-
-# Model configuration selection
+# Select configs from tuning or defaults.
 def cfgs():
     if "default" in sys.argv:
         return {
@@ -286,8 +271,7 @@ def cfgs():
         "b4vd": b4
     }
 
-
-# Final model experiments
+# Train all fusion heads and B2.
 def heads():
     cf = cfgs()
     S = {}
@@ -355,8 +339,7 @@ def heads():
         wj("head_val_summary.json", S)
         print(name, r)
 
-
-# Baseline CNN training
+# Train the custom CNN baseline.
 def b1():
     seed_all(SEED)
 
@@ -410,8 +393,7 @@ def b1():
     wj("train_times.json", TIMES)
     wj("history.json", HIST)
 
-
-# Command execution
+# Run requested stages.
 if st in ("b1", "all"):
     b1()
 
