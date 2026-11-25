@@ -1,36 +1,36 @@
-# Beyond the Frame
+# Lightbox web app
 
-Static site: a scroll story, an Evidence section and an in-browser instrument (TF.js 4.22.0). No build step.
+Static site with no build step: a hero with a three-plate view stack, an in-browser model, and a four-chapter study. TensorFlow.js 4.22.0 loads from jsDelivr.
 
 ## Layout
-- `index.html`, `css/`, `js/`, `assets/`: the site
-- `model/`: a verbatim copy of the export's `web/` folder (`manifest.json`, `data.json`, `gradcam_paths.json`, `parity.json`, model files, gallery and Grad-CAM images)
-- `data/results/`: a verbatim copy of `results/` (CSV, JSON and PNG files)
+- `index.html`, `404.html`, `css/`, `js/`, `assets/`: the site
+- `manifest.json`, `data.json`, `gradcam_paths.json`, `parity.json`: written by `export.py`
+- `head.json`, `head.bin`: gated head weights, written by `export_web.py`
+- `tfjs/backbone/`: MobileNetV2 as a TF.js graph model
+- `img/`, `cam/`: gallery samples and Grad-CAM overlays, copied by `export.py`
+- `data/results/`: copied from `results/` by the deploy workflow and ignored by git
 
-## Regenerate model and data
+## Regenerate the model files
+Run from the repository root, after `evaluate.py` and `explain.py`:
 ```bash
-python export.py b4vd 42          # writes web/
-cp -r web/*     model/
-cp -r results/* data/results/
+./run_all.sh web
 ```
-Do not copy anything from `uae/` or any Esri imagery. The site shows UAE only as aggregate numbers.
-
-## Deploy on GitHub Pages
-1. Push the repo with `.nojekyll` at the root.
-2. Settings → Pages → Deploy from branch → `main` / root.
-3. Open `https://<user>.github.io/<repo>/`. All paths are relative, so the `/<repo>/` base path works.
+This runs `export_web.py b4vd 42` (backbone SavedModel, head weights, numpy parity check), converts the backbone with `tensorflowjs_converter`, then runs `export.py b4vd 42`. Install the converter in its own environment: `pip install tensorflowjs==4.22.0 -c tfjs-constraints.txt`.
 
 ## Local preview
 ```bash
-python -m http.server 8000      # then open http://localhost:8000/
+mkdir -p docs/data && cp -r results docs/data/results
+python -m http.server 8000 -d docs     # open http://localhost:8000/
 ```
-Opening `index.html` from disk will not work, because the browser blocks fetch and model loading on `file://`.
+Opening `index.html` from disk does not work: browsers block fetch and model loading on `file://`.
 
-## Optional export for live Grad-CAM
-If the Keras backbone is a flat functional model with a layer named `out_relu`, the site derives the split model itself. Otherwise add this to `manifest.json` and export a backbone with outputs `[conv 7×7×1280, pooled 1280]`:
-```json
-"backbone_cam": { "format": "graph", "path": "backbone_cam/model.json", "inputs": ["<input name>"] }
-```
+## Deploy
+Settings → Pages → Source: **GitHub Actions**. Every push to `main` runs `.github/workflows/deploy.yml`, which copies `results/` into `docs/data/results/` and publishes `docs/`. The deploy does not block on missing files; a missing file shows a "results not exported yet" state on the site instead. All paths are relative, so the `/<repo>/` base path works.
+
+## What runs where
+- The head (gated fusion) is parity-tested against Keras: `export_web.py` asserts agreement within 1e-3 and the page has a "run the check" button.
+- Images are resized with the browser canvas, which is not bit-identical to the Python bicubic resize. Only the head is parity-tested, so live top-1 can differ slightly from the stored prediction.
+- Live Grad-CAM on uploads needs a backbone export that returns the 7x7x1280 conv map. The graph export does not, so gallery samples use precomputed overlays and uploads show a notice.
 
 ## Data honesty
-Every number comes from `data/results/` or `model/`. Missing files show a “results not exported yet” state. Placeholders from the README appear as TODO chips in the Method section.
+Every number on the site is read from `data/results/` or `data.json`. A missing file shows a "results not exported yet" state. Only aggregate UAE numbers appear; no UAE imagery is published.

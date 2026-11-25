@@ -1,13 +1,41 @@
-data/
-features/
-subset/
-uae*/
-tmp_zips/
-tmp_export/
+
+# Python
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# Virtual environments
 .venv/
 .venv-tfjs/
-__pycache__/
-*.pyc
-uae/
-uae_subset/
+
+# OS files
+.DS_Store
+
+# Datasets and generated features
+data/
+subset/
+features/
 meet10/
+uae_subset/
+
+# Model checkpoints and exports
+models/
+tmp_zips/
+tmp_export/
+
+# UAE data and temporary files
+uae/raw/
+uae/thumbs/
+uae/op_*.json
+uae/review*.html
+uae/fetch_errors.txt
+uae/sample50.csv
+
+# Generated research outputs
+results/kt/
+results/gradcam/
+results/errors.csv
+results/gates_samples.csv
+
+# GitHub Pages: exclude generated data, retain website assets
+docs/data/

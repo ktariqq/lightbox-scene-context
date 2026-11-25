@@ -9,7 +9,8 @@ case "$1" in
   meet10) python 08_meet10.py; python features.py meet10 ;;
   train) python train.py b1; python train.py tune; python train.py heads ;;
   train-fast) python train.py b1; python train.py heads default ;;  # fallback: no tuning, one default config
-  report) python evaluate.py; python 09_s2_summary.py; python explain.py all; python export.py b4vd 42 ;;
+  report) python evaluate.py; python 09_s2_summary.py; python explain.py all ;;
+  web) python export_web.py b4vd 42; tensorflowjs_converter --input_format=tf_saved_model --output_format=tfjs_graph_model --signature_name=serving_default --saved_model_tags=serve tmp_export/backbone_sm docs/tfjs/backbone; python export.py b4vd 42 ;;  # needs tensorflowjs==4.22.0 -c tfjs-constraints.txt
   freeze) pip freeze > requirements.lock.txt ;;
-  *) echo "stages: prep remote audit uaetest uaefetch uaeviews meet10 train|train-fast report freeze"; exit 1 ;;
+  *) echo "stages: prep remote audit uaetest uaefetch uaeviews meet10 train|train-fast report web freeze"; exit 1 ;;
 esac

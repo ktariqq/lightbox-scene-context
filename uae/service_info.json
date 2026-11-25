@@ -1,0 +1,7 @@
+{
+ "copyrightText": "Contains modified Copernicus Sentinel data 2025, 2026",
+ "source": "Sentinel-2 L2A TCI via Element84 Earth Search (AWS Open Data)",
+ "collection": "sentinel-2-c1-l2a",
+ "dates": "2025-11-01T00:00:00Z/2026-03-31T23:59:59Z",
+ "fetched": "2026-11-24T21:18:37.480609+00:00"
+}
