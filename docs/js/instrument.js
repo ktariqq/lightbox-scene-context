@@ -42,12 +42,15 @@ export function initInstrument(D, GP) {
   let loadP = null;
   const showLoading = () => { const el = $('#model-loading'); if (el) el.hidden = false; $('#ins-status').textContent = 'Loading model… please wait'; };
   const hideLoading = () => { const el = $('#model-loading'); if (el) el.hidden = true; };
-  const load = () => (loadP ??= (showLoading(), ensureModel(progress).then(() => { hideLoading(); $('#ro-load').hidden = true; $('#ins-status').textContent = 'Pick a sample or drop an image'; })
-    .catch(err => {
-      loadP = null; hideLoading(); $('#ro-load').hidden = true; err.shown = true;
-      renderWarn([{ err: true, retry: () => analyseCurrent(), text: err instanceof UserError ? err.message : `The model could not be loaded (${err.message}). Check that model/ holds the exported web/ folder and that the page is served over http(s), not opened from disk.` }]);
-      throw err;
-    }));
+  const load = () => {
+    showLoading();
+    return (loadP ??= ensureModel(progress).then(() => { hideLoading(); $('#ro-load').hidden = true; $('#ins-status').textContent = 'Pick a sample or drop an image'; })
+      .catch(err => {
+        loadP = null; hideLoading(); $('#ro-load').hidden = true; err.shown = true;
+        renderWarn([{ err: true, retry: () => analyseCurrent(), text: err instanceof UserError ? err.message : `The model could not be loaded (${err.message}). Check that model/ holds the exported web/ folder and that the page is served over http(s), not opened from disk.` }]);
+        throw err;
+      }));
+  };
 
   /* ---------- faders ---------- */
   const fad = $('#ro-gates');
