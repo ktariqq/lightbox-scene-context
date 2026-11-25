@@ -6,8 +6,8 @@
   --f-body:"Bricolage Grotesque","Helvetica Neue",Arial,system-ui,sans-serif;
   --f-mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
   --f-pix:"Silkscreen","JetBrains Mono",ui-monospace,monospace;
-  --t-pix:.66rem;--t-xs:.78rem;--t-sm:.9rem;--t-md:1.0625rem;--t-lg:1.3rem;
-  --t-xl:clamp(1.5rem,2.6vw,2.3rem);--t-2xl:clamp(2rem,4.2vw,4.2rem);--t-num:clamp(6rem,16vw,15rem);
+  --t-pix:.97rem;--t-xs:.81rem;--t-sm:.9rem;--t-md:1.04rem;--t-lg:1.28rem;
+  --t-xl:clamp(1.4rem,2.4vw,2.1rem);--t-2xl:clamp(1.75rem,3.7vw,3.7rem);--t-num:clamp(5.3rem,14vw,13.2rem);
   --gap:clamp(12px,1.8vw,26px);--pad:clamp(16px,4vw,64px);--max:1400px;--dock:68px;
   --ease:cubic-bezier(.2,.8,.2,1);
   --foil:linear-gradient(115deg,#663399 0%,#A9E8E8 32%,#F2C14E 58%,#E8A7D1 82%,#663399 100%);

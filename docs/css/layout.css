@@ -3,16 +3,16 @@
 .hero{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:var(--gap);max-width:var(--max);margin:0 auto;
   padding:6vh var(--pad) 4vh;min-height:calc(100svh - 20px);align-items:center}
 .hero-copy{display:grid;gap:16px;min-width:0}
-.hook-title{margin:0;font-size:var(--t-2xl);line-height:1.1}
+.hook-title{margin:0;font-size:clamp(2.65rem,6.5vw,5.8rem);line-height:1}
 .hook-title .chrome{font-size:inherit}
 .lede{font:700 var(--t-xl)/1.2 var(--f-display);margin:0;letter-spacing:-.01em;max-width:24ch}
-.lede-2{margin:0;max-width:56ch;font-size:var(--t-lg);line-height:1.45;background:rgba(26,16,37,.8);border-left:4px solid var(--sun);padding:10px 16px}
+.lede-2{margin:0;max-width:60ch;font-size:var(--t-lg);line-height:1.45;background:rgba(26,16,37,.8);border-left:4px solid var(--sun);padding:10px 16px}
 .trio{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:0}
 .trio div{border:1px solid var(--lilac);background:rgba(26,16,37,.85);padding:8px 10px}
 .trio dt{font:var(--t-pix) var(--f-pix);text-transform:uppercase;letter-spacing:.06em;color:var(--sun)}
 .trio dd{margin:3px 0 0;font-size:var(--t-sm)}
 .cta,.stickers{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
-.hero-credit{margin:0;opacity:.8}
+.hero-credit{margin:0;opacity:.85}
 .hero .stage{
   position:relative;
   display:flex;
@@ -51,9 +51,19 @@
 .more[open] summary{margin-bottom:6px}
 .ev-head{margin-bottom:var(--gap)}
 
+/* readability: plate labels, charts, diagram, confusion map */
+.gtag{top:auto;bottom:calc(100% + 12px)}
+.chart .tick{font-size:11px}
+.chart .tick.sub{font-size:10px}
+.chart .gl,.chart .val{font-size:10.5px}
+.diagram .t{font-size:11.5px}
+.cm{min-width:900px}
+
 @media (max-width:900px){
   .hero{grid-template-columns:1fr;min-height:0}
   .hero .stage{height:auto}
   .hero .stage #story-stack{height:56svh;flex:none}
   .trio{grid-template-columns:1fr}
 }
+@media (max-width:640px){.plabel,.gtag{font-size:.8rem}}
+@media (max-width:560px){.in-preview figcaption{font-size:.66rem}}

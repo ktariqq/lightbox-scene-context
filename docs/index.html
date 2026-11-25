@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Beyond the Frame · Does the neighbourhood help name the place?</title>
-<meta name="description" content="Can a model name a place better when it also sees what surrounds it? A satellite scene classifier you can take apart, running in your browser.">
+<title>Lightbox · Does the neighbourhood help name the place?</title>
+<meta name="description" content="Lightbox is a research tool that tests whether the landscape around a place helps a model identify it. Read a satellite scene at three scales and switch views off to watch the answer change. Runs in your browser.">
 <meta name="theme-color" content="#0A0614">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,10 +24,10 @@
 <!-- 1 · HERO -->
 <header id="hook" class="hero">
   <div class="hero-copy">
-    <p class="pix">A study of satellite scene classification</p>
-    <h1 id="h-hook" class="hook-title"><span class="chrome">Beyond the</span> <span class="cut cut-a">frame</span></h1>
+    <p class="pix">Lightbox · a study of satellite scene classification</p>
+    <h1 id="h-hook" class="hook-title"><span class="chrome">Light</span><span class="cut cut-a">box</span></h1>
     <p class="lede">Can a computer name a place more accurately when it also sees what surrounds it?</p>
-    <p class="lede-2">This tool lets you find out. Give it a satellite image and it reads the scene three times: a tight crop of the spot itself, a wider look at its neighbourhood, and the whole landscape. It names the scene type, then shows how much weight each view received.</p>
+    <p class="lede-2">Lightbox is a research tool for testing whether the landscape around a place helps a model identify it. Give it a satellite image and it studies the scene at three scales: the spot itself, its neighbourhood and the whole landscape. It names the scene type and shows how much weight each view earned. Switch a view off and watch the answer change.</p>
     <dl class="trio">
       <div><dt>Center · 256 m</dt><dd>The spot itself</dd></div>
       <div><dt>Surround · 768 m</dt><dd>Its neighbourhood</dd></div>
@@ -78,28 +78,55 @@
     </aside>
 
     <div class="ins-stage">
-      <p id="ins-status" class="pix" role="status" aria-live="polite">Pick a sample or drop an image</p>
-      <div id="model-loading" class="model-loading" hidden><span class="spinner" aria-hidden="true"></span>Loading model… please wait</div>
+      <p id="ins-status" class="pix status" role="status" aria-live="polite">Pick a sample or drop an image</p>
       <div id="ins-stack" role="group" aria-label="Plate stack for the current image"></div>
       <div class="ins-ctl">
         <div class="seg" id="ins-seg" role="radiogroup" aria-label="Scale mode">
-          <button type="button" role="radio" aria-checked="true" data-mode="ground">True scale</button>
-          <button type="button" role="radio" aria-checked="false" data-mode="input">What the model gets</button>
+          <button type="button" role="radio" aria-checked="false" data-mode="ground">True scale</button>
+          <button type="button" role="radio" aria-checked="true" data-mode="input">What the model gets</button>
         </div>
         <label class="slider"><span class="pix">Spread</span><input id="ins-explode" type="range" min="0" max="100" value="55" aria-label="Spread the plates apart or stack them together"></label>
       </div>
-      <div id="ins-inputs" class="inputs" aria-label="The three 224 pixel images the model receives"></div>
       <div id="ins-warn" class="warn" role="status"></div>
+
+      <!-- model loading overlay -->
+      <div id="loader" class="loader" hidden>
+        <div class="ld-card">
+          <div class="ld-plates" aria-hidden="true"><i></i><i></i><i></i></div>
+          <p class="pix ld-kicker">Lightbox is warming up</p>
+          <h3 class="ld-title">Loading the model<span>Please wait</span></h3>
+          <div class="ld-row"><b id="ld-pct" class="ld-pct">0%</b><span id="ld-step" class="ld-step">Starting</span></div>
+          <div id="ld-bar" class="ld-bar" role="progressbar" aria-label="Model loading progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><i id="ld-fill" class="ld-fill"></i></div>
+          <p id="ld-note" class="ld-note">The page is not frozen. The model runs on your device, so it has to download and start once. Your image is never uploaded.</p>
+        </div>
+      </div>
     </div>
 
     <aside class="readout" aria-label="Result">
-      <div id="ro-load" class="ro-load" hidden><label for="ro-prog" id="ro-prog-l">Loading</label><progress id="ro-prog" max="1" value="0"></progress></div>
       <div id="ro-slip" class="slip" aria-live="polite"><p class="slip-empty">Pick a sample or drop an image and the model's answer appears here.</p></div>
       <h3 class="pix">How much each view counted</h3>
       <div id="ro-gates" class="faders"></div>
       <p class="fine">Learned weights. A high value means the model leaned on that view. It does not prove that the view caused the answer.</p>
       <p id="ro-time" class="pix">timing —</p>
     </aside>
+
+    <section class="inputs" aria-labelledby="in-h">
+      <div class="inputs-head">
+        <div>
+          <h3 id="in-h" class="h3 in-title">What the model reads</h3>
+          <p id="ins-src" class="pix"></p>
+        </div>
+        <div class="in-tools">
+          <div class="seg" id="tile-seg" role="radiogroup" aria-label="Grad-CAM heat map on the three images">
+            <button type="button" role="radio" aria-checked="false" data-cam="off">Plain</button>
+            <button type="button" role="radio" aria-checked="true" data-cam="on">Heat map</button>
+          </div>
+          <span id="tile-src" class="sticker alt">—</span>
+        </div>
+      </div>
+      <div id="ins-inputs" class="inrow" role="group" aria-label="The three 224 pixel images the model receives"></div>
+      <p class="fine">The same three plates as above, laid flat. Click one to switch that view off and on.</p>
+    </section>
 
     <div class="ins-bottom glass">
       <fieldset class="subsets"><legend class="pix">Which views to use</legend>

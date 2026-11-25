@@ -15,13 +15,28 @@ const entropyNorm = p => -p.reduce((a, x) => a + (x > 0 ? x * Math.log(x) : 0), 
 export function initInstrument(D, GP) {
   const classes = D?.classes ?? [], arid = new Set(D?.groups?.arid ?? []), items = D?.gallery?.items ?? [];
   const grp = c => (arid.has(c) ? 'arid' : 'other');
-  const S = { token: 0, rseq: 0, feat: null, item: null, label: '', views: null, mask: [1, 1, 1], res: null, info: null, cams: null, camNote: '', visible: false, started: false };
+  const S = { token: 0, rseq: 0, feat: null, item: null, label: '', views: null, mask: [1, 1, 1], res: null, info: null, cams: null, camNote: '', visible: false, started: false, tiles: null };
   const cache = new Map();
-  const stack = new PlateStack($('#ins-stack'), { trail: true });
+  const stack = new PlateStack($('#ins-stack'), { trail: true, maxP: 760, wFrac: 0.56, hFrac: 0.64 });
   bindControls(stack, $('#ins-seg'), $('#ins-explode'));
+  stack.setMode('input'); // open on "what the model gets" so all three images are easy to see
 
   const status = t => { $('#ins-status').textContent = t; };
-  const progress = (f, label) => { $('#ro-load').hidden = false; $('#ro-prog').value = f; $('#ro-prog-l').textContent = `${label} · ${Math.round(f * 100)}%`; };
+
+  /* ---------- loading overlay ---------- */
+  const LD = { el: $('#loader'), fill: $('#ld-fill'), pct: $('#ld-pct'), step: $('#ld-step'), bar: $('#ld-bar'), note: $('#ld-note'), stage: $('.ins-stage') };
+  const NOTE = LD.note.textContent; let slowT = 0;
+  const setProgress = (f, label) => {
+    const p = Math.round(Math.max(0, Math.min(1, f)) * 100);
+    LD.fill.style.setProperty('--p', f); LD.pct.textContent = p + '%'; LD.step.textContent = label; LD.bar.setAttribute('aria-valuenow', p);
+  };
+  const showLoader = () => {
+    if (!LD.el.hidden) return;
+    LD.el.hidden = false; LD.stage.setAttribute('aria-busy', 'true'); setProgress(0, 'Starting');
+    LD.note.textContent = NOTE; clearTimeout(slowT);
+    slowT = setTimeout(() => { LD.note.textContent = 'Still working. On a slow connection this can take a minute. Please keep this tab open.'; }, 12000);
+  };
+  const hideLoader = () => { clearTimeout(slowT); LD.el.hidden = true; LD.stage.removeAttribute('aria-busy'); };
 
   /* ---------- warnings ---------- */
   let extraWarn = [];
@@ -29,7 +44,7 @@ export function initInstrument(D, GP) {
     if (extra) extraWarn = extra;
     const O = C.OOD, i = S.info, w = [];
     if (i) {
-      if (i.aspect > O.aspect) w.push({ text: `This image is not square (${i.w} Ã— ${i.h}), so the model read the central square and left the edges out.` });
+      if (i.aspect > O.aspect) w.push({ text: `This image is not square (${i.w} × ${i.h}), so the model read the central square and left the edges out.` });
       if (i.minSide < O.minSide) w.push({ text: `The shorter side is ${i.minSide} px. The scene was enlarged to ${C.SIDE} px, so the fine texture the model learned from is missing.` });
       if (i.std < O.flatStd) w.push({ text: 'This image is almost uniform in brightness. It may not be an overhead photo.' });
       w.push({ text: 'The model learned from imagery at about 1 m per pixel covering 1.28 km. On anything else, treat the percentages as rough.' });
@@ -40,14 +55,13 @@ export function initInstrument(D, GP) {
 
   /* ---------- model loading ---------- */
   let loadP = null;
-  const showLoading = () => { const el = $('#model-loading'); if (el) el.hidden = false; $('#ins-status').textContent = 'Loading model… please wait'; };
-  const hideLoading = () => { const el = $('#model-loading'); if (el) el.hidden = true; };
   const load = () => {
-    showLoading();
-    return (loadP ??= ensureModel(progress).then(() => { hideLoading(); $('#ro-load').hidden = true; $('#ins-status').textContent = 'Pick a sample or drop an image'; })
+    if (E.ready) return Promise.resolve();
+    showLoader(); status('Loading the model… please wait');
+    return (loadP ??= ensureModel(setProgress).then(() => { hideLoader(); status('Pick a sample or drop an image'); })
       .catch(err => {
-        loadP = null; hideLoading(); $('#ro-load').hidden = true; err.shown = true;
-        renderWarn([{ err: true, retry: () => analyseCurrent(), text: err instanceof UserError ? err.message : `The model could not be loaded (${err.message}). Check that model/ holds the exported web/ folder and that the page is served over http(s), not opened from disk.` }]);
+        loadP = null; hideLoader(); err.shown = true;
+        renderWarn([{ err: true, retry: () => analyseCurrent(), text: err instanceof UserError ? err.message : `The model could not be loaded (${err.message}). Check that the exported model files are present and that the page is served over http(s), not opened from disk.` }]);
         throw err;
       }));
   };
@@ -57,18 +71,68 @@ export function initInstrument(D, GP) {
   fad.replaceChildren(...C.VIEWS.map(v => h('div', { class: 'fader off' },
     h('div', { class: 'ftrack', role: 'meter', 'aria-label': `${v.label} view gate`, 'aria-valuemin': 0, 'aria-valuemax': 1, 'aria-valuenow': 0, 'aria-valuetext': 'not read yet' }, h('i', { class: 'ffill' }), h('i', { class: 'fthumb' })),
     h('span', { class: 'pix' }, v.label), h('b', { class: 'fval' }, '—'))));
-  const setFaders = (g, mask) => $$('.fader', fad).forEach((f, i) => {
-    const on = g && mask[i], t = $('.ftrack', f);
-    f.classList.toggle('off', !on); f.style.setProperty('--g', on ? g[i] : 0);
-    t.setAttribute('aria-valuenow', on ? g[i].toFixed(3) : 0); t.setAttribute('aria-valuetext', on ? g[i].toFixed(3) : g ? 'off' : 'not read yet');
-    $('.fval', f).textContent = on ? g[i].toFixed(3) : g ? 'off' : '—';
-  });
+  const setFaders = (g, mask) => {
+    $$('.fader', fad).forEach((f, i) => {
+      const on = g && mask[i], t = $('.ftrack', f);
+      f.classList.toggle('off', !on); f.style.setProperty('--g', on ? g[i] : 0);
+      t.setAttribute('aria-valuenow', on ? g[i].toFixed(3) : 0); t.setAttribute('aria-valuetext', on ? g[i].toFixed(3) : g ? 'off' : 'not read yet');
+      $('.fval', f).textContent = on ? g[i].toFixed(3) : g ? 'off' : '—';
+    });
+    syncTiles(g, mask);
+  };
+
+  /* ---------- tiles: the three model inputs, built like the plates ---------- */
+  function syncTiles(g, mask) {
+    if (!S.tiles) return;
+    C.VIEWS.forEach((v, i) => {
+      const t = S.tiles[v.id]; if (!t) return;
+      const on = !!mask[i];
+      t.el.classList.toggle('off', !on); t.el.setAttribute('aria-checked', on);
+      t.el.style.setProperty('--gl', on && g ? Math.max(0, Math.min(1, g[i])) : 0);
+      t.gtag.textContent = !on ? 'OFF' : g ? `G ${g[i].toFixed(2)}` : 'G —';
+    });
+  }
+  function tileFilm(id, src) {
+    const t = S.tiles?.[id]; if (!t) return;
+    if (!src) { t.fc.hidden = t.fi.hidden = true; return; }
+    if (src.canvas) { const x = t.fc.getContext('2d'); x.clearRect(0, 0, C.INPUT, C.INPUT); x.drawImage(src.canvas, 0, 0); t.fc.hidden = false; t.fi.hidden = true; }
+    else if (src.url) { t.fi.onerror = () => { t.fi.hidden = true; }; t.fi.src = src.url; t.fi.hidden = false; t.fc.hidden = true; }
+  }
+  const setFilm = (id, src) => { stack.setFilm(id, src); tileFilm(id, src); };
+  const clearFilms = () => { stack.clearFilm(); C.VIEWS.forEach(v => tileFilm(v.id, null)); };
+  const setOp = o => { stack.setFilmOpacity(o); $('#ins-inputs').style.setProperty('--film-o', o); };
+
+  function renderInputs() {
+    S.tiles = {};
+    const tiles = C.VIEWS.map((v, i) => {
+      const fp = FOOTPRINT(v);
+      const pic = h('canvas', { class: 'pic', width: C.INPUT, height: C.INPUT, role: 'img', 'aria-label': `${v.label} model input, ${C.INPUT} by ${C.INPUT} pixels, ${fmtM(fp)} of ground` });
+      pic.getContext('2d').drawImage(S.views[v.id], 0, 0);
+      const fc = h('canvas', { class: 'film', width: C.INPUT, height: C.INPUT, hidden: true, 'aria-hidden': 'true' });
+      const fi = h('img', { class: 'film', alt: '', hidden: true, 'aria-hidden': 'true' });
+      const gtag = h('span', { class: 'tile-g pix' }, 'G —');
+      const el = h('div', {
+        class: 'tile', role: 'switch', tabindex: 0, 'aria-checked': 'true', 'aria-label': `${v.label} view, ${fmtM(fp)} wide. Press Enter to switch it off or on.`,
+        onclick: () => stack.toggle(i),
+        onkeydown: e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); stack.toggle(i); } },
+      },
+        h('div', { class: 'tile-hd' }, h('span', { class: 'pix' }, `Plate 0${i + 1}/03 · ${v.label}`), gtag),
+        h('div', { class: 'tile-face' }, pic, fc, fi, h('i', { class: 'glint' })),
+        h('div', { class: 'tile-cap' }, `${C.INPUT} × ${C.INPUT} px · ${fmtM(fp)} · ${(fp / C.INPUT).toFixed(2)} m/px`));
+      S.tiles[v.id] = { el, fc, fi, gtag };
+      return el;
+    });
+    const i = S.info;
+    $('#ins-src').textContent = i ? `source ${i.w} × ${i.h} px → centre square ${Math.min(i.w, i.h)} px → ${C.SIDE} px → three cuts → ${C.INPUT} px` : `stored ${C.INPUT} px views from the exported gallery`;
+    $('#ins-inputs').replaceChildren(...tiles);
+    syncTiles(S.res?.gates ?? null, S.mask);
+  }
 
   /* ---------- subsets (mirror plate ejection) ---------- */
   const subRow = $('#subsets');
   subRow.replaceChildren(...C.SUBSETS.map(sb => h('button', { type: 'button', class: 'cap ghost tiny', 'data-sb': sb, 'aria-pressed': 'false', onclick: () => stack.setMask(maskOf(sb)) }, SUBL[sb])));
   const syncSub = () => $$('button', subRow).forEach(b => b.setAttribute('aria-pressed', maskOf(b.dataset.sb).join() === S.mask.join()));
-  stack.onMask = m => { S.mask = m.slice(); syncSub(); refresh(); };
+  stack.onMask = m => { S.mask = m.slice(); syncSub(); syncTiles(S.res?.gates ?? null, S.mask); refresh(); };
   syncSub();
   const subsetLabel = () => { const k = C.SUBSETS.find(sb => maskOf(sb).join() === S.mask.join()); return k ? SUBL[k] : 'none'; };
 
@@ -88,17 +152,6 @@ export function initInstrument(D, GP) {
     markCS();
   }
   filter.addEventListener('change', renderCS); renderCS();
-
-  /* ---------- input views ---------- */
-  function renderInputs() {
-    const cs = C.VIEWS.map(v => {
-      const fp = FOOTPRINT(v), c = h('canvas', { width: C.INPUT, height: C.INPUT, role: 'img', 'aria-label': `${v.label} model input, ${C.INPUT} by ${C.INPUT} pixels, ${fmtM(fp)} of ground` });
-      c.getContext('2d').drawImage(S.views[v.id], 0, 0);
-      return h('figure', {}, c, h('figcaption', {}, `${v.label} · ${C.INPUT} Ã— ${C.INPUT} px · ${fmtM(fp)} · ${(fp / C.INPUT).toFixed(2)} m/px`));
-    });
-    const i = S.info;
-    $('#ins-inputs').replaceChildren(h('p', { class: 'pix' }, i ? `source ${i.w} Ã— ${i.h} px ’ centre square ${Math.min(i.w, i.h)} px ’ ${C.SIDE} px ’ three cuts ’ ${C.INPUT} px` : `stored ${C.INPUT} px views from the exported gallery`), h('div', { class: 'inrow' }, cs));
-  }
 
   /* ---------- readout ---------- */
   function renderSlip(r) {
@@ -151,14 +204,14 @@ export function initInstrument(D, GP) {
       else { views = await viewsFromItem(input.item); S.item = input.item; S.label = input.item.filename; }
       if (my !== S.token) return;
       Object.assign(S, { views, info, prep: performance.now() - t0, res: null, cams: null });
-      stack.setViews(views); stack.clearFilm(); stack.setGates(null); setFaders(null, S.mask);
+      stack.setViews(views); clearFilms(); stack.setGates(null); setFaders(null, S.mask);
       renderInputs(); renderWarn(); markCS();
-      if (!E.ready) status('Loading the model…');
+      if (!E.ready) status('Loading the model… please wait');
       await load(); if (my !== S.token) return;
       const key = input.file ? `u:${input.file.name}:${input.file.size}:${input.file.lastModified}` : `g:${input.item.filename}`;
       let feat = cache.get(key); S.cached = !!feat;
       if (!feat) {
-        status('Reading the three views……'); feat = await extract(views);
+        status('Reading the three views…'); feat = await extract(views);
         if (my !== S.token) { disposeFeat(feat); return; }
         cache.set(key, feat); S.bbMs = feat.ms;
         for (const [k, f] of cache) { if (cache.size <= 6) break; if (f !== feat) { disposeFeat(f); cache.delete(k); } }
@@ -172,13 +225,13 @@ export function initInstrument(D, GP) {
   const analyseCurrent = () => (S.lastInput ? analyse(S.lastInput) : load().catch(() => {}));
 
   /* ---------- Grad-CAM ---------- */
-  const camSrc = t => { $('#cam-src').textContent = t; };
-  const paintCams = () => C.VIEWS.forEach((v, i) => stack.setFilm(v.id, S.cams?.[i] ? { canvas: camCanvas(S.cams[i], $('#cam-cb').checked ? 'cb' : 'gold') } : null));
-  const usePre = (p, label) => { C.VIEWS.forEach((v, i) => stack.setFilm(v.id, S.mask[i] && p[v.id] ? { url: exportURL(p[v.id]) } : null)); camSrc(label); };
+  const camSrc = t => { $('#cam-src').textContent = t; $('#tile-src').textContent = t; };
+  const paintCams = () => C.VIEWS.forEach((v, i) => setFilm(v.id, S.cams?.[i] ? { canvas: camCanvas(S.cams[i], $('#cam-cb').checked ? 'cb' : 'gold') } : null));
+  const usePre = (p, label) => { C.VIEWS.forEach((v, i) => setFilm(v.id, S.mask[i] && p[v.id] ? { url: exportURL(p[v.id]) } : null)); camSrc(label); };
   async function updateCam() {
-    const my = S.token; stack.setFilmOpacity($('#cam-op').value / 100);
+    const my = S.token; setOp($('#cam-op').value / 100);
     if (!S.feat || !S.res) return;
-    if (!$('#cam-on').checked) { stack.clearFilm(); camSrc('off'); return; }
+    if (!$('#cam-on').checked) { clearFilms(); camSrc('off'); return; }
     const sel = $('#cam-class').value, idx = sel === '' ? argmax(S.res.probs) : +sel, pre = S.item && GP?.[S.item.filename];
     const wantLive = !S.item || $('#cam-live').checked || sel !== '';
     S.camNote = '';
@@ -186,14 +239,20 @@ export function initInstrument(D, GP) {
     if (S.feat.conv) {
       try { const cams = await liveCam(S.feat, S.mask, idx); if (my !== S.token) return; S.cams = cams; paintCams(); camSrc(`live · ${classes[idx]}`); renderWarn(); return; }
       catch (e) { console.warn('live Grad-CAM failed', e); S.camNote = `Live Grad-CAM failed in this browser (${e.message}).`; }
-    } else S.camNote = 'Live Grad-CAM needs a backbone export with the 7Ã—7Ã—1280 conv map and the pooled feature. Gallery images still show precomputed overlays.';
-    if (pre) usePre(pre, 'precomputed · ignores your class and views'); else { stack.clearFilm(); camSrc('unavailable'); }
+    } else S.camNote = 'Live Grad-CAM needs a backbone export with the 7×7×1280 conv map and the pooled feature. Gallery images still show precomputed overlays.';
+    if (pre) usePre(pre, 'precomputed · ignores your class and views'); else { clearFilms(); camSrc('unavailable'); }
     renderWarn();
   }
   $('#cam-class').append(...classes.map((c, i) => h('option', { value: i }, c)));
-  $('#cam-on').onchange = updateCam; $('#cam-class').onchange = updateCam; $('#cam-live').onchange = updateCam;
-  $('#cam-op').oninput = () => stack.setFilmOpacity($('#cam-op').value / 100);
-  $('#cam-cb').onchange = () => { if (S.cams && !S.item || S.cams) paintCams(); };
+
+  // the Plain / Heat map toggle above the tiles and the "Show" checkbox control the same thing
+  const syncCamSeg = () => $$('#tile-seg [data-cam]').forEach(b => b.setAttribute('aria-checked', (b.dataset.cam === 'on') === $('#cam-on').checked));
+  $$('#tile-seg [data-cam]').forEach(b => b.addEventListener('click', () => { $('#cam-on').checked = b.dataset.cam === 'on'; syncCamSeg(); updateCam(); }));
+  $('#cam-on').onchange = () => { syncCamSeg(); updateCam(); };
+  $('#cam-class').onchange = updateCam; $('#cam-live').onchange = updateCam;
+  $('#cam-op').oninput = () => setOp($('#cam-op').value / 100);
+  $('#cam-cb').onchange = () => { if (S.cams) paintCams(); };
+  syncCamSeg(); setOp($('#cam-op').value / 100);
 
   /* ---------- airlock: drop, pick, paste ---------- */
   const drop = $('#drop'), fileIn = $('#file'), pick = f => (f ? analyse({ file: f }) : renderWarn([{ text: 'Drop an image file. Links and text cannot be read.' }]));

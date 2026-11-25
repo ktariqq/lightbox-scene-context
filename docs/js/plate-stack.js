@@ -4,12 +4,13 @@ import { trail } from './fx.js';
 
 const RATIO = {
   ground: Object.fromEntries(C.VIEWS.map(v => [v.id, (v.box[2] - v.box[0]) / C.SIDE])),
-  input: Object.fromEntries(C.VIEWS.map(v => [v.id, 0.6])),
+  input: Object.fromEntries(C.VIEWS.map(v => [v.id, 0.7])),
 };
 
 export class PlateStack {
-  constructor(host, { trail: withTrail = false, onMask = null } = {}) {
-    Object.assign(this, { host, onMask, mask: [1, 1, 1], dark: [0, 0, 0], mode: 'ground', explode: 0.4, gates: null, P: 300, gap: 40, tx: 0, ty: 0, cx: 0, cy: 0, visible: true, raf: 0, onMode: null, onExplode: null });
+  // maxP: largest plate size in px. wFrac / hFrac: share of the host width / height the plates may use.
+  constructor(host, { trail: withTrail = false, onMask = null, maxP = 400, wFrac = 0.5, hFrac = 0.62 } = {}) {
+    Object.assign(this, { host, onMask, maxP, wFrac, hFrac, mask: [1, 1, 1], dark: [0, 0, 0], mode: 'ground', explode: 0.4, gates: null, P: 300, gap: 40, tx: 0, ty: 0, cx: 0, cy: 0, visible: true, raf: 0, onMode: null, onExplode: null });
     this.build();
     new ResizeObserver(() => this.resize()).observe(host);
     new IntersectionObserver(e => { this.visible = e[0].isIntersecting; if (this.visible) this.start(); }).observe(host);
@@ -37,7 +38,7 @@ export class PlateStack {
         h('div', { class: 'face' }, pic, fc, fi, h('i', { class: 'glint' })),
         ['t', 'r', 'b', 'l'].map(k => h('i', { class: 'edge e-' + k })),
         ['a', 'b', 'c', 'd'].map(k => h('i', { class: 'pj pj-' + k })),
-        h('span', { class: 'plabel pix' }, `PLATE 0${i + 1}/03 · ${v.label} · ${fp}`), gtag);
+        h('span', { class: 'plabel pix' }, `${v.label} · ${fp}`), gtag);
       const p = { v, el, pic, fc, fi, gtag, fp, z: 0 };
       let drag = null;
       el.addEventListener('pointerdown', e => { drag = { x: e.clientX, y: e.clientY, done: false }; });
@@ -90,7 +91,7 @@ export class PlateStack {
 
   resize() {
     const r = this.host.getBoundingClientRect();
-    this.P = Math.max(110, Math.min(r.width * 0.5, r.height * 0.62, 400));
+    this.P = Math.max(110, Math.min(r.width * this.wFrac, r.height * this.hFrac, this.maxP));
     this.host.style.setProperty('--P', this.P + 'px'); this.layout();
   }
   layout() {
