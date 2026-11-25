@@ -19,7 +19,7 @@ name = sys.argv[1] if len(sys.argv) > 1 else "b4vd"
 seed = int(sys.argv[2]) if len(sys.argv) > 2 else 42
 assert name in ("b3", "b3vd", "b4", "b4vd"), name
 
-W = ROOT / "web"
+W = ROOT / "docs"
 T = W / "tfjs"
 X = ROOT / "tmp_export"
 shutil.rmtree(T, ignore_errors=True)
@@ -104,7 +104,7 @@ rec = lambda d: json.loads(d.to_json(orient="records"))
 cj = json.load(open(ROOT / "classes.json"))
 ar = set(cj["arid"])
 
-# Per-class metrics for the web UI.
+# Per-class metrics for the UI.
 pc = rd("per_class.csv")
 pc = pc[(pc["ds"] == "test") & (pc["variant"] == "full24")]
 PCL = {
@@ -119,7 +119,7 @@ cg = rec(cg[(cg["model"] == name) & (cg["seed"] == seed)])
 cm = pd.read_csv(RES / f"confusion_test_{name}.csv", index_col=0)
 G = json.load(open(RES / "gallery.json"))
 
-# Copy gallery images and Grad-CAM overlays into web/.
+# Copy gallery images and Grad-CAM overlays into docs/.
 for it in G["items"]:
     stem = it["filename"][:-4]
     for v in VIEWS:

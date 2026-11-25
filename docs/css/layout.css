@@ -12,8 +12,23 @@
 .trio dd{margin:3px 0 0;font-size:var(--t-sm)}
 .cta,.stickers{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
 .hero-credit{margin:0;opacity:.8}
-.hero .stage{position:relative;top:auto;height:min(76svh,680px);padding:0;grid-area:auto}
-.hero .stage #story-stack{flex:1;min-height:0}
+.hero .stage{
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  height:min(76svh,680px);
+  padding:0;
+  grid-area:auto;
+}
+.hero .stage #story-stack{
+  flex:1 1 auto;
+  min-height:280px;
+  width:100%;
+}
+.hero .stage .stage-bar,
+.hero .stage .stage-ctl,
+.hero .stage .stage-note{flex:none}
 
 /* the instrument leads, so give it less air */
 .instrument{padding-top:2vh;padding-bottom:4vh;min-height:0}
@@ -37,6 +52,7 @@
 
 @media (max-width:900px){
   .hero{grid-template-columns:1fr;min-height:0}
-  .hero .stage{height:56svh}
+  .hero .stage{height:auto}
+  .hero .stage #story-stack{height:56svh;flex:none}
   .trio{grid-template-columns:1fr}
 }

@@ -2,13 +2,15 @@ import sys, json, shutil, numpy as np, pandas as pd, keras
 from PIL import Image
 from config import *
 from common import vpath
+import tensorflow as tf
+
 name=sys.argv[1] if len(sys.argv)>1 else "b4vd"; seed=int(sys.argv[2]) if len(sys.argv)>2 else 42; assert name in ("b4","b4vd")
-W,X=ROOT/"web",ROOT/"tmp_export"; W.mkdir(exist_ok=True); shutil.rmtree(X,ignore_errors=True); X.mkdir()
+W,X=ROOT/"docs",ROOT/"tmp_export"; W.mkdir(exist_ok=True); shutil.rmtree(X,ignore_errors=True); X.mkdir()
 # backbone: same [0,255] -> [-1,1] preprocessing as features.py
 i=keras.Input((224,224,3),name="image"); bb=keras.applications.MobileNetV2((224,224,3),include_top=False,weights="imagenet",pooling="avg")
 bbx=keras.Model(i,bb(keras.layers.Rescaling(1/127.5,offset=-1)(i))); bbx.export(str(X/"backbone_sm"))
 ix=pd.read_csv(FEAT/"test_index.csv"); F={v:np.load(FEAT/f"{v}_test.npy") for v in VIEWS}; p=lambda k:vpath("center","test",CLASSES[ix.label[k]],ix.filename[k])
-a=bbx.predict(np.stack([np.asarray(Image.open(p(k)).convert("RGB"),"float32") for k in range(8)]),verbose=0); b=F["center"][:8]
+a=bbx.predict(np.stack([tf.io.decode_jpeg(tf.io.read_file(str(p(k))),channels=3).numpy().astype("float32") for k in range(8)]),verbose=0); b=F["center"][:8]
 assert ((a*b).sum(1)/np.linalg.norm(a,axis=1)/np.linalg.norm(b,axis=1)>.999).all(),"backbone differs from cached features"
 # head: dump weights, then check a numpy forward pass against Keras
 m=keras.models.load_model(MODELS/f"{name}_s{seed}.keras",compile=False); Ls={l.name:l for l in m.layers}
