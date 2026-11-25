@@ -1,6 +1,6 @@
 <div align="center">
 
-# LIGHTBOX — Does the Neighbourhood Help Name the Place?
+# LIGHTBOX — Scenes in Context
 
 **Gated multi-scale context fusion for fine-grained satellite scene classification: three nested views of one scene, a learned gate per view, and an in-browser instrument where you switch views off and watch the answer change.**
 
@@ -39,7 +39,7 @@
 
 Fine-grained scene types such as quarry versus bare rock, or brownfield versus construction, can look alike up close. The MEET dataset gives every sample three nested views at 1 m per pixel, so the neighbourhood is available as context. Lightbox measures whether a model benefits from it and shows how much weight each view gets.
 
-The study uses a balanced 24-class subset of MEET (200 train, 50 validation and 100 test images per class, sampled from the official split lists with seed 42) and a small UAE external set built from open Sentinel-2 imagery. Built by [@ktariqq](https://github.com/ktariqq) for AIRE410 Deep Learning at Abu Dhabi University.
+The study uses a balanced 24-class subset of MEET (200 train, 50 validation and 100 test images per class, sampled from the official split lists with seed 42) and a small UAE external set built from open Sentinel-2 imagery. 
 
 <br/>
 
