@@ -90,10 +90,6 @@ Each view is resized to 224 x 224, so the network always receives the same numbe
 
 <br/>
 
-<div align="center"><img src="assets/study.jpg" alt="Lightbox study: context gain per class with bootstrap intervals"></div>
-
-<br/>
-
 ## 🟣 Method
 
 **Features.** A frozen ImageNet MobileNetV2 reads each view and global-average-pools it to 1,280 numbers. Features are cached once, so heads train in minutes on a CPU.
@@ -259,6 +255,5 @@ Fine-tune the backbone instead of freezing it, scale to more of MEET, compare ag
 
 ━━━━━━━━━━━━━━ ✦ ✧ ✦ ━━━━━━━━━━━━━━
 
-AIRE410 Deep Learning · Abu Dhabi University
 
 </div>
