@@ -29,6 +29,10 @@
 .warn p.err{border-color:var(--pink)}
 progress{width:100%;height:10px;accent-color:var(--sun)}
 .ro-load label{font:var(--t-xs) var(--f-mono);display:block;margin-bottom:4px}
+.model-loading{display:flex;align-items:center;gap:8px;margin:8px 0;padding:8px 12px;border:1px solid var(--ink);background:rgba(26,16,37,.88);color:var(--paper);font:var(--t-sm) var(--f-mono)}
+.model-loading[hidden]{display:none}
+.spinner{width:14px;height:14px;border:2px solid rgba(255,255,255,.3);border-top-color:var(--sun);border-radius:50%;animation:spin .8s linear infinite;display:inline-block}
+@keyframes spin{to{transform:rotate(360deg)}}
 .slip{position:relative;background:var(--frost);color:var(--ink);border:1px solid var(--ink);box-shadow:5px 5px 0 var(--rebecca);padding:16px 14px 14px}
 .slip::before{content:"";position:absolute;top:-9px;left:14px;width:74px;height:18px;background:rgba(169,232,232,.92);transform:rotate(-3deg)}
 .slip .pix{color:var(--rebecca)}
