@@ -1,3 +1,4 @@
+@charset "UTF-8";
 *,*::before,*::after{box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--void);color:var(--frost);font:400 var(--t-md)/1.55 var(--f-body);padding-bottom:calc(var(--dock) + 18px);overflow-x:hidden}

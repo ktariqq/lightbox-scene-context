@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .stack-host{position:relative;perspective:1600px;perspective-origin:50% 30%;min-height:0;--film-o:.7}
 .stack-rot{position:absolute;inset:0;transform-style:preserve-3d}
 .beams{position:absolute;left:50%;top:50%;width:0;height:0;transform-style:preserve-3d;pointer-events:none}

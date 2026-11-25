@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .instrument{max-width:1680px;margin:0 auto;padding:10vh var(--pad) 6vh;min-height:100svh;position:relative}
 .ins-head{display:flex;justify-content:space-between;align-items:end;gap:12px;flex-wrap:wrap;margin-bottom:16px}
 .ws{display:grid;grid-template-columns:minmax(220px,300px) minmax(0,1fr) minmax(280px,380px);grid-template-areas:"a s r" "b b b";gap:var(--gap);align-items:start}

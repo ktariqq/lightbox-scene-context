@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .stage{position:relative;top:auto;height:min(76svh,680px);padding:0;grid-area:auto}
 .stage #story-stack{flex:1;min-height:0}
 .stage-bar{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid var(--lilac);padding-bottom:6px}
