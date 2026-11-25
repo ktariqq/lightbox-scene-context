@@ -1,0 +1,19 @@
+{
+ "model": "b4vd",
+ "seed": 42,
+ "views": [
+  "center",
+  "surround",
+  "global"
+ ],
+ "backbone": {
+  "path": "tfjs/backbone/model.json",
+  "format": "graph",
+  "inputs": [
+   "image"
+  ]
+ },
+ "head": {
+  "has_gates": true
+ }
+}

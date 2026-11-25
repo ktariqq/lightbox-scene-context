@@ -1,6 +1,6 @@
 export const CONFIG = {
-  EXPORT_ROOT: 'model/',          // folder holding a verbatim copy of export's web/ directory
-  RESULTS_ROOT: 'data/results/',  // verbatim copy of results/
+  EXPORT_ROOT: '',                // export.py + export_web.py outputs live at the docs/ root
+  RESULTS_ROOT: 'data/results/',  // verbatim copy of results/ (copy results/* here)
   FILES: { manifest: 'manifest.json', data: 'data.json', gradcam: 'gradcam_paths.json', parity: 'parity.json' },
   TF: {
     core: 'https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.22.0/dist/tf.min.js',

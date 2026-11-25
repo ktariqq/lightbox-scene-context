@@ -36,13 +36,33 @@ function backbone(x) {
   return { pooled, conv };
 }
 
-// mirrors the harness head(): layers take [c, s, g, mask]; graph models take named inputs. Outputs are told apart by width.
+// Load the head weights dumped by export_web (head.json + head.bin) and return a run function.
+// Mirrors the MOSAIC example: a ~12-line tfjs forward pass over the raw float weights.
+export async function loadHead(base = './') {
+  const m = await (await fetch(exportURL('head.json'))).json();
+  const buf = new Float32Array(await (await fetch(exportURL('head.bin'))).arrayBuffer());
+  const T = {};
+  for (const [k, v] of Object.entries(m.w))
+    T[k] = tf.tensor(buf.slice(v.offset, v.offset + v.shape.reduce((a, c) => a * c, 1)), v.shape);
+  const d = (x, n, a) => { const y = x.matMul(T[n + '/k']).add(T[n + '/b']); return a ? a(y) : y; };
+  return (feat, mask) => tf.tidy(() => {
+    const n = mask.reduce((a, c) => a + c);
+    const pm = m.views.map((v, i) => d(feat[v], 'proj_' + v, tf.relu).mul(mask[i]));
+    const fl = tf.concat(pm, 1);
+    const g = m.views.map((v, i) => d(fl, 'gate_' + v, tf.sigmoid).mul(mask[i]));
+    return { logits: d(d(tf.addN(g.map((x, i) => x.mul(pm[i]))).div(n), 'hid', tf.relu), 'logits'),
+             gates: g.map(x => x.mean().dataSync()[0]) };
+  });
+}
+
+// mirrors the harness head(): now backed by the raw-weight head from export_web.
 export function headRaw(f, maskArr) {
-  const m = tf.tensor2d([maskArr]); let o;
-  if (E.man.head.format === 'layers') o = E.H.predict([...f, m]);
-  else { const by = { center: f[0], surround: f[1], global: f[2], mask: m }; o = E.H.execute(Object.fromEntries(E.man.head.inputs.map(n => [n, by[n]]))); }
-  const a = Array.isArray(o) ? o : [o];
-  return { lg: a.find(t => t.shape[1] === E.D.classes.length), g: a.find(t => t.shape[1] === 3), m };
+  const names = ['center', 'surround', 'global'];
+  const feat = Array.isArray(f)
+    ? Object.fromEntries(names.map((v, i) => [v, f[i]]))
+    : f;
+  const { logits, gates } = E.H(feat, maskArr);
+  return { lg: logits, g: tf.tensor1d(gates), m: null };
 }
 
 const softmax = a => { const mx = Math.max(...a), e = Array.from(a, x => Math.exp(x - mx)), z = e.reduce((p, q) => p + q, 0); return e.map(x => x / z); };
@@ -74,16 +94,16 @@ async function warm() {
 async function run(onProgress) {
   onProgress(0.02, 'Loading TensorFlow.js');
   const [man, D] = await Promise.all([loadManifest(), loadData()]);
-  if (!man) throw new UserError('model/manifest.json was not found. Run “python export.py b4vd 42” and copy the web/ folder into model/.');
+  if (!man) throw new UserError('model/manifest.json was not found. Run “python export.py b4vd 42”.');
   if (!D?.classes) throw new UserError('model/data.json is missing or has no class list.');
   tf = await loadTF(); E.backend = tf.getBackend();
-  const p = [0, 0, man.backbone_cam ? 0 : 1], rep = () => onProgress(0.08 + 0.87 * ((p[0] + p[1] + p[2]) / 3), 'Loading model weights');
-  const [B, H, camM] = await Promise.all([
-    ld(man.backbone, f => { p[0] = f; rep(); }), ld(man.head, f => { p[1] = f; rep(); }),
-    man.backbone_cam ? ld(man.backbone_cam, f => { p[2] = f; rep(); }).catch(() => { p[2] = 1; rep(); return null; }) : null]);
-  Object.assign(E, { man, D, B, H });
-  if (camM) { E.CAM = { model: camM, format: man.backbone_cam.format, inputs: man.backbone_cam.inputs }; E.camHow = 'manifest'; }
-  else { const sp = splitFromLayers(B, man); if (sp) { E.CAM = sp; E.camHow = 'derived'; } }
+  const p = [0, 1], rep = () => onProgress(0.08 + 0.87 * ((p[0] + p[1]) / 2), 'Loading model weights');
+  const B = await ld(man.backbone, f => { p[0] = f; rep(); });
+  const head = await loadHead('./');   // head.bin + head.json from export_web (numpy-verified forward pass)
+  p[1] = 1; rep();
+  Object.assign(E, { man, D, B, H: head });
+  // No TF.js cam model exported; Grad-CAM overlays from export.py (cam/) are used in evidence instead.
+  const sp = splitFromLayers(B, man); if (sp) { E.CAM = sp; E.camHow = 'derived'; }
   onProgress(0.96, 'Warming up'); await warm(); E.ready = true; onProgress(1, 'Ready');
 }
 

@@ -22,8 +22,7 @@ assert name in ("b3", "b3vd", "b4", "b4vd"), name
 W = ROOT / "docs"
 T = W / "tfjs"
 X = ROOT / "tmp_export"
-shutil.rmtree(T, ignore_errors=True)
-T.mkdir(parents=True)
+T.mkdir(parents=True, exist_ok=True)
 X.mkdir(exist_ok=True)
 
 # Convert a Keras model to TF.js.
@@ -73,12 +72,14 @@ hd = keras.Model(
     name="head"
 )  # head takes (3 feature vectors, mask), returns (logits, per-view gates)
 
+# Backbone TF.js conversion is skipped: it was already produced (docs/tfjs/backbone/model.json, Step 1)
+# and conv() needs the tensorflowjs CLI on PATH. Head is provided by export_web (head.bin).
 man = {
     "model": name,
     "seed": seed,
     "views": VIEWS,
-    "backbone": conv(bbx, "backbone"),
-    "head": {**conv(hd, "head"), "has_gates": len(o) == 3}
+    "backbone": {"path": "tfjs/backbone/model.json", "format": "graph", "inputs": ["image"]},
+    "head": {"has_gates": len(o) == 3},
 }
 json.dump(man, open(W / "manifest.json", "w"), indent=1)
 

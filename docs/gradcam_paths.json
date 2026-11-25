@@ -1,0 +1,602 @@
+{
+ "Airport_928938.jpg": {
+  "center": "cam/Airport/Airport_928938_center.png",
+  "surround": "cam/Airport/Airport_928938_surround.png",
+  "global": "cam/Airport/Airport_928938_global.png"
+ },
+ "Airport_927213.jpg": {
+  "center": "cam/Airport/Airport_927213_center.png",
+  "surround": "cam/Airport/Airport_927213_surround.png",
+  "global": "cam/Airport/Airport_927213_global.png"
+ },
+ "Airport_929287.jpg": {
+  "center": "cam/Airport/Airport_929287_center.png",
+  "surround": "cam/Airport/Airport_929287_surround.png",
+  "global": "cam/Airport/Airport_929287_global.png"
+ },
+ "Airport_929215.jpg": {
+  "center": "cam/Airport/Airport_929215_center.png",
+  "surround": "cam/Airport/Airport_929215_surround.png",
+  "global": "cam/Airport/Airport_929215_global.png"
+ },
+ "Airport_929159.jpg": {
+  "center": "cam/Airport/Airport_929159_center.png",
+  "surround": "cam/Airport/Airport_929159_surround.png",
+  "global": "cam/Airport/Airport_929159_global.png"
+ },
+ "Beach_942834.jpg": {
+  "center": "cam/Beach/Beach_942834_center.png",
+  "surround": "cam/Beach/Beach_942834_surround.png",
+  "global": "cam/Beach/Beach_942834_global.png"
+ },
+ "Beach_941496.jpg": {
+  "center": "cam/Beach/Beach_941496_center.png",
+  "surround": "cam/Beach/Beach_941496_surround.png",
+  "global": "cam/Beach/Beach_941496_global.png"
+ },
+ "Beach_941730.jpg": {
+  "center": "cam/Beach/Beach_941730_center.png",
+  "surround": "cam/Beach/Beach_941730_surround.png",
+  "global": "cam/Beach/Beach_941730_global.png"
+ },
+ "Beach_943271.jpg": {
+  "center": "cam/Beach/Beach_943271_center.png",
+  "surround": "cam/Beach/Beach_943271_surround.png",
+  "global": "cam/Beach/Beach_943271_global.png"
+ },
+ "Beach_943608.jpg": {
+  "center": "cam/Beach/Beach_943608_center.png",
+  "surround": "cam/Beach/Beach_943608_surround.png",
+  "global": "cam/Beach/Beach_943608_global.png"
+ },
+ "Brownfield_973181.jpg": {
+  "center": "cam/Brownfield/Brownfield_973181_center.png",
+  "surround": "cam/Brownfield/Brownfield_973181_surround.png",
+  "global": "cam/Brownfield/Brownfield_973181_global.png"
+ },
+ "Brownfield_973394.jpg": {
+  "center": "cam/Brownfield/Brownfield_973394_center.png",
+  "surround": "cam/Brownfield/Brownfield_973394_surround.png",
+  "global": "cam/Brownfield/Brownfield_973394_global.png"
+ },
+ "Brownfield_972660.jpg": {
+  "center": "cam/Brownfield/Brownfield_972660_center.png",
+  "surround": "cam/Brownfield/Brownfield_972660_surround.png",
+  "global": "cam/Brownfield/Brownfield_972660_global.png"
+ },
+ "Brownfield_972791.jpg": {
+  "center": "cam/Brownfield/Brownfield_972791_center.png",
+  "surround": "cam/Brownfield/Brownfield_972791_surround.png",
+  "global": "cam/Brownfield/Brownfield_972791_global.png"
+ },
+ "Brownfield_973029.jpg": {
+  "center": "cam/Brownfield/Brownfield_973029_center.png",
+  "surround": "cam/Brownfield/Brownfield_973029_surround.png",
+  "global": "cam/Brownfield/Brownfield_973029_global.png"
+ },
+ "Chemical_plant_964981.jpg": {
+  "center": "cam/Chemical_plant/Chemical_plant_964981_center.png",
+  "surround": "cam/Chemical_plant/Chemical_plant_964981_surround.png",
+  "global": "cam/Chemical_plant/Chemical_plant_964981_global.png"
+ },
+ "Chemical_plant_964650.jpg": {
+  "center": "cam/Chemical_plant/Chemical_plant_964650_center.png",
+  "surround": "cam/Chemical_plant/Chemical_plant_964650_surround.png",
+  "global": "cam/Chemical_plant/Chemical_plant_964650_global.png"
+ },
+ "Chemical_plant_964795.jpg": {
+  "center": "cam/Chemical_plant/Chemical_plant_964795_center.png",
+  "surround": "cam/Chemical_plant/Chemical_plant_964795_surround.png",
+  "global": "cam/Chemical_plant/Chemical_plant_964795_global.png"
+ },
+ "Chemical_plant_964384.jpg": {
+  "center": "cam/Chemical_plant/Chemical_plant_964384_center.png",
+  "surround": "cam/Chemical_plant/Chemical_plant_964384_surround.png",
+  "global": "cam/Chemical_plant/Chemical_plant_964384_global.png"
+ },
+ "Chemical_plant_964440.jpg": {
+  "center": "cam/Chemical_plant/Chemical_plant_964440_center.png",
+  "surround": "cam/Chemical_plant/Chemical_plant_964440_surround.png",
+  "global": "cam/Chemical_plant/Chemical_plant_964440_global.png"
+ },
+ "Construction_953641.jpg": {
+  "center": "cam/Construction/Construction_953641_center.png",
+  "surround": "cam/Construction/Construction_953641_surround.png",
+  "global": "cam/Construction/Construction_953641_global.png"
+ },
+ "Construction_953774.jpg": {
+  "center": "cam/Construction/Construction_953774_center.png",
+  "surround": "cam/Construction/Construction_953774_surround.png",
+  "global": "cam/Construction/Construction_953774_global.png"
+ },
+ "Construction_954210.jpg": {
+  "center": "cam/Construction/Construction_954210_center.png",
+  "surround": "cam/Construction/Construction_954210_surround.png",
+  "global": "cam/Construction/Construction_954210_global.png"
+ },
+ "Construction_954814.jpg": {
+  "center": "cam/Construction/Construction_954814_center.png",
+  "surround": "cam/Construction/Construction_954814_surround.png",
+  "global": "cam/Construction/Construction_954814_global.png"
+ },
+ "Construction_954633.jpg": {
+  "center": "cam/Construction/Construction_954633_center.png",
+  "surround": "cam/Construction/Construction_954633_surround.png",
+  "global": "cam/Construction/Construction_954633_global.png"
+ },
+ "Dry_field_433066.jpg": {
+  "center": "cam/Dry_field/Dry_field_433066_center.png",
+  "surround": "cam/Dry_field/Dry_field_433066_surround.png",
+  "global": "cam/Dry_field/Dry_field_433066_global.png"
+ },
+ "Dry_field_481488.jpg": {
+  "center": "cam/Dry_field/Dry_field_481488_center.png",
+  "surround": "cam/Dry_field/Dry_field_481488_surround.png",
+  "global": "cam/Dry_field/Dry_field_481488_global.png"
+ },
+ "Dry_field_501145.jpg": {
+  "center": "cam/Dry_field/Dry_field_501145_center.png",
+  "surround": "cam/Dry_field/Dry_field_501145_surround.png",
+  "global": "cam/Dry_field/Dry_field_501145_global.png"
+ },
+ "Dry_field_520368.jpg": {
+  "center": "cam/Dry_field/Dry_field_520368_center.png",
+  "surround": "cam/Dry_field/Dry_field_520368_surround.png",
+  "global": "cam/Dry_field/Dry_field_520368_global.png"
+ },
+ "Dry_field_412109.jpg": {
+  "center": "cam/Dry_field/Dry_field_412109_center.png",
+  "surround": "cam/Dry_field/Dry_field_412109_surround.png",
+  "global": "cam/Dry_field/Dry_field_412109_global.png"
+ },
+ "Highway_892582.jpg": {
+  "center": "cam/Highway/Highway_892582_center.png",
+  "surround": "cam/Highway/Highway_892582_surround.png",
+  "global": "cam/Highway/Highway_892582_global.png"
+ },
+ "Highway_893325.jpg": {
+  "center": "cam/Highway/Highway_893325_center.png",
+  "surround": "cam/Highway/Highway_893325_surround.png",
+  "global": "cam/Highway/Highway_893325_global.png"
+ },
+ "Highway_893020.jpg": {
+  "center": "cam/Highway/Highway_893020_center.png",
+  "surround": "cam/Highway/Highway_893020_surround.png",
+  "global": "cam/Highway/Highway_893020_global.png"
+ },
+ "Highway_891216.jpg": {
+  "center": "cam/Highway/Highway_891216_center.png",
+  "surround": "cam/Highway/Highway_891216_surround.png",
+  "global": "cam/Highway/Highway_891216_global.png"
+ },
+ "Highway_891131.jpg": {
+  "center": "cam/Highway/Highway_891131_center.png",
+  "surround": "cam/Highway/Highway_891131_surround.png",
+  "global": "cam/Highway/Highway_891131_global.png"
+ },
+ "Hills_951855.jpg": {
+  "center": "cam/Hills/Hills_951855_center.png",
+  "surround": "cam/Hills/Hills_951855_surround.png",
+  "global": "cam/Hills/Hills_951855_global.png"
+ },
+ "Hills_952718.jpg": {
+  "center": "cam/Hills/Hills_952718_center.png",
+  "surround": "cam/Hills/Hills_952718_surround.png",
+  "global": "cam/Hills/Hills_952718_global.png"
+ },
+ "Hills_951998.jpg": {
+  "center": "cam/Hills/Hills_951998_center.png",
+  "surround": "cam/Hills/Hills_951998_surround.png",
+  "global": "cam/Hills/Hills_951998_global.png"
+ },
+ "Hills_952749.jpg": {
+  "center": "cam/Hills/Hills_952749_center.png",
+  "surround": "cam/Hills/Hills_952749_surround.png",
+  "global": "cam/Hills/Hills_952749_global.png"
+ },
+ "Hills_953131.jpg": {
+  "center": "cam/Hills/Hills_953131_center.png",
+  "surround": "cam/Hills/Hills_953131_surround.png",
+  "global": "cam/Hills/Hills_953131_global.png"
+ },
+ "Landfill_963414.jpg": {
+  "center": "cam/Landfill/Landfill_963414_center.png",
+  "surround": "cam/Landfill/Landfill_963414_surround.png",
+  "global": "cam/Landfill/Landfill_963414_global.png"
+ },
+ "Landfill_963935.jpg": {
+  "center": "cam/Landfill/Landfill_963935_center.png",
+  "surround": "cam/Landfill/Landfill_963935_surround.png",
+  "global": "cam/Landfill/Landfill_963935_global.png"
+ },
+ "Landfill_963312.jpg": {
+  "center": "cam/Landfill/Landfill_963312_center.png",
+  "surround": "cam/Landfill/Landfill_963312_surround.png",
+  "global": "cam/Landfill/Landfill_963312_global.png"
+ },
+ "Landfill_962913.jpg": {
+  "center": "cam/Landfill/Landfill_962913_center.png",
+  "surround": "cam/Landfill/Landfill_962913_surround.png",
+  "global": "cam/Landfill/Landfill_962913_global.png"
+ },
+ "Landfill_963571.jpg": {
+  "center": "cam/Landfill/Landfill_963571_center.png",
+  "surround": "cam/Landfill/Landfill_963571_surround.png",
+  "global": "cam/Landfill/Landfill_963571_global.png"
+ },
+ "Military_training_ground_944418.jpg": {
+  "center": "cam/Military_training_ground/Military_training_ground_944418_center.png",
+  "surround": "cam/Military_training_ground/Military_training_ground_944418_surround.png",
+  "global": "cam/Military_training_ground/Military_training_ground_944418_global.png"
+ },
+ "Military_training_ground_943958.jpg": {
+  "center": "cam/Military_training_ground/Military_training_ground_943958_center.png",
+  "surround": "cam/Military_training_ground/Military_training_ground_943958_surround.png",
+  "global": "cam/Military_training_ground/Military_training_ground_943958_global.png"
+ },
+ "Military_training_ground_943832.jpg": {
+  "center": "cam/Military_training_ground/Military_training_ground_943832_center.png",
+  "surround": "cam/Military_training_ground/Military_training_ground_943832_surround.png",
+  "global": "cam/Military_training_ground/Military_training_ground_943832_global.png"
+ },
+ "Military_training_ground_944585.jpg": {
+  "center": "cam/Military_training_ground/Military_training_ground_944585_center.png",
+  "surround": "cam/Military_training_ground/Military_training_ground_944585_surround.png",
+  "global": "cam/Military_training_ground/Military_training_ground_944585_global.png"
+ },
+ "Military_training_ground_944279.jpg": {
+  "center": "cam/Military_training_ground/Military_training_ground_944279_center.png",
+  "surround": "cam/Military_training_ground/Military_training_ground_944279_surround.png",
+  "global": "cam/Military_training_ground/Military_training_ground_944279_global.png"
+ },
+ "Mosque_1030949.jpg": {
+  "center": "cam/Mosque/Mosque_1030949_center.png",
+  "surround": "cam/Mosque/Mosque_1030949_surround.png",
+  "global": "cam/Mosque/Mosque_1030949_global.png"
+ },
+ "Mosque_1031448.jpg": {
+  "center": "cam/Mosque/Mosque_1031448_center.png",
+  "surround": "cam/Mosque/Mosque_1031448_surround.png",
+  "global": "cam/Mosque/Mosque_1031448_global.png"
+ },
+ "Mosque_1031113.jpg": {
+  "center": "cam/Mosque/Mosque_1031113_center.png",
+  "surround": "cam/Mosque/Mosque_1031113_surround.png",
+  "global": "cam/Mosque/Mosque_1031113_global.png"
+ },
+ "Mosque_1031035.jpg": {
+  "center": "cam/Mosque/Mosque_1031035_center.png",
+  "surround": "cam/Mosque/Mosque_1031035_surround.png",
+  "global": "cam/Mosque/Mosque_1031035_global.png"
+ },
+ "Mosque_1030836.jpg": {
+  "center": "cam/Mosque/Mosque_1030836_center.png",
+  "surround": "cam/Mosque/Mosque_1030836_surround.png",
+  "global": "cam/Mosque/Mosque_1030836_global.png"
+ },
+ "Mountain_940024.jpg": {
+  "center": "cam/Mountain/Mountain_940024_center.png",
+  "surround": "cam/Mountain/Mountain_940024_surround.png",
+  "global": "cam/Mountain/Mountain_940024_global.png"
+ },
+ "Mountain_941059.jpg": {
+  "center": "cam/Mountain/Mountain_941059_center.png",
+  "surround": "cam/Mountain/Mountain_941059_surround.png",
+  "global": "cam/Mountain/Mountain_941059_global.png"
+ },
+ "Mountain_940922.jpg": {
+  "center": "cam/Mountain/Mountain_940922_center.png",
+  "surround": "cam/Mountain/Mountain_940922_surround.png",
+  "global": "cam/Mountain/Mountain_940922_global.png"
+ },
+ "Mountain_940548.jpg": {
+  "center": "cam/Mountain/Mountain_940548_center.png",
+  "surround": "cam/Mountain/Mountain_940548_surround.png",
+  "global": "cam/Mountain/Mountain_940548_global.png"
+ },
+ "Mountain_940076.jpg": {
+  "center": "cam/Mountain/Mountain_940076_center.png",
+  "surround": "cam/Mountain/Mountain_940076_surround.png",
+  "global": "cam/Mountain/Mountain_940076_global.png"
+ },
+ "Petroleum_well_994470.jpg": {
+  "center": "cam/Petroleum_well/Petroleum_well_994470_center.png",
+  "surround": "cam/Petroleum_well/Petroleum_well_994470_surround.png",
+  "global": "cam/Petroleum_well/Petroleum_well_994470_global.png"
+ },
+ "Petroleum_well_994027.jpg": {
+  "center": "cam/Petroleum_well/Petroleum_well_994027_center.png",
+  "surround": "cam/Petroleum_well/Petroleum_well_994027_surround.png",
+  "global": "cam/Petroleum_well/Petroleum_well_994027_global.png"
+ },
+ "Petroleum_well_993984.jpg": {
+  "center": "cam/Petroleum_well/Petroleum_well_993984_center.png",
+  "surround": "cam/Petroleum_well/Petroleum_well_993984_surround.png",
+  "global": "cam/Petroleum_well/Petroleum_well_993984_global.png"
+ },
+ "Petroleum_well_994603.jpg": {
+  "center": "cam/Petroleum_well/Petroleum_well_994603_center.png",
+  "surround": "cam/Petroleum_well/Petroleum_well_994603_surround.png",
+  "global": "cam/Petroleum_well/Petroleum_well_994603_global.png"
+ },
+ "Petroleum_well_994297.jpg": {
+  "center": "cam/Petroleum_well/Petroleum_well_994297_center.png",
+  "surround": "cam/Petroleum_well/Petroleum_well_994297_surround.png",
+  "global": "cam/Petroleum_well/Petroleum_well_994297_global.png"
+ },
+ "Port_984839.jpg": {
+  "center": "cam/Port/Port_984839_center.png",
+  "surround": "cam/Port/Port_984839_surround.png",
+  "global": "cam/Port/Port_984839_global.png"
+ },
+ "Port_985888.jpg": {
+  "center": "cam/Port/Port_985888_center.png",
+  "surround": "cam/Port/Port_985888_surround.png",
+  "global": "cam/Port/Port_985888_global.png"
+ },
+ "Port_986105.jpg": {
+  "center": "cam/Port/Port_986105_center.png",
+  "surround": "cam/Port/Port_986105_surround.png",
+  "global": "cam/Port/Port_986105_global.png"
+ },
+ "Port_985839.jpg": {
+  "center": "cam/Port/Port_985839_center.png",
+  "surround": "cam/Port/Port_985839_surround.png",
+  "global": "cam/Port/Port_985839_global.png"
+ },
+ "Port_985329.jpg": {
+  "center": "cam/Port/Port_985329_center.png",
+  "surround": "cam/Port/Port_985329_surround.png",
+  "global": "cam/Port/Port_985329_global.png"
+ },
+ "Quarry_904726.jpg": {
+  "center": "cam/Quarry/Quarry_904726_center.png",
+  "surround": "cam/Quarry/Quarry_904726_surround.png",
+  "global": "cam/Quarry/Quarry_904726_global.png"
+ },
+ "Quarry_902734.jpg": {
+  "center": "cam/Quarry/Quarry_902734_center.png",
+  "surround": "cam/Quarry/Quarry_902734_surround.png",
+  "global": "cam/Quarry/Quarry_902734_global.png"
+ },
+ "Quarry_903226.jpg": {
+  "center": "cam/Quarry/Quarry_903226_center.png",
+  "surround": "cam/Quarry/Quarry_903226_surround.png",
+  "global": "cam/Quarry/Quarry_903226_global.png"
+ },
+ "Quarry_901521.jpg": {
+  "center": "cam/Quarry/Quarry_901521_center.png",
+  "surround": "cam/Quarry/Quarry_901521_surround.png",
+  "global": "cam/Quarry/Quarry_901521_global.png"
+ },
+ "Quarry_901119.jpg": {
+  "center": "cam/Quarry/Quarry_901119_center.png",
+  "surround": "cam/Quarry/Quarry_901119_surround.png",
+  "global": "cam/Quarry/Quarry_901119_global.png"
+ },
+ "Resort_972010.jpg": {
+  "center": "cam/Resort/Resort_972010_center.png",
+  "surround": "cam/Resort/Resort_972010_surround.png",
+  "global": "cam/Resort/Resort_972010_global.png"
+ },
+ "Resort_971501.jpg": {
+  "center": "cam/Resort/Resort_971501_center.png",
+  "surround": "cam/Resort/Resort_971501_surround.png",
+  "global": "cam/Resort/Resort_971501_global.png"
+ },
+ "Resort_971841.jpg": {
+  "center": "cam/Resort/Resort_971841_center.png",
+  "surround": "cam/Resort/Resort_971841_surround.png",
+  "global": "cam/Resort/Resort_971841_global.png"
+ },
+ "Resort_972072.jpg": {
+  "center": "cam/Resort/Resort_972072_center.png",
+  "surround": "cam/Resort/Resort_972072_surround.png",
+  "global": "cam/Resort/Resort_972072_global.png"
+ },
+ "Resort_972289.jpg": {
+  "center": "cam/Resort/Resort_972289_center.png",
+  "surround": "cam/Resort/Resort_972289_surround.png",
+  "global": "cam/Resort/Resort_972289_global.png"
+ },
+ "Rock_995621.jpg": {
+  "center": "cam/Rock/Rock_995621_center.png",
+  "surround": "cam/Rock/Rock_995621_surround.png",
+  "global": "cam/Rock/Rock_995621_global.png"
+ },
+ "Rock_995530.jpg": {
+  "center": "cam/Rock/Rock_995530_center.png",
+  "surround": "cam/Rock/Rock_995530_surround.png",
+  "global": "cam/Rock/Rock_995530_global.png"
+ },
+ "Rock_995484.jpg": {
+  "center": "cam/Rock/Rock_995484_center.png",
+  "surround": "cam/Rock/Rock_995484_surround.png",
+  "global": "cam/Rock/Rock_995484_global.png"
+ },
+ "Rock_995008.jpg": {
+  "center": "cam/Rock/Rock_995008_center.png",
+  "surround": "cam/Rock/Rock_995008_surround.png",
+  "global": "cam/Rock/Rock_995008_global.png"
+ },
+ "Rock_995848.jpg": {
+  "center": "cam/Rock/Rock_995848_center.png",
+  "surround": "cam/Rock/Rock_995848_surround.png",
+  "global": "cam/Rock/Rock_995848_global.png"
+ },
+ "Roundabout_1032682.jpg": {
+  "center": "cam/Roundabout/Roundabout_1032682_center.png",
+  "surround": "cam/Roundabout/Roundabout_1032682_surround.png",
+  "global": "cam/Roundabout/Roundabout_1032682_global.png"
+ },
+ "Roundabout_1033010.jpg": {
+  "center": "cam/Roundabout/Roundabout_1033010_center.png",
+  "surround": "cam/Roundabout/Roundabout_1033010_surround.png",
+  "global": "cam/Roundabout/Roundabout_1033010_global.png"
+ },
+ "Roundabout_1033286.jpg": {
+  "center": "cam/Roundabout/Roundabout_1033286_center.png",
+  "surround": "cam/Roundabout/Roundabout_1033286_surround.png",
+  "global": "cam/Roundabout/Roundabout_1033286_global.png"
+ },
+ "Roundabout_1032781.jpg": {
+  "center": "cam/Roundabout/Roundabout_1032781_center.png",
+  "surround": "cam/Roundabout/Roundabout_1032781_surround.png",
+  "global": "cam/Roundabout/Roundabout_1032781_global.png"
+ },
+ "Roundabout_1033462.jpg": {
+  "center": "cam/Roundabout/Roundabout_1033462_center.png",
+  "surround": "cam/Roundabout/Roundabout_1033462_surround.png",
+  "global": "cam/Roundabout/Roundabout_1033462_global.png"
+ },
+ "Sand_957941.jpg": {
+  "center": "cam/Sand/Sand_957941_center.png",
+  "surround": "cam/Sand/Sand_957941_surround.png",
+  "global": "cam/Sand/Sand_957941_global.png"
+ },
+ "Sand_957684.jpg": {
+  "center": "cam/Sand/Sand_957684_center.png",
+  "surround": "cam/Sand/Sand_957684_surround.png",
+  "global": "cam/Sand/Sand_957684_global.png"
+ },
+ "Sand_957101.jpg": {
+  "center": "cam/Sand/Sand_957101_center.png",
+  "surround": "cam/Sand/Sand_957101_surround.png",
+  "global": "cam/Sand/Sand_957101_global.png"
+ },
+ "Sand_956812.jpg": {
+  "center": "cam/Sand/Sand_956812_center.png",
+  "surround": "cam/Sand/Sand_956812_surround.png",
+  "global": "cam/Sand/Sand_956812_global.png"
+ },
+ "Sand_956764.jpg": {
+  "center": "cam/Sand/Sand_956764_center.png",
+  "surround": "cam/Sand/Sand_956764_surround.png",
+  "global": "cam/Sand/Sand_956764_global.png"
+ },
+ "Scrub_860005.jpg": {
+  "center": "cam/Scrub/Scrub_860005_center.png",
+  "surround": "cam/Scrub/Scrub_860005_surround.png",
+  "global": "cam/Scrub/Scrub_860005_global.png"
+ },
+ "Scrub_860076.jpg": {
+  "center": "cam/Scrub/Scrub_860076_center.png",
+  "surround": "cam/Scrub/Scrub_860076_surround.png",
+  "global": "cam/Scrub/Scrub_860076_global.png"
+ },
+ "Scrub_866927.jpg": {
+  "center": "cam/Scrub/Scrub_866927_center.png",
+  "surround": "cam/Scrub/Scrub_866927_surround.png",
+  "global": "cam/Scrub/Scrub_866927_global.png"
+ },
+ "Scrub_857580.jpg": {
+  "center": "cam/Scrub/Scrub_857580_center.png",
+  "surround": "cam/Scrub/Scrub_857580_surround.png",
+  "global": "cam/Scrub/Scrub_857580_global.png"
+ },
+ "Scrub_863522.jpg": {
+  "center": "cam/Scrub/Scrub_863522_center.png",
+  "surround": "cam/Scrub/Scrub_863522_surround.png",
+  "global": "cam/Scrub/Scrub_863522_global.png"
+ },
+ "Solar_power_plant_816356.jpg": {
+  "center": "cam/Solar_power_plant/Solar_power_plant_816356_center.png",
+  "surround": "cam/Solar_power_plant/Solar_power_plant_816356_surround.png",
+  "global": "cam/Solar_power_plant/Solar_power_plant_816356_global.png"
+ },
+ "Solar_power_plant_819719.jpg": {
+  "center": "cam/Solar_power_plant/Solar_power_plant_819719_center.png",
+  "surround": "cam/Solar_power_plant/Solar_power_plant_819719_surround.png",
+  "global": "cam/Solar_power_plant/Solar_power_plant_819719_global.png"
+ },
+ "Solar_power_plant_826772.jpg": {
+  "center": "cam/Solar_power_plant/Solar_power_plant_826772_center.png",
+  "surround": "cam/Solar_power_plant/Solar_power_plant_826772_surround.png",
+  "global": "cam/Solar_power_plant/Solar_power_plant_826772_global.png"
+ },
+ "Solar_power_plant_818931.jpg": {
+  "center": "cam/Solar_power_plant/Solar_power_plant_818931_center.png",
+  "surround": "cam/Solar_power_plant/Solar_power_plant_818931_surround.png",
+  "global": "cam/Solar_power_plant/Solar_power_plant_818931_global.png"
+ },
+ "Solar_power_plant_804727.jpg": {
+  "center": "cam/Solar_power_plant/Solar_power_plant_804727_center.png",
+  "surround": "cam/Solar_power_plant/Solar_power_plant_804727_surround.png",
+  "global": "cam/Solar_power_plant/Solar_power_plant_804727_global.png"
+ },
+ "Substation_986508.jpg": {
+  "center": "cam/Substation/Substation_986508_center.png",
+  "surround": "cam/Substation/Substation_986508_surround.png",
+  "global": "cam/Substation/Substation_986508_global.png"
+ },
+ "Substation_986199.jpg": {
+  "center": "cam/Substation/Substation_986199_center.png",
+  "surround": "cam/Substation/Substation_986199_surround.png",
+  "global": "cam/Substation/Substation_986199_global.png"
+ },
+ "Substation_986339.jpg": {
+  "center": "cam/Substation/Substation_986339_center.png",
+  "surround": "cam/Substation/Substation_986339_surround.png",
+  "global": "cam/Substation/Substation_986339_global.png"
+ },
+ "Substation_986985.jpg": {
+  "center": "cam/Substation/Substation_986985_center.png",
+  "surround": "cam/Substation/Substation_986985_surround.png",
+  "global": "cam/Substation/Substation_986985_global.png"
+ },
+ "Substation_987189.jpg": {
+  "center": "cam/Substation/Substation_987189_center.png",
+  "surround": "cam/Substation/Substation_987189_surround.png",
+  "global": "cam/Substation/Substation_987189_global.png"
+ },
+ "Swimming_pool_955563.jpg": {
+  "center": "cam/Swimming_pool/Swimming_pool_955563_center.png",
+  "surround": "cam/Swimming_pool/Swimming_pool_955563_surround.png",
+  "global": "cam/Swimming_pool/Swimming_pool_955563_global.png"
+ },
+ "Swimming_pool_956137.jpg": {
+  "center": "cam/Swimming_pool/Swimming_pool_956137_center.png",
+  "surround": "cam/Swimming_pool/Swimming_pool_956137_surround.png",
+  "global": "cam/Swimming_pool/Swimming_pool_956137_global.png"
+ },
+ "Swimming_pool_955184.jpg": {
+  "center": "cam/Swimming_pool/Swimming_pool_955184_center.png",
+  "surround": "cam/Swimming_pool/Swimming_pool_955184_surround.png",
+  "global": "cam/Swimming_pool/Swimming_pool_955184_global.png"
+ },
+ "Swimming_pool_955392.jpg": {
+  "center": "cam/Swimming_pool/Swimming_pool_955392_center.png",
+  "surround": "cam/Swimming_pool/Swimming_pool_955392_surround.png",
+  "global": "cam/Swimming_pool/Swimming_pool_955392_global.png"
+ },
+ "Swimming_pool_956397.jpg": {
+  "center": "cam/Swimming_pool/Swimming_pool_956397_center.png",
+  "surround": "cam/Swimming_pool/Swimming_pool_956397_surround.png",
+  "global": "cam/Swimming_pool/Swimming_pool_956397_global.png"
+ },
+ "Thermal_power_plant_1014796.jpg": {
+  "center": "cam/Thermal_power_plant/Thermal_power_plant_1014796_center.png",
+  "surround": "cam/Thermal_power_plant/Thermal_power_plant_1014796_surround.png",
+  "global": "cam/Thermal_power_plant/Thermal_power_plant_1014796_global.png"
+ },
+ "Thermal_power_plant_1014739.jpg": {
+  "center": "cam/Thermal_power_plant/Thermal_power_plant_1014739_center.png",
+  "surround": "cam/Thermal_power_plant/Thermal_power_plant_1014739_surround.png",
+  "global": "cam/Thermal_power_plant/Thermal_power_plant_1014739_global.png"
+ },
+ "Thermal_power_plant_1014985.jpg": {
+  "center": "cam/Thermal_power_plant/Thermal_power_plant_1014985_center.png",
+  "surround": "cam/Thermal_power_plant/Thermal_power_plant_1014985_surround.png",
+  "global": "cam/Thermal_power_plant/Thermal_power_plant_1014985_global.png"
+ },
+ "Thermal_power_plant_1014445.jpg": {
+  "center": "cam/Thermal_power_plant/Thermal_power_plant_1014445_center.png",
+  "surround": "cam/Thermal_power_plant/Thermal_power_plant_1014445_surround.png",
+  "global": "cam/Thermal_power_plant/Thermal_power_plant_1014445_global.png"
+ },
+ "Thermal_power_plant_1014635.jpg": {
+  "center": "cam/Thermal_power_plant/Thermal_power_plant_1014635_center.png",
+  "surround": "cam/Thermal_power_plant/Thermal_power_plant_1014635_surround.png",
+  "global": "cam/Thermal_power_plant/Thermal_power_plant_1014635_global.png"
+ }
+}

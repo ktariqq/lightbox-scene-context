@@ -12,8 +12,10 @@ const cellOf = (r, k) => (r && typeof r[k + '_mean'] === 'number' ? { m: r[k + '
 const byModel = t => new Map((t ?? []).map(r => [mdl(r), r]));
 const signed = v => (typeof v === 'number' ? (v < 0 ? '−' : '+') + Math.abs(v).toFixed(3) : '—');
 const todoChip = t => h('span', { class: 'todo' }, t);
-const imgFig = (file, alt, cap) => {
-  const box = h('div', { class: 'shot' }, h('img', { src: resultsURL(file), alt, loading: 'lazy', onerror: () => box.replaceChildren(empty(file)) }));
+const imgFig = (file, alt, cap, opts = {}) => {
+  const auto = opts.ar === 'auto';
+  const box = h('div', { class: 'shot' + (auto ? ' shot--auto' : ''), style: auto ? 'aspect-ratio:auto;height:auto;' : (opts.ar ? `aspect-ratio:${opts.ar};` : '') },
+    h('img', { src: resultsURL(file), alt, loading: 'lazy', style: auto ? 'height:auto;' : '', onerror: () => box.replaceChildren(empty(file)) }));
   return h('figure', { class: 'fig' }, box, h('figcaption', { class: 'fine' }, cap));
 };
 
@@ -132,12 +134,11 @@ function gain(host) {
 
 /* 4 · UAE external (aggregates only; no imagery, no per-sample rows) */
 function uae(host) {
-  const fig = h('div'), cov = h('div'), st = { variant: 'full24', metric: 'f1' };
+  const fig = h('div'), st = { variant: 'full24', metric: 'f1' };
   host.append(panel('plum', 12, h('span', { class: 'sticker' }, 'External test'), h('h3', { class: 'h3' }, 'A small UAE check'),
     h('p', {}, 'Sentinel-2 imagery at 10 m per pixel. Labels were checked by eye and nothing was retrained or tuned on UAE. Only classes with at least 5 accepted samples are scored, and Dry field, Hills and Military training ground were not sampled. The sensor and acquisition years differ from MEET. Read this as a sanity check with wide uncertainty.'),
     h('div', { class: 'ctl' }, sel('Variant', [{ v: 'full24', t: 'full24' }, { v: 'restricted', t: 'restricted' }], st.variant, v => { st.variant = v; draw(); }),
       sel('Metric', C.METRICS.map(k => ({ v: k, t: C.METRIC_LABEL[k] })), st.metric, v => { st.metric = v; draw(); })), fig,
-    h('h4', { class: 'pix' }, 'Coverage summary · uae_coverage.json'), cov,
     h('p', {}, todoChip(C.TODOS[2].text), ' ', todoChip(C.TODOS[1].text))));
   async function draw() {
     const [t1, t2] = await Promise.all(['c', 'csg'].map(sb => loadCSV(tableFile('uae', st.variant, sb))));
@@ -148,7 +149,6 @@ function uae(host) {
       table: tbl(['model', 'c', 'c+s+g', 'n_seeds'], ms.map(m => { const a = cellOf(m1.get(m), k), b = cellOf(m2.get(m), k); return [sh(m), a ? pm(a.m, a.sd) : '—', b ? pm(b.m, b.sd) : '—', String(m2.get(m)?.n_seeds ?? '—')]; })) }) : empty('values'));
   }
   draw();
-  loadResultsJSON('uae_coverage.json').then(j => cov.replaceChildren(j ? kvDump(j) : empty('uae_coverage.json')));
 }
 
 /* 5 · calibration */
@@ -157,8 +157,8 @@ function calib(host) {
   host.append(panel('paper', 6, h('h3', { class: 'h3' }, 'How far to trust the percentages'),
     h('p', {}, 'ECE (expected calibration error) measures how closely stated confidence matches how often the model is right. Lower is better. The reliability diagram comes from the MEET test set. On UAE images or your own uploads, read the percentages as rough guides.'),
     sel('Data', [{ v: 'test', t: 'MEET test' }, { v: 'uae', t: 'UAE full24' }], st.ds, v => { st.ds = v; draw(); }), fig,
-    imgFig('reliability_test.png', 'Reliability diagram on the MEET test set: observed accuracy against predicted confidence in bins. The ECE numbers are in the table above.', 'reliability_test.png · MEET test'),
-    imgFig('roc_pr_test.png', 'ROC and precision–recall curves on the MEET test set for the evaluated models. Summary AUC values are in the exported tables.', 'roc_pr_test.png · MEET test')));
+    imgFig('reliability_test.png', 'Reliability diagram on the MEET test set: observed accuracy against predicted confidence in bins. The ECE numbers are in the table above.', 'reliability_test.png · MEET test', { ar: 'auto' }),
+    imgFig('roc_pr_test.png', 'ROC and precision–recall curves on the MEET test set for the evaluated models. Summary AUC values are in the exported tables.', 'roc_pr_test.png · MEET test', { ar: 'auto' })));
   async function draw() {
     const t = await loadCSV(tableFile(st.ds, 'full24', 'csg'));
     if (!t) { fig.replaceChildren(empty(tableFile(st.ds, 'full24', 'csg'))); return; }
