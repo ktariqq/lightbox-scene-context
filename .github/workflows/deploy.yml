@@ -1,3 +1,4 @@
+
 name: Deploy site to GitHub Pages
 
 on:
@@ -20,16 +21,26 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v4
-      - name: Copy results into the site (optional)
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Copy results into the site
         run: |
           mkdir -p docs/data/results
-          if [ -d results ]; then cp -r results/* docs/data/results/ 2>/dev/null || true; fi
+          if [ -d results ]; then
+            cp -r results/. docs/data/results/
+          fi
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
       - name: Upload site
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4
         with:
           path: docs
+
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4
