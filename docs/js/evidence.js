@@ -174,7 +174,7 @@ function gates(host) {
   const a = h('div'), b = h('div');
   host.append(panel('plum', 6, h('h3', { class: 'h3' }, 'How the model weighted each view'),
     h('p', {}, 'A gate is the weight the head learned for a view. A large gate means the head leaned on that view\'s features. It does not show that the view caused the answer.'), a, b,
-    imgFig('gate_dist.png', 'Distribution of the learned view gates on the test set, as exported by the pipeline.', 'gate_dist.png')));
+    imgFig('gate_dist.png', 'Distribution of the learned view gates on the test set, as exported by the pipeline.', 'gate_dist.png', { ar: 'auto' })));
   loadCSV('gates_group.csv').then(r => a.replaceChildren(h('h4', { class: 'pix' }, 'gates_group.csv · arid vs other'), r?.length ? h('div', { class: 'scroll' }, rowsTbl(r)) : empty('gates_group.csv')));
   loadCSV('gates_corr.csv').then(r => b.replaceChildren(h('h4', { class: 'pix' }, 'gates_corr.csv · gate vs correctness'), r?.length ? h('div', { class: 'scroll' }, rowsTbl(r)) : empty('gates_corr.csv')));
 }
