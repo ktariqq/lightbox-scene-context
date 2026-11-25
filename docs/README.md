@@ -1,4 +1,4 @@
-# AIRE410 · Zero-G Lightbox
+# Beyond the Frame
 
 Static site: a scroll story, an Evidence section and an in-browser instrument (TF.js 4.22.0). No build step.
 

@@ -19,12 +19,12 @@ const imgFig = (file, alt, cap) => {
 
 export function initEvidence(D) {
   const host = $('#evidence-body'); let done = false;
-  const go = () => {
-    if (done) return; done = true; host.replaceChildren(
-      h('p', { class: 'fine span-12', style: 'grid-column:span 12' }, 'Files without a subset column (per-class, McNemar, group summary, confusion) report the configuration chosen by the export scripts. Check those scripts for the exact view subset.'));
+  return () => {
+    if (done) return; done = true;
+    host.replaceChildren(
+      h('p', { class: 'fine span-12', style: 'grid-column:span 12' }, 'Some files (per-class scores, McNemar tests, group summary, confusion) report a single configuration chosen by the export scripts rather than a view subset. The scripts name it.'));
     [ablation, comparisons, gain, uae, calib, gates, confusion, perClass].forEach(f => { try { f(host, D); } catch (e) { console.error(f.name, e); } });
   };
-  new IntersectionObserver((e, o) => { if (e[0].isIntersecting) { o.disconnect(); go(); } }, { rootMargin: '700px 0px' }).observe($('#evidence'));
 }
 
 /* 1 · seven view subsets */
@@ -38,10 +38,10 @@ function ablation(host) {
     sel('Metric', C.METRICS.map(k => ({ v: k, t: C.METRIC_LABEL[k] })), st.metric, v => { st.metric = v; update(); }),
     ...C.FUSION_ORDER.map(m => chk(sh(m), st.models.has(m), on => { on ? st.models.add(m) : st.models.delete(m); update(); })));
   host.append(
-    panel('paper', 8, h('span', { class: 'sticker' }, 'RQ 1'), h('h3', { class: 'h3' }, 'Does context help? Seven view subsets'),
-      h('p', {}, 'Same frozen backbone, same head family. Only the views that reach the head change. c = center, s = surround, g = global. Dashed lines are baselines.'), ctl, fig),
+    panel('paper', 8, h('span', { class: 'sticker' }, 'RQ 1'), h('h3', { class: 'h3' }, 'Does a wider view help? Every combination of views'),
+      h('p', {}, 'The frozen network and the type of head stay the same. Only the views that reach the head change: c = center, s = surround, g = global. Dashed lines mark baselines.'), ctl, fig),
     panel('plum up', 4, h('span', { class: 'tape' }, 'difference of means'), kpi,
-      h('p', { class: 'fine' }, 'B4-VD with all three views minus B4-VD center-only, in the chosen metric. A difference of means, not a significance test. Compare it with the seed spread.')));
+      h('p', { class: 'fine' }, 'The proposed model (B4-VD) with all three views, minus the same model with the center only. This is a plain difference of averages. Compare it with the spread between seeds before reading anything into it.')));
   async function update() {
     const variant = st.ds === 'uae' ? st.variant : 'full24';
     const tabs = await Promise.all(C.SUBSETS.map(sb => loadCSV(tableFile(st.ds, variant, sb))));
@@ -62,9 +62,9 @@ function ablation(host) {
 function comparisons(host) {
   const a = h('div'), b = h('div');
   host.append(
-    panel('plum', 5, h('h3', { class: 'h3' }, 'B2 vs B3 vs B4'),
-      h('p', {}, 'B2 reads the center view only. B3 and B4 fuse all three. That is the context comparison. B1 is a different architecture trained end to end, so B1 vs B2 is not.'), a),
-    panel('paper', 7, h('span', { class: 'tape gold' }, 'McNemar · paired predictions'), h('p', {}, 'Exact McNemar on the same test images, per seed, with effect sizes. Rows with the “significant” flag are tinted. Verdicts are printed exactly as exported. Check mcnemar.csv’s script for the sign convention of Δ.'), b));
+    panel('plum', 5, h('h3', { class: 'h3' }, 'One view against three'),
+      h('p', {}, 'B2 reads the center only. B3 and B4 combine all three views, so B2 against B3 or B4 is the fair test of context. B1 is a different kind of network trained end to end, so B1 against B2 says little about context.'), a),
+    panel('paper', 7, h('span', { class: 'tape gold' }, 'McNemar · paired predictions'), h('p', {}, 'A paired test on the same test images, run once per seed. It looks at the images where one model is right and the other is wrong. Rows marked significant are tinted. Verdicts appear exactly as exported. Check the export script for the sign convention of Δ.'), b));
   (async () => {
     const t = await loadCSV(tableFile('test', 'full24', 'csg'));
     if (!t) a.replaceChildren(empty(tableFile('test', 'full24', 'csg')));
@@ -98,7 +98,7 @@ function comparisons(host) {
 /* 3 · arid vs other gain */
 function gain(host) {
   const left = h('div'), right = h('div');
-  host.append(panel('paper', 7, h('span', { class: 'sticker pk' }, 'RQ 2'), h('h3', { class: 'h3' }, 'Is context worth more for arid classes?'), left), panel('plum up', 5, right));
+  host.append(panel('paper', 7, h('span', { class: 'sticker pk' }, 'RQ 2'), h('h3', { class: 'h3' }, 'Does context help the desert classes more?'), left), panel('plum up', 5, right));
   (async () => {
     const [cg, cgg, gsum] = await Promise.all([loadCSV('context_gain.csv'), loadCSV('context_gain_groups.csv'), loadCSV('group_summary.csv')]);
     if (!cg) { left.replaceChildren(empty('context_gain.csv')); return; }
@@ -106,7 +106,7 @@ function gain(host) {
     const st = { model: models.includes(C.PROPOSED) ? C.PROPOSED : models[0], seed: seeds.includes(42) ? 42 : seeds[0], metric: 'f1' };
     const fig = h('div');
     left.replaceChildren(
-      h('p', {}, 'Per-class gain with a bootstrap 95% CI (test images resampled within each class, paired across models). The arid/other grouping was fixed before results were seen. ', todoChip('[EDIT: one-line definition of context gain as computed by the export code]')),
+      h('p', {}, 'Gain per class, with a bootstrap 95% interval (test images resampled within each class, paired across models). The arid grouping was fixed before any result was seen. ', todoChip('[EDIT: one-line definition of context gain as computed by the export code]')),
       h('div', { class: 'ctl' }, sel('Model', models.map(m => ({ v: m, t: modelLabel(m) })), st.model, v => { st.model = v; draw(); }),
         sel('Seed', seeds.map(x => ({ v: x, t: String(x) })), st.seed, v => { st.seed = +v; draw(); }),
         sel('Metric', [{ v: 'f1', t: 'F1' }, { v: 'acc', t: 'Accuracy' }], st.metric, v => { st.metric = v; draw(); })), fig);
@@ -133,8 +133,8 @@ function gain(host) {
 /* 4 · UAE external (aggregates only; no imagery, no per-sample rows) */
 function uae(host) {
   const fig = h('div'), cov = h('div'), st = { variant: 'full24', metric: 'f1' };
-  host.append(panel('plum', 12, h('span', { class: 'sticker' }, 'External test'), h('h3', { class: 'h3' }, 'RQ 3 · a small UAE external set'),
-    h('p', {}, 'Esri World Imagery at 1.0 m/pixel, labels checked by eye, no retraining or tuning on UAE. Only classes with at least 5 accepted samples are evaluated. Dry field, Hills and Military training ground are not sampled. Sensors and acquisition years differ from MEET. Read this as a sanity check with wide uncertainty.'),
+  host.append(panel('plum', 12, h('span', { class: 'sticker' }, 'External test'), h('h3', { class: 'h3' }, 'A small UAE check'),
+    h('p', {}, 'Sentinel-2 imagery at 10 m per pixel. Labels were checked by eye and nothing was retrained or tuned on UAE. Only classes with at least 5 accepted samples are scored, and Dry field, Hills and Military training ground were not sampled. The sensor and acquisition years differ from MEET. Read this as a sanity check with wide uncertainty.'),
     h('div', { class: 'ctl' }, sel('Variant', [{ v: 'full24', t: 'full24' }, { v: 'restricted', t: 'restricted' }], st.variant, v => { st.variant = v; draw(); }),
       sel('Metric', C.METRICS.map(k => ({ v: k, t: C.METRIC_LABEL[k] })), st.metric, v => { st.metric = v; draw(); })), fig,
     h('h4', { class: 'pix' }, 'Coverage summary · uae_coverage.json'), cov,
@@ -154,8 +154,8 @@ function uae(host) {
 /* 5 · calibration */
 function calib(host) {
   const fig = h('div'), st = { ds: 'test' };
-  host.append(panel('paper', 6, h('h3', { class: 'h3' }, 'Calibration'),
-    h('p', {}, 'ECE is the expected calibration error, and lower is better. The reliability diagram is the exported MEET-test plot. On UAE or on uploads, confidence is not a calibrated probability.'),
+  host.append(panel('paper', 6, h('h3', { class: 'h3' }, 'How far to trust the percentages'),
+    h('p', {}, 'ECE (expected calibration error) measures how closely stated confidence matches how often the model is right. Lower is better. The reliability diagram comes from the MEET test set. On UAE images or your own uploads, read the percentages as rough guides.'),
     sel('Data', [{ v: 'test', t: 'MEET test' }, { v: 'uae', t: 'UAE full24' }], st.ds, v => { st.ds = v; draw(); }), fig,
     imgFig('reliability_test.png', 'Reliability diagram on the MEET test set: observed accuracy against predicted confidence in bins. The ECE numbers are in the table above.', 'reliability_test.png · MEET test'),
     imgFig('roc_pr_test.png', 'ROC and precision–recall curves on the MEET test set for the evaluated models. Summary AUC values are in the exported tables.', 'roc_pr_test.png · MEET test')));
@@ -172,8 +172,8 @@ function calib(host) {
 /* 6 · gates */
 function gates(host) {
   const a = h('div'), b = h('div');
-  host.append(panel('plum', 6, h('h3', { class: 'h3' }, 'What the gates did'),
-    h('p', {}, 'Gates are the head’s learned weights on each view. A large gate means the head leaned on that view’s features. It does not mean the view is causally important.'), a, b,
+  host.append(panel('plum', 6, h('h3', { class: 'h3' }, 'How the model weighted each view'),
+    h('p', {}, 'A gate is the weight the head learned for a view. A large gate means the head leaned on that view\'s features. It does not show that the view caused the answer.'), a, b,
     imgFig('gate_dist.png', 'Distribution of the learned view gates on the test set, as exported by the pipeline.', 'gate_dist.png')));
   loadCSV('gates_group.csv').then(r => a.replaceChildren(h('h4', { class: 'pix' }, 'gates_group.csv · arid vs other'), r?.length ? h('div', { class: 'scroll' }, rowsTbl(r)) : empty('gates_group.csv')));
   loadCSV('gates_corr.csv').then(r => b.replaceChildren(h('h4', { class: 'pix' }, 'gates_corr.csv · gate vs correctness'), r?.length ? h('div', { class: 'scroll' }, rowsTbl(r)) : empty('gates_corr.csv')));
@@ -199,8 +199,8 @@ function heat(t) {
 }
 function confusion(host, D) {
   const classes = D?.classes ?? [], arid = new Set(D?.groups?.arid ?? []), body = h('div'), st = { model: C.PROPOSED };
-  host.append(panel('plum', 12, h('span', { class: 'sticker' }, 'seed 42'), h('h3', { class: 'h3' }, 'Confusion map · MEET test'),
-    h('p', {}, 'Rows are true classes and columns are predicted classes, sorted into arid (gold) then other. Colour is the share of the true class predicted as the column class, on a square-root scale. The diagonal (correct) is outlined, not coloured. Pink lines mark the top confusions. Hover or focus a label to isolate a class.'),
+  host.append(panel('plum', 12, h('span', { class: 'sticker' }, 'seed 42'), h('h3', { class: 'h3' }, 'Where the model gets confused'),
+    h('p', {}, 'Each row is a true class and each column is what the model predicted, with arid classes (gold) grouped first. Colour shows the share of the true class sent to that column, on a square-root scale. The diagonal (correct answers) is outlined. Pink lines mark the most common mix-ups. Hover or focus a label to isolate a class.'),
     h('div', { class: 'ctl' }, sel('Model', ['b2', 'b3', 'b3vd', 'b4', 'b4vd', 'customcnn'].map(m => ({ v: m, t: modelLabel(m) })), st.model, v => { st.model = v; draw(); })), body));
   async function draw() {
     const [raw, tc] = await Promise.all([loadRawCSV(`confusion_test_${st.model}.csv`), loadCSV('top_confusions.csv')]);
@@ -245,7 +245,7 @@ function confusion(host, D) {
 /* 8 · per-class explorer */
 function perClass(host) {
   const out = h('div');
-  host.append(panel('paper', 12, h('span', { class: 'sticker alt' }, 'MEET test'), h('h3', { class: 'h3' }, 'Per-class explorer'), out));
+  host.append(panel('paper', 12, h('span', { class: 'sticker alt' }, 'MEET test'), h('h3', { class: 'h3' }, 'Class by class'), out));
   (async () => {
     const [pc, tc] = await Promise.all([loadCSV('per_class.csv'), loadCSV('top_confusions.csv')]);
     if (!pc) { out.replaceChildren(empty('per_class.csv')); return; }

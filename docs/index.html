@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>AIRE410 · Does the neighbourhood help name the place?</title>
-<meta name="description" content="Context-aware fine-grained scene classification on 1 m/pixel satellite imagery. A scroll story and an in-browser instrument.">
+<title>Beyond the Frame · Does the neighbourhood help name the place?</title>
+<meta name="description" content="Can a model name a place better when it also sees what surrounds it? A satellite scene classifier you can take apart, running in your browser.">
 <meta name="theme-color" content="#0A0614">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,157 +14,67 @@
 <link rel="stylesheet" href="css/stack.css">
 <link rel="stylesheet" href="css/sections.css">
 <link rel="stylesheet" href="css/instrument.css">
+<link rel="stylesheet" href="css/layout.css">
 <link rel="modulepreload" href="js/main.js">
 </head>
 <body>
-<a class="skip" href="#instrument">Skip to instrument</a>
+<a class="skip" href="#instrument">Skip to the model</a>
 <div class="sky" aria-hidden="true"><div class="limb"></div></div>
 
-<div class="story" id="story">
+<!-- 1 · HERO -->
+<header id="hook" class="hero">
+  <div class="hero-copy">
+    <p class="pix">A study of satellite scene classification</p>
+    <h1 id="h-hook" class="hook-title"><span class="chrome">Beyond the</span> <span class="cut cut-a">frame</span></h1>
+    <p class="lede">Can a computer name a place more accurately when it also sees what surrounds it?</p>
+    <p class="lede-2">This tool lets you find out. Give it a satellite image and it reads the scene three times: a tight crop of the spot itself, a wider look at its neighbourhood, and the whole landscape. It names the scene type, then shows how much weight each view received.</p>
+    <dl class="trio">
+      <div><dt>Center · 256 m</dt><dd>The spot itself</dd></div>
+      <div><dt>Surround · 768 m</dt><dd>Its neighbourhood</dd></div>
+      <div><dt>Global · 1.28 km</dt><dd>The whole scene</dd></div>
+    </dl>
+    <div class="cta">
+      <a class="cap go" href="#instrument">Try it on an image</a>
+      <a class="cap ghost" href="#study">Read the study</a>
+    </div>
+    <div class="stickers"><span class="sticker">24 scene types</span><span class="sticker alt">1 m per pixel</span><span class="sticker pk">Runs in your browser</span></div>
+    <p class="pix hero-credit">Research: Gated Multi-Scale Context Fusion for Fine-Grained Geospatial Scene Classification</p>
+  </div>
+
   <aside class="stage" aria-label="Interactive plate stack">
-    <div class="stage-bar pix"><span>Plate stack</span><span id="stage-sample">no sample loaded</span></div>
-    <div id="story-stack" role="group" aria-label="Three glass plates: center, surround, global. Activate a plate to eject it."></div>
+    <div class="stage-bar pix"><span>The three views</span><span id="stage-sample">no sample loaded</span></div>
+    <div id="story-stack" role="group" aria-label="Three glass plates: center, surround and global. Activate a plate to switch that view off."></div>
     <div class="stage-ctl">
       <div class="seg" role="radiogroup" aria-label="Scale mode">
-        <button type="button" role="radio" aria-checked="true" data-mode="ground">Ground scale</button>
-        <button type="button" role="radio" aria-checked="false" data-mode="input">Model input</button>
+        <button type="button" role="radio" aria-checked="true" data-mode="ground">True scale</button>
+        <button type="button" role="radio" aria-checked="false" data-mode="input">What the model gets</button>
       </div>
-      <label class="slider"><span class="pix">Explode</span><input id="story-explode" type="range" min="0" max="100" value="40" aria-label="Explode or collapse the stack"></label>
+      <label class="slider"><span class="pix">Spread</span><input id="story-explode" type="range" min="0" max="100" value="40" aria-label="Spread the plates apart or stack them together"></label>
     </div>
-    <p class="stage-note pix">Beam = learned view gate · a weighting, not causal importance</p>
+    <p class="stage-note pix">Click a plate to remove that view · beam width = learned weight, a weighting and not proof of cause</p>
   </aside>
+</header>
 
-  <div class="chapters">
-    <section id="hook" class="chapter hook" data-stack='{"mode":"ground","explode":0.35,"focus":null}' aria-labelledby="h-hook">
-      <p class="pix">AIRE410 · MEET subset · 24 classes · 1 m / pixel</p>
-      <h1 id="h-hook" class="hook-title"><span class="chrome">Gated Scale-aware</span> <span class="cut cut-a">G.S.C.A.P.E.</span> <span class="chrome">Context Analysis</span> <span class="cut cut-b"> GEOSPATIAL</span></h1>
-      <p class="claim"><i><b>Gated Scale-aware Context Analysis Platform for Exploration:</b></i><br><br>
-        An interactive research platform for multi-scale geospatial scene classification. 
-        GSCAPE explores how information from different spatial scales can improve scene recognition, allowing users to compare contextual views, examine learned fusion weights, and investigate model predictions.</p>
-      <div class="cta">
-        <a class="cap go" href="#instrument">Skip to instrument</a>
-        <a class="cap ghost" href="#questions">Read the story</a>
-      </div>
-      <div class="stickers"><span class="sticker">1.0 m / pixel</span><span class="sticker alt">3 views · 224 px</span><span class="sticker pk">Frozen backbone</span></div>
-    </section>
-
-    <section id="questions" class="chapter q" data-stack='{"mode":"ground","explode":0.7,"focus":"center"}' aria-labelledby="h-q1">
-      <span class="num" aria-hidden="true">01</span>
-      <div class="copy">
-        <p class="pix">Research question 1</p>
-        <h2 id="h-q1" class="h2">Does multi-scale context beat <span class="cut cut-a">center-only</span>?</h2>
-        <p>Compare the 256 m center alone with the same scene seen at 768 m and 1.28 km. Features come from the same frozen backbone, so any difference comes from the views, not from a better feature extractor.</p>
-      </div>
-    </section>
-
-    <section id="q2" class="chapter q" data-stack='{"mode":"ground","explode":0.55,"focus":"global"}' aria-labelledby="h-q2">
-      <span class="num" aria-hidden="true">02</span>
-      <div class="copy">
-        <p class="pix">Research question 2</p>
-        <h2 id="h-q2" class="h2">Is the gain larger for <span class="cut cut-b">arid</span> and bare classes?</h2>
-        <p>The arid/other grouping was fixed before any result was seen. We report the difference in context gain with a bootstrap 95% interval.</p>
-        <p class="pix">Arid group</p><ul id="arid-chips" class="chips"></ul>
-      </div>
-    </section>
-
-    <section id="q3" class="chapter q" data-stack='{"mode":"ground","explode":0.12,"focus":null}' aria-labelledby="h-q3">
-      <span class="num" aria-hidden="true">03</span>
-      <div class="copy">
-        <p class="pix">Research question 3</p>
-        <h2 id="h-q3" class="h2">Does it hold on a small <span class="cut cut-c">UAE</span> external set?</h2>
-        <p>Sentinel-2 imagery at 10 m/pixel, so this is a cross-resolution test. Labels checked by eye, no retraining or tuning on UAE. A MEET test set degraded to 10 m separates resolution from regional shift. Classes with fewer than 5 accepted samples are not evaluated. Read it as a sanity check, not a verdict.</p>
-        <span class="sticker">External test</span>
-      </div>
-    </section>
-
-    <section id="views" class="chapter views" data-stack='{"mode":"ground","explode":0.85,"focus":null}' aria-labelledby="h-views">
-      <div class="copy wide">
-        <p class="pix">The views</p>
-        <h2 id="h-views" class="h2">Three plates, <span class="cut cut-a">one</span> scene</h2>
-        <p>Each 1280 × 1280 px scene (1.28 km at 1.0 m/pixel) is cut into three nested, centered crops. Each crop is resized to 224 × 224 px, so the network sees equal pixel counts that cover very different amounts of ground. Flip the stage between <b>Ground scale</b> and <b>Model input</b> to see both.</p>
-        <div id="scale-bar" class="scale-bar" role="group" aria-label="Ground footprint of each view, drawn to scale"></div>
-        <p class="pix">224 px input preview <span id="preview-src"></span></p>
-        <div id="in-preview" class="in-preview"></div>
-      </div>
-    </section>
-
-    <section id="model" class="chapter model" data-stack='{"mode":"input","explode":0.9,"focus":null}' aria-labelledby="h-model">
-      <div class="copy wide">
-        <p class="pix">The model</p>
-        <h2 id="h-model" class="h2">Light, <span class="cut cut-b">gated</span></h2>
-        <p>One frozen MobileNetV2 reads each view. A gated fusion head learns how much each view's features should count. During training of the <b>-VD</b> heads, views are randomly switched off, so the head learns to cope with missing views.</p>
-        <figure class="diagram plum" id="diagram">
-          <svg viewBox="0 0 560 548" role="img" aria-labelledby="dg-t dg-d">
-            <title id="dg-t">Light path through the model</title>
-            <desc id="dg-d">Three view plates feed one shared frozen MobileNetV2 backbone, producing three 1280-dimensional feature vectors. Three learned gates weight the views, a gated fusion head combines them, and the output is a ranked list over 24 classes.</desc>
-            <defs>
-              <linearGradient id="lg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F2C14E"/><stop offset="1" stop-color="#A9E8E8"/></linearGradient>
-              <pattern id="vec" width="5" height="8" patternUnits="userSpaceOnUse"><rect width="2" height="8" fill="#A77BD0"/></pattern>
-            </defs>
-            <g class="dg-v" data-v="center"><rect x="30" y="8" width="100" height="100" class="pl"/><text class="t" x="80" y="124">center · 256 m</text><rect x="77" y="126" width="6" height="34" fill="url(#lg)"/></g>
-            <g class="dg-v" data-v="surround"><rect x="230" y="8" width="100" height="100" class="pl"/><text class="t" x="280" y="124">surround · 768 m</text><rect x="277" y="126" width="6" height="34" fill="url(#lg)"/></g>
-            <g class="dg-v" data-v="global"><rect x="430" y="8" width="100" height="100" class="pl"/><text class="t" x="480" y="124">global · 1.28 km</text><rect x="477" y="126" width="6" height="34" fill="url(#lg)"/></g>
-            <rect x="30" y="162" width="500" height="42" class="blk"/><text class="t b" x="280" y="188">FROZEN MobileNetV2 · ImageNet · shared weights · run per view</text>
-            <g class="dg-v" data-v="center"><rect x="77" y="204" width="6" height="30" fill="url(#lg)"/><rect x="40" y="234" width="80" height="24" fill="url(#vec)" class="vc"/><text class="t" x="80" y="274">1280-d feature</text></g>
-            <g class="dg-v" data-v="surround"><rect x="277" y="204" width="6" height="30" fill="url(#lg)"/><rect x="240" y="234" width="80" height="24" fill="url(#vec)" class="vc"/><text class="t" x="280" y="274">1280-d feature</text></g>
-            <g class="dg-v" data-v="global"><rect x="477" y="204" width="6" height="30" fill="url(#lg)"/><rect x="440" y="234" width="80" height="24" fill="url(#vec)" class="vc"/><text class="t" x="480" y="274">1280-d feature</text></g>
-            <g class="dg-v fd" data-v="center"><rect x="77" y="280" width="6" height="14" fill="url(#lg)"/><rect x="75" y="296" width="10" height="80" class="trk"/><rect x="66" y="331" width="28" height="9" class="thumb" data-fader="0"/><text class="t" x="80" y="394" data-fv="0">gate —</text></g>
-            <g class="dg-v fd" data-v="surround"><rect x="277" y="280" width="6" height="14" fill="url(#lg)"/><rect x="275" y="296" width="10" height="80" class="trk"/><rect x="266" y="331" width="28" height="9" class="thumb" data-fader="1"/><text class="t" x="280" y="394" data-fv="1">gate —</text></g>
-            <g class="dg-v fd" data-v="global"><rect x="477" y="280" width="6" height="14" fill="url(#lg)"/><rect x="475" y="296" width="10" height="80" class="trk"/><rect x="466" y="331" width="28" height="9" class="thumb" data-fader="2"/><text class="t" x="480" y="394" data-fv="2">gate —</text></g>
-            <rect x="130" y="414" width="300" height="40" class="blk"/><text class="t b" x="280" y="439">GATED FUSION HEAD</text>
-            <rect x="277" y="454" width="6" height="26" fill="url(#lg)"/>
-            <rect x="30" y="482" width="500" height="40" class="strip"/><text class="t s" x="280" y="507">24-CLASS RANKED OUTPUT · label strip</text>
-          </svg>
-          <figcaption class="pix" id="dg-cap">Gate faders show <b>—</b> until you run the instrument. They then mirror your last reading.</figcaption>
-          <button type="button" class="cap ghost tiny" id="dropout-btn">Randomise view dropout</button>
-        </figure>
-        <h3 class="pix">Size and speed · from efficiency.csv</h3>
-        <div id="specs"></div>
-      </div>
-    </section>
-  </div>
-</div>
-
-<section id="evidence" class="evidence" aria-labelledby="h-ev">
-  <header class="ev-head">
-    <p class="pix">Evidence</p>
-    <h2 id="h-ev" class="h2 big">What the <span class="cut cut-b">numbers</span> say, and <span class="cut cut-c">don't</span></h2>
-    <p class="ev-sub">Everything below is read from the exported results files. Scores are mean ± std over seeds 42, 7 and 123, and intervals are bootstrap 95% CIs where stated.</p>
-    <span class="tape">mean ± std · n = 3 seeds</span>
-  </header>
-  <div id="evidence-body" class="ev-grid"><p class="empty">Results load when this section nears the viewport…</p></div>
-  <div class="ev-grid" style="margin-top:var(--gap)">
-    <section class="panel plum span-12" aria-labelledby="h-lim">
-      <span class="tape pk">Limitations, stated plainly</span>
-      <h3 id="h-lim" class="h3" style="margin-top:.6em">What this study cannot tell you</h3>
-      <ul class="lim">
-        <li><b>No coordinates in MEET.</b> Geographic overlap between train, validation and test cannot be checked. Near-duplicates are screened only by exact MD5 and by feature cosine similarity to the nearest train sample.</li>
-        <li><b>UAE n is small.</b> Up to 25 candidates per class, only classes with at least 5 accepted samples are evaluated, and some classes are not sampled at all (Dry field, Hills, Military training ground).</li>
-        <li><b>Sensor and date differences.</b> UAE imagery is Copernicus Sentinel-2 at 10 m (winter 2025-26), ten times coarser than MEET, and five small-object classes cannot be sampled. There is no retraining or tuning on UAE.</li>
-        <li><b>B1 vs B2 is not a context comparison.</b> The custom CNN is trained end to end on the center view and has a different architecture from the frozen-MobileNetV2 head.</li>
-        <li><b>Gates are weights, not explanations.</b> A larger gate means the head leaned on that view's features, not that the view is causally important.</li>
-        <li><b>Grad-CAM is a visual aid.</b> It shows where a class logit is sensitive, not a proof of what the model "understands".</li>
-      </ul>
-    </section>
-  </div>
-</section>
-
+<!-- 2 · THE MODEL -->
 <section id="instrument" class="instrument" aria-labelledby="h-ins">
   <header class="ins-head">
-    <h2 id="h-ins" class="h2">The <span class="cut cut-b">instrument</span></h2>
-    <p class="pix">Runs in your browser · uploaded images never leave this device</p>
+    <div>
+      <p class="pix">The model</p>
+      <h2 id="h-ins" class="h2">Read a <span class="cut cut-b">scene</span></h2>
+    </div>
+    <p class="pix">Pick a sample or drop an image · everything runs on your device</p>
   </header>
   <div class="ws">
-    <aside class="airlock" aria-label="Airlock: choose an image">
+    <aside class="airlock" aria-label="Choose an image">
       <label id="drop" class="drop" tabindex="0" role="button" aria-describedby="drop-help">
         <input id="file" type="file" accept="image/jpeg,image/png,image/webp" class="vh" tabindex="-1">
         <span class="drop-t">Drop a satellite image</span>
-        <span id="drop-help" class="drop-s">or press to choose · or paste (Ctrl/⌘ + V) · JPEG, PNG or WebP · up to 25 MB</span>
+        <span id="drop-help" class="drop-s">or press to choose, or paste with Ctrl/⌘ + V · JPEG, PNG or WebP · up to 25 MB</span>
       </label>
-      <p class="pix">MEET samples</p>
-      <label class="vh" for="cs-filter">Filter samples by class</label>
-      <select id="cs-filter"><option value="">All classes</option></select>
-      <ol id="cs" class="contact" aria-label="Preloaded MEET samples"></ol>
+      <p class="pix">Samples from MEET</p>
+      <label class="vh" for="cs-filter">Filter samples by scene type</label>
+      <select id="cs-filter"><option value="">All scene types</option></select>
+      <ol id="cs" class="contact" aria-label="Sample images"></ol>
     </aside>
 
     <div class="ins-stage">
@@ -172,84 +82,205 @@
       <div id="ins-stack" role="group" aria-label="Plate stack for the current image"></div>
       <div class="ins-ctl">
         <div class="seg" id="ins-seg" role="radiogroup" aria-label="Scale mode">
-          <button type="button" role="radio" aria-checked="true" data-mode="ground">Ground scale</button>
-          <button type="button" role="radio" aria-checked="false" data-mode="input">Model input</button>
+          <button type="button" role="radio" aria-checked="true" data-mode="ground">True scale</button>
+          <button type="button" role="radio" aria-checked="false" data-mode="input">What the model gets</button>
         </div>
-        <label class="slider"><span class="pix">Explode</span><input id="ins-explode" type="range" min="0" max="100" value="55" aria-label="Explode or collapse the stack"></label>
+        <label class="slider"><span class="pix">Spread</span><input id="ins-explode" type="range" min="0" max="100" value="55" aria-label="Spread the plates apart or stack them together"></label>
       </div>
-      <div id="ins-inputs" class="inputs" aria-label="The three 224 px model inputs"></div>
+      <div id="ins-inputs" class="inputs" aria-label="The three 224 pixel images the model receives"></div>
       <div id="ins-warn" class="warn" role="status"></div>
     </div>
 
-    <aside class="readout" aria-label="Readout">
+    <aside class="readout" aria-label="Result">
       <div id="ro-load" class="ro-load" hidden><label for="ro-prog" id="ro-prog-l">Loading</label><progress id="ro-prog" max="1" value="0"></progress></div>
-      <div id="ro-slip" class="slip" aria-live="polite"><p class="slip-empty">Pick a sample or drop an image to read it.</p></div>
-      <h3 class="pix">View gates · learned weights, not causal importance</h3>
+      <div id="ro-slip" class="slip" aria-live="polite"><p class="slip-empty">Pick a sample or drop an image and the model's answer appears here.</p></div>
+      <h3 class="pix">How much each view counted</h3>
       <div id="ro-gates" class="faders"></div>
+      <p class="fine">Learned weights. A high value means the model leaned on that view. It does not prove that the view caused the answer.</p>
       <p id="ro-time" class="pix">timing —</p>
     </aside>
 
     <div class="ins-bottom glass">
-      <fieldset class="subsets"><legend class="pix">View subset (mirrors plate ejection)</legend>
+      <fieldset class="subsets"><legend class="pix">Which views to use</legend>
         <div id="subsets" class="subset-row"></div>
+        <p class="fine">Mirrors the plates. Removing a plate removes that view.</p>
       </fieldset>
-      <fieldset class="camctl"><legend class="pix">Grad-CAM film</legend>
+      <fieldset class="camctl"><legend class="pix">Heat map (Grad-CAM)</legend>
         <label><input type="checkbox" id="cam-on" checked> Show</label>
-        <label>Class <select id="cam-class" aria-label="Grad-CAM class"><option value="">Predicted (default)</option></select></label>
+        <label>For <select id="cam-class" aria-label="Scene type for the heat map"><option value="">the predicted type</option></select></label>
         <label class="slider">Opacity <input id="cam-op" type="range" min="0" max="100" value="70"></label>
-        <label><input type="checkbox" id="cam-cb"> Colorblind-safe ramp</label>
-        <label><input type="checkbox" id="cam-live"> Recompute live (samples)</label>
+        <label><input type="checkbox" id="cam-cb"> Colour-blind-safe colours</label>
+        <label><input type="checkbox" id="cam-live"> Recompute for samples</label>
         <span id="cam-src" class="sticker alt">—</span>
       </fieldset>
-      <div class="compare"><h3 class="pix">Compare · center only → + surround → + global</h3><div id="compare"></div></div>
-      <details class="dev"><summary class="pix">Developer drawer · head parity</summary>
-        <p class="fine">Feeds <code>parity.json</code> features and masks to the TF.js head and compares them with the Keras logits and gates (the same test as the export harness).</p>
-        <button type="button" class="cap tiny" id="parity-run">Run head parity test</button>
+      <div class="compare"><h3 class="pix">Add context one step at a time</h3><div id="compare"></div></div>
+      <details class="dev"><summary class="pix">For developers · check the head against Keras</summary>
+        <p class="fine">Feeds the saved features and masks from <code>parity.json</code> to the browser model and compares the output with the Keras logits and gates, the same test the export script runs.</p>
+        <button type="button" class="cap tiny" id="parity-run">Run the check</button>
         <pre id="parity-out" class="parity"></pre>
       </details>
     </div>
   </div>
 </section>
 
-<section id="method" class="method" aria-labelledby="h-method">
-  <div class="ev-grid">
-    <header class="span-12"><p class="pix">Method, data and credits</p><h2 id="h-method" class="h2">How this was <span class="cut cut-a">made</span></h2></header>
-    <section class="panel paper span-7" aria-labelledby="h-rep">
-      <h3 id="h-rep" class="h3">Reproducibility</h3>
+<!-- 3 · THE STUDY -->
+<section id="study" class="study" aria-labelledby="h-study">
+  <header class="study-head">
+    <p class="pix">The study</p>
+    <h2 id="h-study" class="h2 big">What we asked, and <span class="cut cut-c">what we found</span></h2>
+    <p class="ev-sub">Four short chapters. Start anywhere.</p>
+  </header>
+
+  <div class="tabs" role="tablist" aria-label="Study chapters">
+    <button type="button" class="tab" role="tab" id="t-questions" aria-controls="p-questions" aria-selected="true">The questions</button>
+    <button type="button" class="tab" role="tab" id="t-how" aria-controls="p-how" aria-selected="false" tabindex="-1">How it works</button>
+    <button type="button" class="tab" role="tab" id="t-results" aria-controls="p-results" aria-selected="false" tabindex="-1">Results</button>
+    <button type="button" class="tab" role="tab" id="t-method" aria-controls="p-method" aria-selected="false" tabindex="-1">Method and credits</button>
+  </div>
+
+  <!-- questions -->
+  <div id="p-questions" role="tabpanel" aria-labelledby="t-questions">
+    <div class="qcards">
+      <article class="panel paper">
+        <span class="sticker">Question 1</span>
+        <h3 class="h3">Does a wider view help?</h3>
+        <p>Start with the 256 m square at the center, then add a 768 m view and the full 1.28 km scene. All three go through the same frozen network, so any change in accuracy comes from what the model was shown.</p>
+      </article>
+      <article class="panel paper">
+        <span class="sticker pk">Question 2</span>
+        <h3 class="h3">Does it help most in the desert?</h3>
+        <p>Bare ground, sand and scrub look alike up close. Our guess was that the neighbourhood matters most for those scenes. We fixed which classes count as arid before looking at any result, and we report the gap with a bootstrap 95% interval.</p>
+        <p class="pix">Arid classes</p><ul id="arid-chips" class="chips"></ul>
+      </article>
+      <article class="panel paper">
+        <span class="sticker alt">Question 3</span>
+        <h3 class="h3">Does it travel to the UAE?</h3>
+        <p>We tried the model on Sentinel-2 images of the UAE at 10 m per pixel, ten times coarser than the training imagery. The labels were checked by eye and the model was not retrained. Classes with fewer than 5 accepted samples are skipped. Treat the outcome as a sanity check, since the set is small.</p>
+      </article>
+    </div>
+  </div>
+
+  <!-- how it works -->
+  <div id="p-how" role="tabpanel" aria-labelledby="t-how" hidden>
+    <div class="ev-grid">
+      <section class="panel plum span-6" aria-labelledby="h-views">
+        <h3 id="h-views" class="h3">One place, three views</h3>
+        <p>Each scene is 1280 × 1280 pixels, about 1.28 km across at 1 m per pixel. We cut three centered crops from it and shrink each to 224 × 224 pixels. The network always receives the same number of pixels, and each view covers a different amount of ground.</p>
+        <div id="scale-bar" class="scale-bar" role="group" aria-label="Ground footprint of each view, drawn to scale"></div>
+        <p class="pix">What the model receives <span id="preview-src"></span></p>
+        <div id="in-preview" class="in-preview"></div>
+      </section>
+
+      <section class="panel plum span-6" aria-labelledby="h-model">
+        <h3 id="h-model" class="h3">Three looks, one answer</h3>
+        <p>One frozen MobileNetV2 reads each view. A small gated head then learns how much each view should count and blends them into a ranked list of the 24 scene types. During training of the <b>-VD</b> versions, views are switched off at random, so the head copes when one is missing. Press the button to see that happen.</p>
+        <figure class="diagram" id="diagram">
+          <svg viewBox="0 0 560 548" role="img" aria-labelledby="dg-t dg-d">
+            <title id="dg-t">How light travels through the model</title>
+            <desc id="dg-d">Three view plates feed one shared frozen MobileNetV2 network, producing three lists of 1280 numbers. Three learned gates weight the views, a gated head blends them, and the output is a ranked list over 24 scene types.</desc>
+            <defs>
+              <linearGradient id="lg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F2C14E"/><stop offset="1" stop-color="#A9E8E8"/></linearGradient>
+              <pattern id="vec" width="5" height="8" patternUnits="userSpaceOnUse"><rect width="2" height="8" fill="#A77BD0"/></pattern>
+            </defs>
+            <g class="dg-v" data-v="center"><rect x="30" y="8" width="100" height="100" class="pl"/><text class="t" x="80" y="124">center · 256 m</text><rect x="77" y="126" width="6" height="34" fill="url(#lg)"/></g>
+            <g class="dg-v" data-v="surround"><rect x="230" y="8" width="100" height="100" class="pl"/><text class="t" x="280" y="124">surround · 768 m</text><rect x="277" y="126" width="6" height="34" fill="url(#lg)"/></g>
+            <g class="dg-v" data-v="global"><rect x="430" y="8" width="100" height="100" class="pl"/><text class="t" x="480" y="124">global · 1.28 km</text><rect x="477" y="126" width="6" height="34" fill="url(#lg)"/></g>
+            <rect x="30" y="162" width="500" height="42" class="blk"/><text class="t b" x="280" y="188">FROZEN MobileNetV2 · same weights for every view</text>
+            <g class="dg-v" data-v="center"><rect x="77" y="204" width="6" height="30" fill="url(#lg)"/><rect x="40" y="234" width="80" height="24" fill="url(#vec)" class="vc"/><text class="t" x="80" y="274">1280 numbers</text></g>
+            <g class="dg-v" data-v="surround"><rect x="277" y="204" width="6" height="30" fill="url(#lg)"/><rect x="240" y="234" width="80" height="24" fill="url(#vec)" class="vc"/><text class="t" x="280" y="274">1280 numbers</text></g>
+            <g class="dg-v" data-v="global"><rect x="477" y="204" width="6" height="30" fill="url(#lg)"/><rect x="440" y="234" width="80" height="24" fill="url(#vec)" class="vc"/><text class="t" x="480" y="274">1280 numbers</text></g>
+            <g class="dg-v fd" data-v="center"><rect x="77" y="280" width="6" height="14" fill="url(#lg)"/><rect x="75" y="296" width="10" height="80" class="trk"/><rect x="66" y="331" width="28" height="9" class="thumb" data-fader="0"/><text class="t" x="80" y="394" data-fv="0">gate —</text></g>
+            <g class="dg-v fd" data-v="surround"><rect x="277" y="280" width="6" height="14" fill="url(#lg)"/><rect x="275" y="296" width="10" height="80" class="trk"/><rect x="266" y="331" width="28" height="9" class="thumb" data-fader="1"/><text class="t" x="280" y="394" data-fv="1">gate —</text></g>
+            <g class="dg-v fd" data-v="global"><rect x="477" y="280" width="6" height="14" fill="url(#lg)"/><rect x="475" y="296" width="10" height="80" class="trk"/><rect x="466" y="331" width="28" height="9" class="thumb" data-fader="2"/><text class="t" x="480" y="394" data-fv="2">gate —</text></g>
+            <rect x="130" y="414" width="300" height="40" class="blk"/><text class="t b" x="280" y="439">GATED HEAD · weighs and blends</text>
+            <rect x="277" y="454" width="6" height="26" fill="url(#lg)"/>
+            <rect x="30" y="482" width="500" height="40" class="strip"/><text class="t s" x="280" y="507">RANKED LIST · 24 SCENE TYPES</text>
+          </svg>
+          <figcaption class="pix" id="dg-cap">The gate faders stay empty until you read an image in the model above. Then they follow your latest reading.</figcaption>
+          <button type="button" class="cap ghost tiny" id="dropout-btn">Switch views off at random</button>
+        </figure>
+        <details class="more">
+          <summary>Size and speed</summary>
+          <div id="specs"></div>
+        </details>
+      </section>
+    </div>
+  </div>
+
+  <!-- results -->
+  <div id="p-results" role="tabpanel" aria-labelledby="t-results" hidden>
+    <header class="ev-head">
+      <h3 class="h3">The numbers</h3>
+      <p class="ev-sub">Every figure is read from the exported results files. Scores are averages over three training runs (seeds 42, 7 and 123), and ± is the spread between those runs. Intervals are bootstrap 95% CIs where stated.</p>
+    </header>
+    <div id="evidence-body" class="ev-grid"><p class="empty">Loading results…</p></div>
+    <section class="panel plum span-12 lim-panel" aria-labelledby="h-lim">
+      <span class="tape pk">Limits</span>
+      <h3 id="h-lim" class="h3" style="margin-top:.6em">What this study cannot tell you</h3>
       <ul class="lim">
-        <li>Subset: 24 classes sampled only from the official MEET split lists, never reshuffled. Per class and split: min(N, available), N = 200 train / 50 val / 100 test, seed 42.</li>
-        <li>Views are nested crops resized to 224 × 224 (bicubic in the export pipeline): center box (512,512,768,768), surround (256,256,1024,1024), global the full image.</li>
-        <li>Heads train on cached frozen MobileNetV2 (ImageNet) features. Seeds 42, 7 and 123 for every head; seed 42 for data and B1.</li>
-        <li>Tuning: keras-tuner RandomSearch, 10 trials each for B3-VD and B4-VD, macro-F1 on the whole validation set. Test and UAE never influence tuning.</li>
-        <li>Statistics: exact McNemar on paired test predictions (per seed) with effect sizes, and a bootstrap 95% CI on per-class context gain (test images resampled within each class, paired across models).</li>
-        <li>Pinned environment in <code>requirements.txt</code> and <code>requirements.lock.txt</code>. Run order in <code>run_all.sh</code>.</li>
-        <li>This site's browser preprocessing resamples with the browser canvas, which is not bit-identical to the export pipeline's bicubic resize. Only the head is parity-tested.</li>
-      </ul>
-      <div id="todos" class="todos"></div>
-    </section>
-    <section class="panel plum span-5" aria-labelledby="h-lic">
-      <h3 id="h-lic" class="h3">Licences and credits</h3>
-      <ul class="lim">
-        <li><b>MEET</b>, Hugging Face dataset repo <code>zinStar/MEET</code>. Only the exported gallery subset is shown here. Do not redistribute <code>subset/</code> unless the licence permits.</li>
-        <li><b>ImageNet-pretrained MobileNetV2</b> weights from <code>keras.applications</code>. ImageNet terms apply.</li>
-        <li><b>Copernicus Sentinel-2</b>, free, full and open. Contains modified Copernicus Sentinel data [years]. Only aggregate UAE metrics are shown here.</li>
-        <li>UAE candidate generation: © OpenStreetMap contributors, ODbL.</li>
-        <li>TensorFlow.js 4.22.0 (Apache 2.0). Fonts: Unbounded, Bricolage Grotesque, JetBrains Mono, Silkscreen (SIL OFL).</li>
+        <li><b>MEET has no coordinates.</b> We cannot check whether training, validation and test scenes overlap on the ground. Near-duplicates were screened by exact file hash and by feature similarity to the closest training image.</li>
+        <li><b>The UAE set is small.</b> Up to 25 candidates per class, and only classes with at least 5 accepted samples are scored. Dry field, Hills and Military training ground were not sampled at all.</li>
+        <li><b>The UAE imagery is a different sensor.</b> Sentinel-2 at 10 m per pixel (winter 2025-26), ten times coarser than MEET. Five small-object classes cannot be sampled at that resolution. Nothing was retrained or tuned on UAE.</li>
+        <li><b>B1 against B2 says little about context.</b> The custom CNN trains end to end on the center view and has a different architecture from the frozen-MobileNetV2 head.</li>
+        <li><b>Gates are weights.</b> A larger gate means the head leaned on that view's features. It does not show that the view caused the answer.</li>
+        <li><b>Grad-CAM is a visual aid.</b> It shows where a class score is sensitive. It does not prove what the model understands.</li>
       </ul>
     </section>
+  </div>
+
+  <!-- method -->
+  <div id="p-method" role="tabpanel" aria-labelledby="t-method" hidden>
+    <div class="ev-grid">
+      <section class="panel paper span-7" aria-labelledby="h-rep">
+        <h3 id="h-rep" class="h3">How the study was run</h3>
+        <p>Open any block for the details. The aim is that someone else could repeat the work.</p>
+        <details class="more"><summary>Data and sampling</summary>
+          <ul class="lim">
+            <li>24 classes drawn only from the official MEET split lists, never reshuffled. Per class and split: min(N, available), with N = 200 train, 50 validation and 100 test, seed 42.</li>
+            <li>Views are nested centered crops of the 1280 px scene, each resized to 224 × 224 (bicubic in the export pipeline): center box (512, 512, 768, 768), surround (256, 256, 1024, 1024), global the full image.</li>
+          </ul>
+        </details>
+        <details class="more"><summary>Training and tuning</summary>
+          <ul class="lim">
+            <li>Heads train on cached features from a frozen ImageNet MobileNetV2. Seeds 42, 7 and 123 for every head. Seed 42 for the data and for B1.</li>
+            <li>Tuning: keras-tuner RandomSearch, 10 trials each for B3-VD and B4-VD, scored by macro-F1 on the whole validation set. The test set and UAE never influenced tuning.</li>
+          </ul>
+        </details>
+        <details class="more"><summary>Statistics</summary>
+          <ul class="lim">
+            <li>Exact McNemar test on paired test predictions, per seed, with effect sizes.</li>
+            <li>Bootstrap 95% CI on per-class context gain: test images resampled within each class, paired across models.</li>
+          </ul>
+        </details>
+        <details class="more"><summary>Reproducing it, and what differs in the browser</summary>
+          <ul class="lim">
+            <li>Pinned environment in <code>requirements.txt</code> and <code>requirements.lock.txt</code>. Run order in <code>run_all.sh</code>.</li>
+            <li>This site resizes images with the browser canvas, which does not give bit-identical pixels to the export pipeline's bicubic resize. Only the head is parity-tested.</li>
+          </ul>
+        </details>
+        <div id="todos" class="todos"></div>
+      </section>
+
+      <section class="panel plum span-5" aria-labelledby="h-lic">
+        <h3 id="h-lic" class="h3">Data, software and credits</h3>
+        <ul class="lim">
+          <li><b>MEET</b>, Hugging Face dataset <code>zinStar/MEET</code>. Only the exported sample gallery appears here. Do not redistribute <code>subset/</code> unless the licence permits.</li>
+          <li><b>MobileNetV2</b> with ImageNet weights from <code>keras.applications</code>. ImageNet terms apply.</li>
+          <li><b>Copernicus Sentinel-2</b>, free, full and open. Contains modified Copernicus Sentinel data [years]. Only aggregate UAE numbers appear here.</li>
+          <li>UAE candidate generation: © OpenStreetMap contributors, ODbL.</li>
+          <li>TensorFlow.js 4.22.0 (Apache 2.0). Fonts: Unbounded, Bricolage Grotesque, JetBrains Mono and Silkscreen (SIL OFL).</li>
+        </ul>
+      </section>
+    </div>
   </div>
 </section>
 
 <nav class="dock" aria-label="Sections">
-  <a class="cap go" href="#instrument">Open instrument</a>
+  <a class="cap go" href="#instrument">Try the model</a>
   <ol class="dock-list">
-    <li><a href="#hook" data-sec="hook"><span class="pix">01</span>Hook</a></li>
-    <li><a href="#questions" data-sec="questions"><span class="pix">02</span>Questions</a></li>
-    <li><a href="#views" data-sec="views"><span class="pix">03</span>Views</a></li>
-    <li><a href="#model" data-sec="model"><span class="pix">04</span>Model</a></li>
-    <li><a href="#evidence" data-sec="evidence"><span class="pix">05</span>Evidence</a></li>
-    <li><a href="#instrument" data-sec="instrument"><span class="pix">06</span>Instrument</a></li>
-    <li><a href="#method" data-sec="method"><span class="pix">07</span>Method</a></li>
+    <li><a href="#hook" data-sec="hook"><span class="pix">01</span>Overview</a></li>
+    <li><a href="#instrument" data-sec="instrument"><span class="pix">02</span>The model</a></li>
+    <li><a href="#study" data-sec="study"><span class="pix">03</span>The study</a></li>
   </ol>
   <span class="glyph" aria-hidden="true"><i></i><i></i><i></i></span>
 </nav>
