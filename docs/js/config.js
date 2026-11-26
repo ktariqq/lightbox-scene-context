@@ -26,12 +26,13 @@ export const CONFIG = {
   ACCEPT: ['image/jpeg', 'image/png', 'image/webp'],
   // heuristic thresholds, not tuned on data
   OOD: { aspect: 1.15, minSide: 640, flatStd: 6, entropyNorm: 0.6, top1Min: 0.35 },
-  TODOS: [
-    { label: 'MEET licence and citation', text: '[EDIT: copy from the Hugging Face dataset card]' },
-    { label: 'UAE second-annotator agreement', text: '[EDIT: report kappa and n, or state not done]' },
-    { label: 'UAE acquisition and coverage', text: '[EDIT: acquisition dates min-max, source resolution min/median/max, flagged counts, final class coverage from results/uae_coverage.json]' },
-    { label: 'Extraction platform', text: '[EDIT: Kaggle or Colab, GPU type]' },
-    { label: 'Copernicus attribution', text: '[EDIT: paste copyrightText from uae/service_info.json]' },
+    NOTES: [
+    { label: 'MEET licence and citation', text: 'Y. Li, Y. Wu, G. Cheng, C. Tao, B. Dang, Y. Wang, J. Zhang, C. Zhang, Y. Liu, X. Tang, J. Ma, and  Y. Zhang,  “MEET: A million-scale dataset for fine-grained geospatial scene classification with zoom-free remote sensing imagery,” IEEE/CAA J. Autom. Sinica, vol. 12, no. 5, pp. 1004–1023, May 2025. doi: 10.1109/JAS.2025.125324	' },
+    { label: 'UAE labelling', text: 'One reviewer (the author) labelled every UAE sample by eye. A second-annotator agreement check was not done.' },
+    { label: 'UAE acquisition and coverage', text: 'Sentinel-2 L2A scenes from 2025-11-01 to 2026-03-16 at 10 m per pixel, cloud cover below 1%. 93 reviewed samples in 9 of the 24 classes: Airport 12, Beach 12, Brownfield 7, Landfill 7, Mountain 17, Quarry 6, Scrub 8, Solar power plant 11, Thermal power plant 13.' },
+    { label: 'Compute', text: 'Image extraction and feature caching ran on Kaggle with GPU T4. Training, evaluation and the web export ran locally on CPU.' },
+    { label: 'Copernicus notice', text: 'Contains modified Copernicus Sentinel data 2025, 2026.' },
+    { label: 'Context gain', text: 'For one class: its score with all three views minus its score with the center only (B2), same seed, MEET test set. F1 gain uses per-class F1; accuracy gain uses per-class accuracy (recall). Positive means context helped.' },
   ],
 };
 export const FOOTPRINT = v => (v.box[2] - v.box[0]) * CONFIG.GSD;

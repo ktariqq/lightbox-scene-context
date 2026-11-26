@@ -183,7 +183,7 @@
       <article class="panel paper">
         <span class="sticker alt">Question 3</span>
         <h3 class="h3">Does it travel to the UAE?</h3>
-        <p>We tried the model on Sentinel-2 images of the UAE at 10 m per pixel, ten times coarser than the training imagery. The labels were checked by eye and the model was not retrained. Classes with fewer than 5 accepted samples are skipped. Treat the outcome as a sanity check, since the set is small.</p>
+        <p>We tried the model on Sentinel-2 images of the UAE at 10 m per pixel, ten times coarser than the training imagery. The labels were checked by eye and the model was not retrained. Classes with fewer than 5 accepted samples are skipped. 9 of the 24 classes qualified. Treat the outcome as a sanity check, since the set is small.</p>
       </article>
     </div>
   </div>
@@ -247,7 +247,7 @@
       <h3 id="h-lim" class="h3" style="margin-top:.6em">What this study cannot tell you</h3>
       <ul class="lim">
         <li><b>MEET has no coordinates.</b> We cannot check whether training, validation and test scenes overlap on the ground. Near-duplicates were screened by exact file hash and by feature similarity to the closest training image.</li>
-        <li><b>The UAE set is small.</b> Up to 25 candidates per class, and only classes with at least 5 accepted samples are scored. Dry field, Hills and Military training ground were not sampled at all.</li>
+        <li><b>The UAE set is small.</b> Up to 15 candidates per class. Only classes with at least 5 accepted samples are scored: 9 of 24 classes, 93 samples.</li>
         <li><b>The UAE imagery is a different sensor.</b> Sentinel-2 at 10 m per pixel (winter 2025-26), ten times coarser than MEET. Five small-object classes cannot be sampled at that resolution. Nothing was retrained or tuned on UAE.</li>
         <li><b>B1 against B2 says little about context.</b> The custom CNN trains end to end on the center view and has a different architecture from the frozen-MobileNetV2 head.</li>
         <li><b>Gates are weights.</b> A larger gate means the head leaned on that view's features. It does not show that the view caused the answer.</li>
@@ -294,7 +294,7 @@
         <ul class="lim">
           <li><b>MEET</b>, Hugging Face dataset <code>zinStar/MEET</code>. Only the exported sample gallery appears here. Do not redistribute <code>subset/</code> unless the licence permits.</li>
           <li><b>MobileNetV2</b> with ImageNet weights from <code>keras.applications</code>. ImageNet terms apply.</li>
-          <li><b>Copernicus Sentinel-2</b>, free, full and open. Contains modified Copernicus Sentinel data [years]. Only aggregate UAE numbers appear here.</li>
+          <li><b>Copernicus Sentinel-2</b>, free, full and open. Contains modified Copernicus Sentinel data 2025, 2026. Only aggregate UAE numbers appear here.</li>
           <li>UAE candidate generation: © OpenStreetMap contributors, ODbL.</li>
           <li>TensorFlow.js 4.22.0 (Apache 2.0). Fonts: Unbounded, Bricolage Grotesque, JetBrains Mono and Silkscreen (SIL OFL).</li>
         </ul>

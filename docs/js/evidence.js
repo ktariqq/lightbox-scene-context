@@ -11,7 +11,6 @@ const panel = (kind, span, ...kids) => h('section', { class: `panel ${kind} span
 const cellOf = (r, k) => (r && typeof r[k + '_mean'] === 'number' ? { m: r[k + '_mean'], sd: r[k + '_std'] || 0 } : null);
 const byModel = t => new Map((t ?? []).map(r => [mdl(r), r]));
 const signed = v => (typeof v === 'number' ? (v < 0 ? '−' : '+') + Math.abs(v).toFixed(3) : '—');
-const todoChip = t => h('span', { class: 'todo' }, t);
 const imgFig = (file, alt, cap, opts = {}) => {
   const auto = opts.ar === 'auto';
   const box = h('div', { class: 'shot' + (auto ? ' shot--auto' : ''), style: auto ? 'aspect-ratio:auto;height:auto;' : (opts.ar ? `aspect-ratio:${opts.ar};` : '') },
@@ -24,7 +23,7 @@ export function initEvidence(D) {
   return () => {
     if (done) return; done = true;
     host.replaceChildren(
-      h('p', { class: 'fine span-12', style: 'grid-column:span 12' }, 'Some files (per-class scores, McNemar tests, group summary, confusion) report a single configuration chosen by the export scripts rather than a view subset. The scripts name it.'));
+      h('p', { class: 'fine span-12', style: 'grid-column:span 12' }, 'Per-class scores, group summaries, error lists and McNemar tests use all three views (c+s+g) for fusion heads and the center only for B2. Confusion matrices are for seed 42. Everything else is averaged over seeds 42, 7 and 123.'));
     [ablation, comparisons, gain, uae, calib, gates, confusion, perClass].forEach(f => { try { f(host, D); } catch (e) { console.error(f.name, e); } });
   };
 }
@@ -66,7 +65,7 @@ function comparisons(host) {
   host.append(
     panel('plum', 5, h('h3', { class: 'h3' }, 'One view against three'),
       h('p', {}, 'B2 reads the center only. B3 and B4 combine all three views, so B2 against B3 or B4 is the fair test of context. B1 is a different kind of network trained end to end, so B1 against B2 says little about context.'), a),
-    panel('paper', 7, h('span', { class: 'tape gold' }, 'McNemar · paired predictions'), h('p', {}, 'A paired test on the same test images, run once per seed. It looks at the images where one model is right and the other is wrong. Rows marked significant are tinted. Verdicts appear exactly as exported. Check the export script for the sign convention of Δ.'), b));
+    panel('paper', 7, h('span', { class: 'tape gold' }, 'McNemar · paired predictions'), h('p', {}, 'A paired test on the same test images, run once per seed. It looks at the images where one model is right and the other is wrong. Rows marked significant are tinted. Verdicts appear exactly as exported. Δ is the accuracy of the second model minus the accuracy of the first.'), b));
   (async () => {
     const t = await loadCSV(tableFile('test', 'full24', 'csg'));
     if (!t) a.replaceChildren(empty(tableFile('test', 'full24', 'csg')));
@@ -108,7 +107,7 @@ function gain(host) {
     const st = { model: models.includes(C.PROPOSED) ? C.PROPOSED : models[0], seed: seeds.includes(42) ? 42 : seeds[0], metric: 'f1' };
     const fig = h('div');
     left.replaceChildren(
-      h('p', {}, 'Gain per class, with a bootstrap 95% interval (test images resampled within each class, paired across models). The arid grouping was fixed before any result was seen. ', todoChip('[EDIT: one-line definition of context gain as computed by the export code]')),
+      h('p', {}, 'Gain per class, with a bootstrap 95% interval (test images resampled within each class, paired across models). The arid grouping was fixed before any result was seen. ', todoChip(' Context gain for a class is its score with all three views minus its score with the center only (B2), same seed. F1 gain uses per-class F1 and accuracy gain uses per-class accuracy (recall). Positive means context helped.')),
       h('div', { class: 'ctl' }, sel('Model', models.map(m => ({ v: m, t: modelLabel(m) })), st.model, v => { st.model = v; draw(); }),
         sel('Seed', seeds.map(x => ({ v: x, t: String(x) })), st.seed, v => { st.seed = +v; draw(); }),
         sel('Metric', [{ v: 'f1', t: 'F1' }, { v: 'acc', t: 'Accuracy' }], st.metric, v => { st.metric = v; draw(); })), fig);
@@ -139,7 +138,7 @@ function uae(host) {
     h('p', {}, 'Sentinel-2 imagery at 10 m per pixel. Labels were checked by eye and nothing was retrained or tuned on UAE. Only classes with at least 5 accepted samples are scored, and Dry field, Hills and Military training ground were not sampled. The sensor and acquisition years differ from MEET. Read this as a sanity check with wide uncertainty.'),
     h('div', { class: 'ctl' }, sel('Variant', [{ v: 'full24', t: 'full24' }, { v: 'restricted', t: 'restricted' }], st.variant, v => { st.variant = v; draw(); }),
       sel('Metric', C.METRICS.map(k => ({ v: k, t: C.METRIC_LABEL[k] })), st.metric, v => { st.metric = v; draw(); })), fig,
-    h('p', {}, todoChip(C.TODOS[2].text), ' ', todoChip(C.TODOS[1].text))));
+    h('p', { class: 'fine' }, 'Coverage: 93 reviewed samples in 9 of 24 classes, scenes dated 2025-11-01 to 2026-03-16 at 10 m per pixel. One reviewer labelled all samples; no second-annotator check was done.')));
   async function draw() {
     const [t1, t2] = await Promise.all(['c', 'csg'].map(sb => loadCSV(tableFile('uae', st.variant, sb))));
     if (!t1 && !t2) { fig.replaceChildren(empty(tableFile('uae', st.variant, 'csg'))); return; }
